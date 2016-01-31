@@ -71,8 +71,7 @@
 		B9E891FF1C5D80A00068AA18 /* Shenanigans */ = {
 			isa = PBXGroup;
 			children = (
-				B9E892001C5D80A00068AA18 /* Shenanigans.h */,
-				B9E892021C5D80A00068AA18 /* Info.plist */,
+				B9E892171C5D88B70068AA18 /* Support */,
 			);
 			path = Shenanigans;
 			sourceTree = "<group>";
@@ -80,10 +79,27 @@
 		B9E8920B1C5D80A00068AA18 /* ShenanigansTests */ = {
 			isa = PBXGroup;
 			children = (
+				B9E892181C5D88D10068AA18 /* Support */,
+			);
+			path = ShenanigansTests;
+			sourceTree = "<group>";
+		};
+		B9E892171C5D88B70068AA18 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				B9E892001C5D80A00068AA18 /* Shenanigans.h */,
+				B9E892021C5D80A00068AA18 /* Info.plist */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		B9E892181C5D88D10068AA18 /* Support */ = {
+			isa = PBXGroup;
+			children = (
 				B9E8920C1C5D80A00068AA18 /* ShenanigansTests.swift */,
 				B9E8920E1C5D80A00068AA18 /* Info.plist */,
 			);
-			path = ShenanigansTests;
+			name = Support;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
