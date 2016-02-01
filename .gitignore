@@ -1,8 +1,18 @@
-## Build generated
+# For more info about `gitignore`, open a terminal and run:
+#
+#   man gitignore
+#
+# or
+#
+#   git help ignore
+#
+# Also, check git-scm.com/docs/gitignore and/or refer to github.com/github/gitignore (Xcode & Swift).
+
+# Build generated
 build/
 DerivedData/
 
-## Various settings
+# Various settings
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -13,7 +23,7 @@ DerivedData/
 !default.perspectivev3
 xcuserdata/
 
-## Other
+# Other
 .DS_Store
 *.moved-aside
 *.xccheckout
