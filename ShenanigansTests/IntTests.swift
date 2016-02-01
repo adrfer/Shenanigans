@@ -39,4 +39,9 @@ class ShenanigansTests: XCTestCase {
         for int in [-2, 0, 2, 4] { XCTAssertTrue(int.isEven) }
         for int in [-1, 3, 5, 7] { XCTAssertFalse(int.isEven) }
     }
+
+    func testIsOdd() {
+        for int in [-2, 0, 2, 4] { XCTAssertFalse(int.isOdd) }
+        for int in [-1, 3, 5, 7] { XCTAssertTrue(int.isOdd) }
+    }
 }
