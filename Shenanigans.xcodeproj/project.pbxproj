@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B98BB48E1C5EDA05000FACDB /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98BB48D1C5EDA05000FACDB /* Int.swift */; };
+		B98BB4921C5EDB03000FACDB /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98BB4901C5EDB03000FACDB /* IntTests.swift */; };
+		B98BB4931C5EDBDD000FACDB /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98BB48D1C5EDA05000FACDB /* Int.swift */; };
 		B9E892011C5D80A00068AA18 /* Shenanigans.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E892001C5D80A00068AA18 /* Shenanigans.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9E892081C5D80A00068AA18 /* Shenanigans.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E891FD1C5D80A00068AA18 /* Shenanigans.framework */; };
-		B9E8920D1C5D80A00068AA18 /* ShenanigansTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9E8920C1C5D80A00068AA18 /* ShenanigansTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -23,11 +25,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B98BB48D1C5EDA05000FACDB /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
+		B98BB4901C5EDB03000FACDB /* IntTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
 		B9E891FD1C5D80A00068AA18 /* Shenanigans.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shenanigans.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E892001C5D80A00068AA18 /* Shenanigans.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shenanigans.h; sourceTree = "<group>"; };
 		B9E892021C5D80A00068AA18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9E892071C5D80A00068AA18 /* ShenanigansTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShenanigansTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B9E8920C1C5D80A00068AA18 /* ShenanigansTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShenanigansTests.swift; sourceTree = "<group>"; };
 		B9E8920E1C5D80A00068AA18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				B9E892171C5D88B70068AA18 /* Support */,
+				B98BB48D1C5EDA05000FACDB /* Int.swift */,
 			);
 			path = Shenanigans;
 			sourceTree = "<group>";
@@ -80,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				B9E892181C5D88D10068AA18 /* Support */,
+				B98BB4901C5EDB03000FACDB /* IntTests.swift */,
 			);
 			path = ShenanigansTests;
 			sourceTree = "<group>";
@@ -96,7 +101,6 @@
 		B9E892181C5D88D10068AA18 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				B9E8920C1C5D80A00068AA18 /* ShenanigansTests.swift */,
 				B9E8920E1C5D80A00068AA18 /* Info.plist */,
 			);
 			name = Support;
@@ -210,6 +214,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B98BB48E1C5EDA05000FACDB /* Int.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +222,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9E8920D1C5D80A00068AA18 /* ShenanigansTests.swift in Sources */,
+				B98BB4931C5EDBDD000FACDB /* Int.swift in Sources */,
+				B98BB4921C5EDB03000FACDB /* IntTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +330,7 @@
 		B9E892121C5D80A00068AA18 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -334,12 +341,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adrfer.Shenanigans;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		B9E892131C5D80A00068AA18 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -392,6 +401,7 @@
 				B9E892131C5D80A00068AA18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B9E892141C5D80A00068AA18 /* Build configuration list for PBXNativeTarget "ShenanigansTests" */ = {
 			isa = XCConfigurationList;
@@ -400,6 +410,7 @@
 				B9E892161C5D80A00068AA18 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
