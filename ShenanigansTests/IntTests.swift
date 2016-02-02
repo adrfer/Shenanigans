@@ -50,6 +50,11 @@ class ShenanigansTests: XCTestCase {
         for int in [-1, -7] { XCTAssertFalse(int.isPositive) }
     }
 
+    func testIsNegative() {
+        for int in [0, 1, 7] { XCTAssertFalse(int.isNegative) }
+        for int in [-1, -7] { XCTAssertTrue(int.isNegative) }
+    }
+
     func testRandom() {
         for _ in 0...7 {
             var random = Int.random(from: -7, to: 7)
