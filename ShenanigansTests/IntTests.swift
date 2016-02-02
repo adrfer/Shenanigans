@@ -44,4 +44,20 @@ class ShenanigansTests: XCTestCase {
         for int in [-2, 0, 2, 4] { XCTAssertFalse(int.isOdd) }
         for int in [-1, 3, 5, 7] { XCTAssertTrue(int.isOdd) }
     }
+
+    func testRandom() {
+        for _ in 0...7 {
+            var random = Int.random(from: -7, to: 7)
+
+            XCTAssertGreaterThanOrEqual(random, -7)
+            XCTAssertLessThanOrEqual(random, 7)
+
+            random = Int.random(from: 0, to: 0)
+            XCTAssertEqual(random, 0)
+
+            random = Int.random(from: 0, to: 7)
+            XCTAssertGreaterThanOrEqual(random, 0)
+            XCTAssertLessThanOrEqual(random, 7)
+        }
+    }
 }
