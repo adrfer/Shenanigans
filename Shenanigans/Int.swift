@@ -51,7 +51,7 @@ public extension Int {
     /// - parameter closure: The code to be executed `self` times
 
     func times(closure: () -> Void) {
-        guard self.isPositive else {
+        guard self > 0 else {
             return
         }
 
