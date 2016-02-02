@@ -55,6 +55,22 @@ class ShenanigansTests: XCTestCase {
         for int in [-1, -7] { XCTAssertTrue(int.isNegative) }
     }
 
+    func testTimes() {
+        var count: Int
+
+        count = 0
+        (-7).times { count += 1 }
+        XCTAssertEqual(0, count)
+
+        count = 0
+        0.times { count += 1 }
+        XCTAssertEqual(0, count)
+
+        count = 0
+        7.times { count += 1 }
+        XCTAssertEqual(7, count)
+    }
+
     func testRandom() {
         for _ in 0...7 {
             var random = Int.random(from: -7, to: 7)
