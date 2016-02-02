@@ -36,6 +36,14 @@ public extension Int {
         return self >= 0
     }
 
+    /// Check whether an integer is negative
+    ///
+    /// - returns: True iff `self` is less than zero, false otherwise
+
+    var isNegative: Bool {
+        return !isPositive
+    }
+
     // MARK: - Type Methods
 
     /// Generate a uniformly distributed random integer
