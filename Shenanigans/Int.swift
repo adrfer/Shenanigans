@@ -28,6 +28,14 @@ public extension Int {
         return !isEven
     }
 
+    /// Check whether an integer is positive
+    ///
+    /// - returns: True if greater or equal to zero, false otherwise
+
+    var isPositive: Bool {
+        return self >= 0
+    }
+
     // MARK: - Type Methods
 
     /// Generate a uniformly distributed random integer
