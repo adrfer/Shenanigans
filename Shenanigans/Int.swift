@@ -30,7 +30,7 @@ public extension Int {
 
     /// Check whether an integer is positive
     ///
-    /// - returns: True if greater or equal to zero, false otherwise
+    /// - returns: True iff `self` is greater or equal to zero, false otherwise
 
     var isPositive: Bool {
         return self >= 0
