@@ -72,7 +72,7 @@ class ShenanigansTests: XCTestCase {
     }
 
     func testRandom() {
-        for _ in 0...7 {
+        7.times {
             var random = Int.random(from: -7, to: 7)
 
             XCTAssertGreaterThanOrEqual(random, -7)
