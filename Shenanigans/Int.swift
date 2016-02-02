@@ -44,6 +44,22 @@ public extension Int {
         return !isPositive
     }
 
+    // MARK: - Instance Methods
+
+    /// Repeat a block of code `self` times
+    ///
+    /// - parameter: closure The task to be executed self times
+
+    func times(closure: () -> Void) {
+        guard self.isPositive else {
+            return
+        }
+
+        for _ in 0..<self {
+            closure()
+        }
+    }
+
     // MARK: - Type Methods
 
     /// Generate a uniformly distributed random integer
