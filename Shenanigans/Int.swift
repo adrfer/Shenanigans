@@ -48,7 +48,7 @@ public extension Int {
 
     /// Repeat a block of code `self` times
     ///
-    /// - parameter: closure The task to be executed self times
+    /// - parameter closure: The code to be executed `self` times
 
     func times(closure: () -> Void) {
         guard self.isPositive else {
