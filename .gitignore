@@ -8,11 +8,13 @@
 #
 # Also, check git-scm.com/docs/gitignore and/or refer to github.com/github/gitignore (Xcode & Swift).
 
-# Build generated
+# Xcode
 build/
 DerivedData/
-
-# Various settings
+xcuserdata/
+*.xccheckout
+*.xcuserstate
+*.xcscmblueprint
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -21,11 +23,7 @@ DerivedData/
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-xcuserdata/
+*.moved-aside
 
 # Other
 .DS_Store
-*.moved-aside
-*.xccheckout
-*.xcuserstate
-*.xcscmblueprint
