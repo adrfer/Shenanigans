@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B94491C71C62A98300099D6A /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94491C61C62A98300099D6A /* Bool.swift */; };
+		B94491C81C62A98300099D6A /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94491C61C62A98300099D6A /* Bool.swift */; };
 		B98BB48E1C5EDA05000FACDB /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98BB48D1C5EDA05000FACDB /* Int.swift */; };
 		B98BB4921C5EDB03000FACDB /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98BB4901C5EDB03000FACDB /* IntTests.swift */; };
 		B98BB4931C5EDBDD000FACDB /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98BB48D1C5EDA05000FACDB /* Int.swift */; };
@@ -25,6 +27,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B94491C61C62A98300099D6A /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		B98BB48D1C5EDA05000FACDB /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		B98BB4901C5EDB03000FACDB /* IntTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
 		B9E891FD1C5D80A00068AA18 /* Shenanigans.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shenanigans.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				B9E892171C5D88B70068AA18 /* Support */,
+				B94491C61C62A98300099D6A /* Bool.swift */,
 				B98BB48D1C5EDA05000FACDB /* Int.swift */,
 			);
 			path = Shenanigans;
@@ -215,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B98BB48E1C5EDA05000FACDB /* Int.swift in Sources */,
+				B94491C71C62A98300099D6A /* Bool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +229,7 @@
 			files = (
 				B98BB4931C5EDBDD000FACDB /* Int.swift in Sources */,
 				B98BB4921C5EDB03000FACDB /* IntTests.swift in Sources */,
+				B94491C81C62A98300099D6A /* Bool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
