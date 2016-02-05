@@ -37,4 +37,26 @@ public extension Array {
     func decompose() -> (Element?, [Element]?) {
         return (head, tail)
     }
+
+    /// Shuffle the elements of `self`
+    ///
+    /// - returns: A copy of `self` with its elements shuffled
+
+    func shuffle() -> [Element] {
+
+        guard count > 1 else {
+            return self
+        }
+
+        var array = Array(self)
+
+        for i in 0..<array.count - 1 {
+
+            let j = Int.random(from: i, to: array.count - 1)
+            
+            if i != j { swap(&array[i], &array[j]) }
+        }
+        
+        return array
+    }
 }
