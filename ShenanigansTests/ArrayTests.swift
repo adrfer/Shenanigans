@@ -22,4 +22,15 @@ class ArrayTests: XCTestCase {
         array = [0, 1, 2, 3]
         XCTAssertEqual(array.head, 0)
     }
+
+    func testTail() {
+        var array = [Int]()
+        XCTAssertNil(array.tail)
+    
+        array = [7]
+        XCTAssertEqual(array.tail!, [])
+    
+        array = [0, 1, 2, 3]
+        XCTAssertEqual(array.tail!, [1, 2, 3])
+    }
 }
