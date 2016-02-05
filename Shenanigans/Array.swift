@@ -19,4 +19,12 @@ extension Array {
     var head: Element? {
         return count > 0 ? first! : nil
     }
+
+    /// Decompose `self` into its tail
+    ///
+    /// - returns: A array containing all but the first element of `self` iff it is not empty, nil otherwise
+
+    var tail: [Element]? {
+        return count > 0 ? Array(self.dropFirst()) : nil
+    }
 }
