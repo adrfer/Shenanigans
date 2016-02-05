@@ -7,3 +7,19 @@
 //
 
 import Foundation
+import XCTest
+@testable import Shenanigans
+
+class ArrayTests: XCTestCase {
+
+    func testHead() {
+        var array = [Int]()
+        XCTAssertNil(array.head)
+
+        array = [7]
+        XCTAssertEqual(array.head, 7)
+
+        array = [0, 1, 2, 3]
+        XCTAssertEqual(array.head, 0)
+    }
+}
