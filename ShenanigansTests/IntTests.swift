@@ -13,46 +13,44 @@ import XCTest
 
 class ShenanigansTests: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
+    func testIsEven() {
+        [-2, 0, 2, 4].forEach {
+            XCTAssertTrue($0.isEven)
+        }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
+        [-1, 3, 5, 7].forEach {
+            XCTAssertFalse($0.isEven)
         }
     }
 
-    func testIsEven() {
-        for int in [-2, 0, 2, 4] { XCTAssertTrue(int.isEven) }
-        for int in [-1, 3, 5, 7] { XCTAssertFalse(int.isEven) }
-    }
-
     func testIsOdd() {
-        for int in [-2, 0, 2, 4] { XCTAssertFalse(int.isOdd) }
-        for int in [-1, 3, 5, 7] { XCTAssertTrue(int.isOdd) }
+        [-2, 0, 2, 4].forEach {
+            XCTAssertFalse($0.isOdd)
+        }
+
+        [-1, 3, 5, 7].forEach {
+            XCTAssertTrue($0.isOdd)
+        }
     }
 
     func testIsPositive() {
-        for int in [0, 1, 7] { XCTAssertTrue(int.isPositive) }
-        for int in [-1, -7] { XCTAssertFalse(int.isPositive) }
+        [1, 7].forEach {
+            XCTAssertTrue($0.isPositive)
+        }
+
+        [-1, -7].forEach {
+            XCTAssertFalse($0.isPositive)
+        }
     }
 
     func testIsNegative() {
-        for int in [0, 1, 7] { XCTAssertFalse(int.isNegative) }
-        for int in [-1, -7] { XCTAssertTrue(int.isNegative) }
+        [0, 1, 7].forEach {
+            XCTAssertFalse($0.isNegative)
+        }
+
+        [-1, -7].forEach {
+            XCTAssertTrue($0.isNegative)
+        }
     }
 
     func testTimes() {
