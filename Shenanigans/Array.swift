@@ -17,7 +17,7 @@ public extension Array {
     /// - returns: The first element of `self` iff it is not empty, nil otherwise
 
     var head: Element? {
-        return count > 0 ? first! : nil
+        return isEmpty ? nil : first
     }
 
     /// Decompose `self` into its tail
@@ -25,6 +25,16 @@ public extension Array {
     /// - returns: A array containing all but the first element of `self` iff it is not empty, nil otherwise
 
     var tail: [Element]? {
-        return count > 0 ? Array(self.dropFirst()) : nil
+        return isEmpty ? nil : Array(self[1..<count])
+    }
+
+    // MARK: - Instance Methods
+
+    /// Decompose `self` into its head and tail
+    ///
+    /// - returns: A tuple containing the head and tail of `self`
+
+    func decompose() -> (Element?, [Element]?) {
+        return (head, tail)
     }
 }

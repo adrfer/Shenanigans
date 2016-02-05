@@ -20,7 +20,7 @@ class ArrayTests: XCTestCase {
         XCTAssertEqual(array.head, 7)
 
         array = [0, 1, 2, 3]
-        XCTAssertEqual(array.head, 0)
+        XCTAssertEqual(array.head!, 0)
     }
 
     func testTail() {
@@ -28,9 +28,24 @@ class ArrayTests: XCTestCase {
         XCTAssertNil(array.tail)
     
         array = [7]
-        XCTAssertEqual(array.tail!, [])
+        XCTAssertEqual(array.tail!, [Int]())
     
         array = [0, 1, 2, 3]
         XCTAssertEqual(array.tail!, [1, 2, 3])
+    }
+
+    func testDecompose() {
+        var (head, tail) = [Int]().decompose()
+        XCTAssertNil(head)
+        XCTAssertNil(tail)
+
+        (head, tail) = [7].decompose()
+        XCTAssertEqual(head!, 7)
+        XCTAssertEqual(tail!, [Int]())
+
+
+        (head, tail) = [0, 1, 2, 3].decompose()
+        XCTAssertEqual(head!, 0)
+        XCTAssertEqual(tail!, [1, 2, 3])
     }
 }
