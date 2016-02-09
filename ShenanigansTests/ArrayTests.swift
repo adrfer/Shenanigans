@@ -73,4 +73,20 @@ class ArrayTests: XCTestCase {
         XCTAssertTrue(array.any({ $0 > 0 }))
         XCTAssertTrue(array.any({ $0 < 0 }))
     }
+
+    func testAll() {
+        var array = [Int]()
+        XCTAssertFalse(array.all({ $0 == 0 }))
+
+        array = [0, 1, 2, 3]
+        XCTAssertFalse(array.all({ $0 == 0 }))
+        XCTAssertFalse(array.all({ $0 > 0 }))
+        XCTAssertTrue(array.all({ $0 >= 0 }))
+        XCTAssertFalse(array.all({ $0 < 0 }))
+
+        array = [1, -2, 3, 4]
+        XCTAssertFalse(array.all({ $0 == 0 }))
+        XCTAssertFalse(array.all({ $0 > 0 }))
+        XCTAssertFalse(array.all({ $0 < 0 }))
+    }
 }

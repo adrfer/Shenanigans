@@ -75,4 +75,25 @@ public extension Array {
 
         return false
     }
+
+    /// Check if a predicate is true for all elements of `self`
+    ///
+    /// - parameter predicate: The predicate called on each element of `self`
+    ///
+    /// - returns: True iff the predicate returns true for all elements, false otherwise
+
+    func all(predicate: (Element) -> Bool) -> Bool {
+
+        guard !isEmpty else {
+            return false
+        }
+
+        for item in self {
+            if !predicate(item) {
+                return false
+            }
+        }
+
+        return true
+    }
 }
