@@ -43,7 +43,6 @@ class ArrayTests: XCTestCase {
         XCTAssertEqual(head!, 7)
         XCTAssertEqual(tail!, [Int]())
 
-
         (head, tail) = [0, 1, 2, 3].decompose()
         XCTAssertEqual(head!, 0)
         XCTAssertEqual(tail!, [1, 2, 3])
