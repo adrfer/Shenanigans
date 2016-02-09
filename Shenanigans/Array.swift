@@ -59,4 +59,20 @@ public extension Array {
         
         return array
     }
+
+    /// Check if a predicate is true for at least one element of `self`
+    ///
+    /// - parameter predicate: The predicate called on each element of `self`
+    ///
+    /// - returns: True iff the predicate returns true for any element, false otherwise
+
+    func any(predicate: (Element) -> Bool) -> Bool {
+        for element in self {
+            if predicate(element) {
+                return true
+            }
+        }
+
+        return false
+    }
 }
