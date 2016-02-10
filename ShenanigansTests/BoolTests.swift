@@ -21,4 +21,18 @@ class BoolTests: XCTestCase {
         bool = true
         XCTAssertFalse(bool.toggle())
     }
+
+    func testRandom() {
+        7.times {
+            var bool = Bool.random()
+
+            XCTAssertTrue([true, false].contains(bool))
+
+            if bool {
+                XCTAssertFalse(bool.toggle())
+            } else {
+                XCTAssertTrue(bool.toggle())
+            }
+        }
+    }
 }

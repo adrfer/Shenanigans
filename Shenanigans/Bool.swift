@@ -20,4 +20,15 @@ public extension Bool {
         self = !self
         return self
     }
+
+    // MARK: - Type Methods
+
+    /// Generate a uniformly distributed random bool
+    ///
+    /// - returns: A random bool value
+
+    static func random() -> Bool {
+        return [true, false][Int.random(from: 0, to: 1)]
+        // return [true, false].sample()
+    }
 }
