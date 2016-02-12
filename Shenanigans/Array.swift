@@ -67,10 +67,8 @@ public extension Array {
     /// - returns: True iff the predicate returns true for any element, false otherwise
 
     func any(@noescape predicate: (Element) -> Bool) -> Bool {
-        for element in self {
-            if predicate(element) {
-                return true
-            }
+        for element in self where predicate(element) {
+            return true
         }
 
         return false
@@ -88,10 +86,8 @@ public extension Array {
             return false
         }
 
-        for item in self {
-            if !predicate(item) {
-                return false
-            }
+        for item in self where !predicate(item) {
+            return false
         }
 
         return true
