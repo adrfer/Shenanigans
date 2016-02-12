@@ -81,11 +81,6 @@ public extension Array {
     /// - returns: True iff the predicate returns true for all elements, false otherwise
 
     func all(@noescape predicate: (Element) -> Bool) -> Bool {
-
-        guard !isEmpty else {
-            return false
-        }
-
         for item in self where !predicate(item) {
             return false
         }
