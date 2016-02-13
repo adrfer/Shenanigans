@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import Swift
 public extension Array {
 
     // MARK: - Instance Properties
@@ -66,8 +66,8 @@ public extension Array {
     ///
     /// - returns: True iff the predicate returns true for any element, false otherwise
 
-    func any(@noescape predicate: (Element) -> Bool) -> Bool {
-        for element in self where predicate(element) {
+    func any(@noescape predicate: (Element) throws -> Bool) rethrows -> Bool {
+        for element in self where try predicate(element) {
             return true
         }
 
@@ -80,8 +80,8 @@ public extension Array {
     ///
     /// - returns: True iff the predicate returns true for all elements, false otherwise
 
-    func all(@noescape predicate: (Element) -> Bool) -> Bool {
-        for item in self where !predicate(item) {
+    func all(@noescape predicate: (Element) throws -> Bool) rethrows -> Bool {
+        for item in self where try !predicate(item) {
             return false
         }
 
@@ -94,11 +94,31 @@ public extension Array {
     ///
     /// - returns: True iff the predicate returns false for all elements, false otherwise
 
-    func none(@noescape predicate: (Element) -> Bool) -> Bool {
-        for element in self where predicate(element){
+    func none(@noescape predicate: (Element) throws -> Bool) rethrows -> Bool {
+        for element in self where try predicate(element){
             return false
         }
 
         return true
+    }
+
+    /// Drop elements of `self` while a predicate is true
+    ///
+    /// - parameter predicate: The predicate called on each element of `self`
+    ///
+    /// - returns: A new array containing all elements of `self` but those the predicate was false
+
+    func dropWhile(predicate: (Element) -> Bool) -> [Element] {
+
+        guard !self.isEmpty else { return self }
+
+        var array = self
+
+        for element in array {
+            if !predicate(element) { break }
+            array = Array(array.dropFirst())
+        }
+
+        return array
     }
 }
