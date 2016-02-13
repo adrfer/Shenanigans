@@ -121,4 +121,23 @@ public extension Array {
 
         return array
     }
+
+    /// Take elements of `self` while a predicate is true
+    ///
+    /// - parameter predicate: The predicate called on each element of `self`
+    ///
+    /// - returns: A new array containing all elements of `self` for which the predicate was true
+
+    func takeWhile(predicate: (Element) -> Bool) -> [Element] {
+
+        guard !self.isEmpty else { return self }
+
+        var array = [Element]()
+
+        for element in self where predicate(element) {
+            array.append(element)
+        }
+
+        return array
+    }
 }
