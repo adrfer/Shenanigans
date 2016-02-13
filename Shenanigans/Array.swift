@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Swift
+
 public extension Array {
 
     // MARK: - Instance Properties
