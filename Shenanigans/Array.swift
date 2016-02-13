@@ -34,6 +34,7 @@ public extension Array {
     ///
     /// - returns: A tuple containing the head and tail of `self`
 
+    @warn_unused_result
     func decompose() -> (Element?, [Element]?) {
         return (head, tail)
     }
@@ -42,6 +43,7 @@ public extension Array {
     ///
     /// - returns: A copy of `self` with its elements shuffled
 
+    @warn_unused_result
     func shuffle() -> [Element] {
 
         guard count > 1 else {
@@ -66,6 +68,7 @@ public extension Array {
     ///
     /// - returns: True iff the predicate returns true for any element, false otherwise
 
+    @warn_unused_result
     func any(@noescape predicate: (Element) throws -> Bool) rethrows -> Bool {
         for element in self where try predicate(element) {
             return true
@@ -80,6 +83,7 @@ public extension Array {
     ///
     /// - returns: True iff the predicate returns true for all elements, false otherwise
 
+    @warn_unused_result
     func all(@noescape predicate: (Element) throws -> Bool) rethrows -> Bool {
         for item in self where try !predicate(item) {
             return false
@@ -94,6 +98,7 @@ public extension Array {
     ///
     /// - returns: True iff the predicate returns false for all elements, false otherwise
 
+    @warn_unused_result
     func none(@noescape predicate: (Element) throws -> Bool) rethrows -> Bool {
         for element in self where try predicate(element){
             return false
@@ -108,6 +113,7 @@ public extension Array {
     ///
     /// - returns: A new array containing all elements of `self` but those the predicate was false
 
+    @warn_unused_result
     func dropWhile(predicate: (Element) -> Bool) -> [Element] {
 
         guard !self.isEmpty else { return self }
@@ -128,6 +134,7 @@ public extension Array {
     ///
     /// - returns: A new array containing all elements of `self` for which the predicate was true
 
+    @warn_unused_result
     func takeWhile(predicate: (Element) -> Bool) -> [Element] {
 
         guard !self.isEmpty else { return self }
