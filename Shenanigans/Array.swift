@@ -106,45 +106,4 @@ public extension Array {
 
         return true
     }
-
-    /// Drop elements of `self` while a predicate is true
-    ///
-    /// - parameter predicate: The predicate called on each element of `self`
-    ///
-    /// - returns: A new array containing all elements of `self` but those the predicate was false
-
-    @warn_unused_result
-    func dropWhile(@noescape predicate: (Element) throws -> Bool) rethrows -> [Element] {
-
-        guard !self.isEmpty else { return self }
-
-        var array = self
-
-        for element in array {
-            if try !predicate(element) { break }
-            array = Array(array.dropFirst())
-        }
-
-        return array
-    }
-
-    /// Take elements of `self` while a predicate is true
-    ///
-    /// - parameter predicate: The predicate called on each element of `self`
-    ///
-    /// - returns: A new array containing all elements of `self` for which the predicate was true
-
-    @warn_unused_result
-    func takeWhile(@noescape predicate: (Element) throws -> Bool) rethrows -> [Element] {
-
-        guard !self.isEmpty else { return self }
-
-        var array = [Element]()
-
-        for element in self where try predicate(element) {
-            array.append(element)
-        }
-
-        return array
-    }
 }
