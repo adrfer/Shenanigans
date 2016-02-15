@@ -114,7 +114,7 @@ public extension Array {
     /// - returns: A new array containing all elements of `self` but those the predicate was false
 
     @warn_unused_result
-    func dropWhile(predicate: (Element) -> Bool) -> [Element] {
+    func dropWhile(@noescape predicate: (Element) -> Bool) -> [Element] {
 
         guard !self.isEmpty else { return self }
 
@@ -135,7 +135,7 @@ public extension Array {
     /// - returns: A new array containing all elements of `self` for which the predicate was true
 
     @warn_unused_result
-    func takeWhile(predicate: (Element) -> Bool) -> [Element] {
+    func takeWhile(@noescape predicate: (Element) -> Bool) -> [Element] {
 
         guard !self.isEmpty else { return self }
 
