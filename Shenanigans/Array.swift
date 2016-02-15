@@ -5,7 +5,7 @@
 //  Created by Adriano Ferreira on 2016-02-04.
 //  Copyright © 2016 Adriano Ferreira. All rights reserved.
 //
-
+import Swift
 import Foundation
 
 public extension Array {
@@ -114,14 +114,14 @@ public extension Array {
     /// - returns: A new array containing all elements of `self` but those the predicate was false
 
     @warn_unused_result
-    func dropWhile(@noescape predicate: (Element) -> Bool) -> [Element] {
+    func dropWhile(@noescape predicate: (Element) throws -> Bool) rethrows -> [Element] {
 
         guard !self.isEmpty else { return self }
 
         var array = self
 
         for element in array {
-            if !predicate(element) { break }
+            if try !predicate(element) { break }
             array = Array(array.dropFirst())
         }
 
@@ -135,13 +135,13 @@ public extension Array {
     /// - returns: A new array containing all elements of `self` for which the predicate was true
 
     @warn_unused_result
-    func takeWhile(@noescape predicate: (Element) -> Bool) -> [Element] {
+    func takeWhile(@noescape predicate: (Element) throws -> Bool) rethrows -> [Element] {
 
         guard !self.isEmpty else { return self }
 
         var array = [Element]()
 
-        for element in self where predicate(element) {
+        for element in self where try predicate(element) {
             array.append(element)
         }
 
