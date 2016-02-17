@@ -58,10 +58,12 @@ public extension SequenceType {
     ///
     /// - returns: The first element where `predicate` is `true`, `nil` otherwise
 
+    @warn_unused_result
     func find(@noescape predicate: Generator.Element throws -> Bool) rethrows -> Generator.Element? {
         for element in self where try predicate(element) {
             return element
         }
+
         return nil
     }
 }
