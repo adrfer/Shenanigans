@@ -61,20 +61,4 @@ public extension Array {
         
         return array
     }
-
-
-    /// Check if a predicate is false for all elements of `self`
-    ///
-    /// - parameter predicate: The predicate called on each element of `self`
-    ///
-    /// - returns: True iff the predicate returns false for all elements, false otherwise
-
-    @warn_unused_result
-    func none(@noescape predicate: (Element) throws -> Bool) rethrows -> Bool {
-        for element in self where try predicate(element){
-            return false
-        }
-
-        return true
-    }
 }
