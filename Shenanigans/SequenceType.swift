@@ -67,6 +67,21 @@ public extension SequenceType {
         return nil
     }
 
+    /// Check if `predicate` is true for at least one element of `self`
+    ///
+    /// - parameter predicate: The predicate called on each element of `self`
+    ///
+    /// - returns: True iff any element in `self` satisfies `predicate`, false otherwise
+
+    @warn_unused_result
+    func any(@noescape predicate: (Generator.Element) throws -> Bool) rethrows -> Bool {
+        for element in self where try predicate(element) {
+            return true
+        }
+
+        return false
+    }
+
     /// Check if `predicate` is true for all elements of `self`
     ///
     /// - parameter predicate: The predicate called on each element of `self`
