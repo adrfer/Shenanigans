@@ -51,4 +51,17 @@ public extension SequenceType {
 
         return AnySequence(array)
     }
+
+    /// Find the first element of `self` where `predicate` is true
+    ///
+    /// - parameter predicate: The predicate called on each element of `self`
+    ///
+    /// - returns: The first element where `predicate` is `true`, `nil` otherwise
+
+    func find(@noescape predicate: Generator.Element throws -> Bool) rethrows -> Generator.Element? {
+        for element in self where try predicate(element) {
+            return element
+        }
+        return nil
+    }
 }
