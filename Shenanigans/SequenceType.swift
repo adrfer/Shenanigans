@@ -19,7 +19,7 @@ public extension SequenceType {
     /// - returns: A subsequence containing all elements of `self` but those the predicate was false
 
     @warn_unused_result
-    func dropWhile(@noescape predicate: (Generator.Element) throws -> Bool) rethrows -> AnySequence<Generator.Element> {
+    func dropWhile(@noescape predicate: (Self.Generator.Element) throws -> Bool) rethrows -> AnySequence<Self.Generator.Element> {
 
         var array = Array(self)
         var generator = generate()
@@ -39,7 +39,7 @@ public extension SequenceType {
     /// - returns: A new array containing all elements of `self` for which the predicate was true
 
     @warn_unused_result
-    func takeWhile(@noescape predicate: (Generator.Element) throws -> Bool) rethrows -> AnySequence<Generator.Element> {
+    func takeWhile(@noescape predicate: (Self.Generator.Element) throws -> Bool) rethrows -> AnySequence<Self.Generator.Element> {
 
         var array = ContiguousArray<Generator.Element>()
         var generator = generate()
@@ -59,7 +59,7 @@ public extension SequenceType {
     /// - returns: The first element where `predicate` is `true`, `nil` otherwise
 
     @warn_unused_result
-    func find(@noescape predicate: Generator.Element throws -> Bool) rethrows -> Generator.Element? {
+    func find(@noescape predicate: Self.Generator.Element throws -> Bool) rethrows -> Self.Generator.Element? {
         for element in self where try predicate(element) {
             return element
         }
@@ -74,7 +74,7 @@ public extension SequenceType {
     /// - returns: True iff any element in `self` satisfies `predicate`, false otherwise
 
     @warn_unused_result
-    func any(@noescape predicate: (Generator.Element) throws -> Bool) rethrows -> Bool {
+    func any(@noescape predicate: (Self.Generator.Element) throws -> Bool) rethrows -> Bool {
         for element in self where try predicate(element) {
             return true
         }
@@ -89,7 +89,7 @@ public extension SequenceType {
     /// - returns: True iff every element in `self` satisfies `predicate`, false otherwise
 
     @warn_unused_result
-    func all(@noescape predicate: Generator.Element throws -> Bool) rethrows -> Bool {
+    func all(@noescape predicate: Self.Generator.Element throws -> Bool) rethrows -> Bool {
         for element in self where try !predicate(element) {
             return false
         }
@@ -104,7 +104,7 @@ public extension SequenceType {
     /// - returns: True iff every element in `self` does not satisfy `predicate`, false otherwise
 
     @warn_unused_result
-    func none(@noescape predicate: (Generator.Element) throws -> Bool) rethrows -> Bool {
+    func none(@noescape predicate: (Self.Generator.Element) throws -> Bool) rethrows -> Bool {
         for element in self where try predicate(element) {
             return false
         }
