@@ -34,4 +34,18 @@ public extension CollectionType where Index.Distance == Int {
 
         return array
     }
+
+    /// Shuffle  elements of `self`
+    ///
+    /// - returns: A copy of `self` with its elements shuffled
+
+    @warn_unused_result
+    func shuffle() -> [Generator.Element] {
+
+        var array = Array(self)
+
+        array.shuffleInPlace()
+        
+        return array
+    }
 }
