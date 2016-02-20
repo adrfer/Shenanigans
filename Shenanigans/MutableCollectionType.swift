@@ -1,0 +1,27 @@
+//
+//  MutableCollectionType.swift
+//  Shenanigans
+//
+//  Created by Adriano Ferreira on 2016-02-20.
+//  Copyright © 2016 Adriano Ferreira. All rights reserved.
+//
+
+import Foundation
+
+public extension MutableCollectionType where Self.Index == Int {
+
+    // MARK: - Instance Methods
+
+    /// Shuffle elements of `self` in place
+    ///
+    /// - note: This implementation uses the Fisher–Yates algorithm
+
+    mutating func shuffleInPlace() {
+        guard count > 1 else { return }
+
+        for i in 0..<count - 1 {
+            let j = Int.random(from: i, to: count - 1)
+            if i != j { swap(&self[i], &self[j]) }
+        }
+    }
+}

@@ -10,10 +10,12 @@
 		B94491C71C62A98300099D6A /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94491C61C62A98300099D6A /* Bool.swift */; };
 		B94491C81C62A98300099D6A /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94491C61C62A98300099D6A /* Bool.swift */; };
 		B94491CB1C62AA6700099D6A /* BoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94491C91C62AA6700099D6A /* BoolTests.swift */; };
+		B964AC041C78D762002E638E /* MutableCollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B964AC031C78D762002E638E /* MutableCollectionType.swift */; };
 		B98BB48E1C5EDA05000FACDB /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98BB48D1C5EDA05000FACDB /* Int.swift */; };
 		B98BB4921C5EDB03000FACDB /* IntTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98BB4901C5EDB03000FACDB /* IntTests.swift */; };
 		B98BB4931C5EDBDD000FACDB /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98BB48D1C5EDA05000FACDB /* Int.swift */; };
 		B9B3FF3E1C72292B0095FC07 /* SequenceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B3FF3D1C72292B0095FC07 /* SequenceType.swift */; };
+		B9BB520B1C75264700C521F5 /* CollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB520A1C75264700C521F5 /* CollectionType.swift */; };
 		B9E892011C5D80A00068AA18 /* Shenanigans.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E892001C5D80A00068AA18 /* Shenanigans.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9E892081C5D80A00068AA18 /* Shenanigans.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E891FD1C5D80A00068AA18 /* Shenanigans.framework */; };
 		B9F2E62D1C6434B80004F465 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F2E62C1C6434B80004F465 /* Array.swift */; };
@@ -33,9 +35,11 @@
 /* Begin PBXFileReference section */
 		B94491C61C62A98300099D6A /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		B94491C91C62AA6700099D6A /* BoolTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolTests.swift; sourceTree = "<group>"; };
+		B964AC031C78D762002E638E /* MutableCollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutableCollectionType.swift; sourceTree = "<group>"; };
 		B98BB48D1C5EDA05000FACDB /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		B98BB4901C5EDB03000FACDB /* IntTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntTests.swift; sourceTree = "<group>"; };
 		B9B3FF3D1C72292B0095FC07 /* SequenceType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SequenceType.swift; sourceTree = "<group>"; };
+		B9BB520A1C75264700C521F5 /* CollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionType.swift; sourceTree = "<group>"; };
 		B9E891FD1C5D80A00068AA18 /* Shenanigans.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Shenanigans.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E892001C5D80A00068AA18 /* Shenanigans.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shenanigans.h; sourceTree = "<group>"; };
 		B9E892021C5D80A00068AA18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				B9E892171C5D88B70068AA18 /* Support */,
+				B9BB520A1C75264700C521F5 /* CollectionType.swift */,
+				B964AC031C78D762002E638E /* MutableCollectionType.swift */,
 				B9F2E62C1C6434B80004F465 /* Array.swift */,
 				B94491C61C62A98300099D6A /* Bool.swift */,
 				B98BB48D1C5EDA05000FACDB /* Int.swift */,
@@ -230,9 +236,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9BB520B1C75264700C521F5 /* CollectionType.swift in Sources */,
 				B9B3FF3E1C72292B0095FC07 /* SequenceType.swift in Sources */,
 				B9F2E62D1C6434B80004F465 /* Array.swift in Sources */,
 				B98BB48E1C5EDA05000FACDB /* Int.swift in Sources */,
+				B964AC041C78D762002E638E /* MutableCollectionType.swift in Sources */,
 				B94491C71C62A98300099D6A /* Bool.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
