@@ -48,14 +48,14 @@ class ArrayTests: XCTestCase {
         XCTAssertEqual(tail!, [1, 2, 3])
     }
 
-    func testShuffle() {
-        let array = [3, 1, 0, 2, 1]
-        let shuffled = array.shuffle()
-
-        XCTAssertEqual(array.count, shuffled.count)
-
-        array.forEach {
-            XCTAssertTrue(shuffled.contains($0))
-        }
-    }
+//    func testShuffle() {
+//        let array = [3, 1, 0, 2, 1]
+//        let shuffled = array.shuffle()
+//
+//        XCTAssertEqual(array.count, shuffled.count)
+//
+//        array.forEach {
+//            XCTAssertTrue(shuffled.contains($0))
+//        }
+//    }
 }
