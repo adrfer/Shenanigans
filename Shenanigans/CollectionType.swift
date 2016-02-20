@@ -18,6 +18,7 @@ public extension CollectionType where Index.Distance == Int {
     ///
     /// - returns: An optional random element from `self` or `nil` if `self` is empty
 
+    @warn_unused_result
     func sample(size size: Int = 1) -> [Generator.Element]? {
 
         guard !isEmpty else {
