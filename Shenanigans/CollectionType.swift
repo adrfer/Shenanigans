@@ -7,3 +7,30 @@
 //
 
 import Foundation
+
+public extension CollectionType where Index.Distance == Int {
+
+    // MARK: - Instance Methods
+
+    /// Choose a random element from `self`
+    ///
+    /// - parameter size: The size of the sample to be returned from `self`
+    ///
+    /// - returns: An optional random element from `self` or `nil` if `self` is empty
+
+    func sample(size size: Int = 1) -> [Generator.Element]? {
+
+        guard !isEmpty else {
+            return nil
+        }
+
+        var array = Array<Generator.Element>()
+
+        size.times {
+            let index = self.startIndex.advancedBy(Int.random(to: size))
+            array.append(self[index])
+        }
+
+        return array
+    }
+}
