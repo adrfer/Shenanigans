@@ -14,7 +14,7 @@ public extension Bool {
 
     /// Toggle a bool value
     ///
-    /// - returns: A toggled bool
+    /// - Returns: A toggled bool
     
     mutating func toggle() -> Bool {
         self = !self
@@ -25,7 +25,7 @@ public extension Bool {
 
     /// Generate a uniformly distributed random bool
     ///
-    /// - returns: A random bool value
+    /// - Returns: A random bool value
 
     static func random() -> Bool {
         return [true, false][Int.random(from: 0, to: 1)]
