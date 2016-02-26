@@ -14,9 +14,9 @@ public extension SequenceType {
 
     /// Drop elements of `self` while a predicate is true
     ///
-    /// - parameter predicate: The predicate called on each element of `self`
+    /// - Parameter predicate: The predicate called on each element of `self`
     ///
-    /// - returns: A subsequence containing all elements of `self` but those the predicate was false
+    /// - Returns: A subsequence containing all elements of `self` but those the predicate was false
 
     @warn_unused_result
     func dropWhile(@noescape predicate: (Self.Generator.Element) throws -> Bool) rethrows -> AnySequence<Self.Generator.Element> {
@@ -34,9 +34,9 @@ public extension SequenceType {
 
     /// Take elements of `self` while a predicate is true
     ///
-    /// - parameter predicate: The predicate called on each element of `self`
+    /// - Parameter predicate: The predicate called on each element of `self`
     ///
-    /// - returns: A new array containing all elements of `self` for which the predicate was true
+    /// - Returns: A new array containing all elements of `self` for which the predicate was true
 
     @warn_unused_result
     func takeWhile(@noescape predicate: (Self.Generator.Element) throws -> Bool) rethrows -> AnySequence<Self.Generator.Element> {
@@ -54,9 +54,9 @@ public extension SequenceType {
 
     /// Find the first element of `self` where `predicate` is true
     ///
-    /// - parameter predicate: The predicate called on each element of `self`
+    /// - Parameter predicate: The predicate called on each element of `self`
     ///
-    /// - returns: The first element where `predicate` is `true`, `nil` otherwise
+    /// - Returns: The first element where `predicate` is `true`, `nil` otherwise
 
     @warn_unused_result
     func find(@noescape predicate: Self.Generator.Element throws -> Bool) rethrows -> Self.Generator.Element? {
@@ -69,9 +69,9 @@ public extension SequenceType {
 
     /// Check if `predicate` is true for at least one element of `self`
     ///
-    /// - parameter predicate: The predicate called on each element of `self`
+    /// - Parameter predicate: The predicate called on each element of `self`
     ///
-    /// - returns: True iff any element in `self` satisfies `predicate`, false otherwise
+    /// - Returns: True iff any element in `self` satisfies `predicate`, false otherwise
 
     @warn_unused_result
     func any(@noescape predicate: (Self.Generator.Element) throws -> Bool) rethrows -> Bool {
@@ -84,9 +84,9 @@ public extension SequenceType {
 
     /// Check if `predicate` is true for all elements of `self`
     ///
-    /// - parameter predicate: The predicate called on each element of `self`
+    /// - Parameter predicate: The predicate called on each element of `self`
     ///
-    /// - returns: True iff every element in `self` satisfies `predicate`, false otherwise
+    /// - Returns: True iff every element in `self` satisfies `predicate`, false otherwise
 
     @warn_unused_result
     func all(@noescape predicate: Self.Generator.Element throws -> Bool) rethrows -> Bool {
@@ -99,9 +99,9 @@ public extension SequenceType {
 
     /// Check if `predicate` is false for all elements of `self`
     ///
-    /// - parameter predicate: The predicate called on each element of `self`
+    /// - Parameter predicate: The predicate called on each element of `self`
     ///
-    /// - returns: True iff every element in `self` does not satisfy `predicate`, false otherwise
+    /// - Returns: True iff every element in `self` does not satisfy `predicate`, false otherwise
 
     @warn_unused_result
     func none(@noescape predicate: (Self.Generator.Element) throws -> Bool) rethrows -> Bool {
