@@ -14,7 +14,7 @@ public extension Int {
     
     /// Check whether an integer is even
     ///
-    /// - returns: True if even, false otherwise
+    /// - Returns: True if even, false otherwise
 
     var isEven: Bool {
         return self % 2 == 0
@@ -22,7 +22,7 @@ public extension Int {
 
     /// Check whether an integer is odd
     ///
-    /// - returns: True if odd, false otherwise
+    /// - Returns: True if odd, false otherwise
 
     var isOdd: Bool {
         return !isEven
@@ -30,7 +30,7 @@ public extension Int {
 
     /// Check whether an integer is positive
     ///
-    /// - returns: True iff `self` is greater or equal to zero, false otherwise
+    /// - Returns: True iff `self` is greater or equal to zero, false otherwise
 
     var isPositive: Bool {
         return self >= 0
@@ -38,7 +38,7 @@ public extension Int {
 
     /// Check whether an integer is negative
     ///
-    /// - returns: True iff `self` is less than zero, false otherwise
+    /// - Returns: True iff `self` is less than zero, false otherwise
 
     var isNegative: Bool {
         return !isPositive
@@ -48,7 +48,7 @@ public extension Int {
 
     /// Repeat a block of code `self` times
     ///
-    /// - parameter closure: The code to be executed `self` times
+    /// - Parameter closure: The code to be executed `self` times
 
     func times(closure: () -> Void) {
         guard self > 0 else {
@@ -64,12 +64,12 @@ public extension Int {
 
     /// Generate a uniformly distributed random integer
     ///
-    /// - parameters:
+    /// - Parameters:
     ///
     ///   - lower: Inclusive lower bound random value
     ///   - upper: Inclusive upper bound random value
     ///
-    /// - returns: A random integer between lower and upper bounds
+    /// - Returns: A random integer between lower and upper bounds
 
     static func random(from lower: Int = 0, to upper: Int) -> Int {
         return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
