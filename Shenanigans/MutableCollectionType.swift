@@ -14,7 +14,7 @@ public extension MutableCollectionType where Self.Index == Int {
 
     /// Shuffle elements of `self` in place
     ///
-    /// - note: This implementation uses the Fisher–Yates algorithm
+    /// - Note: This implementation uses the Fisher–Yates algorithm
 
     mutating func shuffleInPlace() {
         guard count > 1 else { return }
