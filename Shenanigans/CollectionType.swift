@@ -12,7 +12,7 @@ public extension CollectionType {
 
     // MARK: - Instance Methods
 
-    /// Shuffle  elements of `self`
+    /// Shuffle elements of `self`
     ///
     /// - Returns: A copy of `self` with its elements shuffled
 
