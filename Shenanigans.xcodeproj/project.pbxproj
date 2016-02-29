@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B91B42931C848D9500763287 /* CollectionTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B91B42921C848D9500763287 /* CollectionTypeTests.swift */; };
 		B94491C71C62A98300099D6A /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94491C61C62A98300099D6A /* Bool.swift */; };
 		B94491C81C62A98300099D6A /* Bool.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94491C61C62A98300099D6A /* Bool.swift */; };
 		B94491CB1C62AA6700099D6A /* BoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B94491C91C62AA6700099D6A /* BoolTests.swift */; };
@@ -33,6 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B91B42921C848D9500763287 /* CollectionTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTypeTests.swift; sourceTree = "<group>"; };
 		B94491C61C62A98300099D6A /* Bool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bool.swift; sourceTree = "<group>"; };
 		B94491C91C62AA6700099D6A /* BoolTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoolTests.swift; sourceTree = "<group>"; };
 		B964AC031C78D762002E638E /* MutableCollectionType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MutableCollectionType.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				B9F2E62E1C6435590004F465 /* ArrayTests.swift */,
 				B94491C91C62AA6700099D6A /* BoolTests.swift */,
 				B98BB4901C5EDB03000FACDB /* IntTests.swift */,
+				B91B42921C848D9500763287 /* CollectionTypeTests.swift */,
 			);
 			path = ShenanigansTests;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B9F2E62F1C6435590004F465 /* ArrayTests.swift in Sources */,
+				B91B42931C848D9500763287 /* CollectionTypeTests.swift in Sources */,
 				B98BB4931C5EDBDD000FACDB /* Int.swift in Sources */,
 				B94491CB1C62AA6700099D6A /* BoolTests.swift in Sources */,
 				B98BB4921C5EDB03000FACDB /* IntTests.swift in Sources */,
