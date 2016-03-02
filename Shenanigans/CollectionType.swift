@@ -16,7 +16,7 @@ public extension CollectionType {
     ///
     /// - Returns: A copy of `self` with its elements shuffled
 
-    @warn_unused_result
+    @warn_unused_result(mutable_variant="shuffleInPlace")
     func shuffle() -> [Generator.Element] {
 
         var array = Array(self)
