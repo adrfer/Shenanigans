@@ -24,4 +24,21 @@ class CollectionTypeTests: XCTestCase {
 
         XCTAssertEqual(array.sort(), shuffled.sort())
     }
+
+    func testSample() {
+
+        var array = [Int]()
+        var sample = array.sample()
+//        XCTAssertNil(sample)
+
+        array = [3, 1, 0, 2, 1]
+
+        sample = array.sample()
+        XCTAssertTrue(sample!.count == 1)
+        XCTAssertTrue(array.contains(sample!.first!))
+
+        sample = array.sample(size: 3)
+        XCTAssertTrue(sample!.count == 3)
+        sample!.forEach { XCTAssertTrue(array.contains($0)) }
+    }
 }

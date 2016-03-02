@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import Swift
 public extension CollectionType {
 
     // MARK: - Instance Methods
@@ -43,7 +43,7 @@ public extension CollectionType where Index.Distance == Int, Generator.Element: 
     @warn_unused_result
     func sample(size size: Int = 1, allowSamePick: Bool = true) -> [Generator.Element]? {
 
-        precondition(size > 0, "Sample size must must be greater than zero")
+        precondition(size > 0, "Sample size must be greater than zero and ")
 
         guard !isEmpty else {
             return nil
