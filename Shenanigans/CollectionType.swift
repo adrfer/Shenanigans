@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import Swift
+
 public extension CollectionType {
 
     // MARK: - Instance Methods
