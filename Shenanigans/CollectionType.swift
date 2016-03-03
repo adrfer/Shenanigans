@@ -31,19 +31,19 @@ public extension CollectionType where Index.Distance == Int, Generator.Element: 
 
     // MARK: - Instance Methods
 
-    /// Choose a random element from `self`
+    /// Choose random elements from `self`
     ///
     /// - Parameters:
     ///
     ///   - size: The size of the sample to be returned from `self`
-    ///   - allowSamePick: The flag used to allow the chosen elements to be picked again
+    ///   - allowSamePick: The flag that allows chosen elements to be picked again
     ///
-    /// - Returns: An optional random element from `self` or `nil` if `self` is empty
+    /// - Returns: An optional random element from `self`, or `nil` if `self` is empty
 
     @warn_unused_result
     func sample(size size: Int = 1, allowSamePick: Bool = true) -> [Generator.Element]? {
 
-        precondition(size > 0, "Sample size must be greater than zero and ")
+        precondition(size > 0, "Sample size must be greater than zero and ")        
 
         guard !isEmpty else {
             return nil
