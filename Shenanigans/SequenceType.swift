@@ -112,3 +112,22 @@ public extension SequenceType {
         return true
     }
 }
+
+public extension SequenceType where Generator.Element: Hashable {
+
+
+    /// Get the frequencies of the elements of `self`
+    ///
+    /// - Returns: A dictionary where the keys are the elements of `self`, and the values are their frequencies
+
+    @warn_unused_result
+    func frequencies() -> [Self.Generator.Element: Int] {
+        var dictionary: [Self.Generator.Element:Int] = [:]
+
+        for element in self {
+            dictionary[element] = dictionary[element]?.successor() ?? 1
+        }
+
+        return dictionary
+    }
+}

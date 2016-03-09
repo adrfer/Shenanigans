@@ -43,7 +43,8 @@ public extension CollectionType where Index.Distance == Int, Generator.Element: 
     @warn_unused_result
     func sample(size size: Int = 1, allowSamePick: Bool = true) -> [Generator.Element]? {
 
-        precondition(size > 0, "Sample size must be greater than zero and ")        
+        precondition(size > 0, "Sample size must be greater than zero and ")
+        //        precondition(size <= count, "Sample size must be less than or equal to the size of the collection")
 
         guard !isEmpty else {
             return nil
