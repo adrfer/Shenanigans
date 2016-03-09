@@ -9,7 +9,7 @@
 import Foundation
 import XCTest
 @testable import Shenanigans
-import Swift
+
 class SequenceTypeTests: XCTestCase {
 
     func testFrequencies() {
