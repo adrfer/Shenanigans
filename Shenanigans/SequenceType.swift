@@ -113,7 +113,7 @@ public extension SequenceType {
     }
 }
 
-public extension SequenceType where Generator.Element: Hashable {
+public extension SequenceType where Self.Generator.Element: Hashable {
 
 
     /// Get the frequencies of the elements of `self`
@@ -122,7 +122,7 @@ public extension SequenceType where Generator.Element: Hashable {
 
     @warn_unused_result
     func frequencies() -> [Self.Generator.Element: Int] {
-        var dictionary: [Self.Generator.Element:Int] = [:]
+        var dictionary: [Self.Generator.Element: Int] = [:]
 
         for element in self {
             dictionary[element] = dictionary[element]?.successor() ?? 1
