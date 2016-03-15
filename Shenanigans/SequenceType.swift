@@ -20,7 +20,6 @@ public extension SequenceType {
 
     @warn_unused_result
     func dropWhile(@noescape predicate: (Self.Generator.Element) throws -> Bool) rethrows -> AnySequence<Self.Generator.Element> {
-
         var array = Array(self)
         var generator = generate()
 
@@ -40,7 +39,6 @@ public extension SequenceType {
 
     @warn_unused_result
     func takeWhile(@noescape predicate: (Self.Generator.Element) throws -> Bool) rethrows -> AnySequence<Self.Generator.Element> {
-
         var array = ContiguousArray<Generator.Element>()
         var generator = generate()
 
@@ -123,7 +121,7 @@ public extension SequenceType where Self.Generator.Element: Hashable {
     @warn_unused_result
     func frequencies() -> [Self.Generator.Element: Int] {
         var dictionary: [Self.Generator.Element: Int] = [:]
-//         var dictionary: Dictionary<Self.Generator.Element, Int>()
+        // var dictionary: Dictionary<Self.Generator.Element, Int>()
 
         for element in self {
             dictionary[element] = dictionary[element]?.successor() ?? 1
