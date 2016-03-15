@@ -20,8 +20,6 @@
 		B9BB520B1C75264700C521F5 /* CollectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BB520A1C75264700C521F5 /* CollectionType.swift */; };
 		B9E892011C5D80A00068AA18 /* Shenanigans.h in Headers */ = {isa = PBXBuildFile; fileRef = B9E892001C5D80A00068AA18 /* Shenanigans.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B9E892081C5D80A00068AA18 /* Shenanigans.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E891FD1C5D80A00068AA18 /* Shenanigans.framework */; };
-		B9F2E62D1C6434B80004F465 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F2E62C1C6434B80004F465 /* Array.swift */; };
-		B9F2E62F1C6435590004F465 /* ArrayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F2E62E1C6435590004F465 /* ArrayTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,8 +47,6 @@
 		B9E892021C5D80A00068AA18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9E892071C5D80A00068AA18 /* ShenanigansTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShenanigansTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9E8920E1C5D80A00068AA18 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B9F2E62C1C6434B80004F465 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array.swift; sourceTree = "<group>"; };
-		B9F2E62E1C6435590004F465 /* ArrayTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +92,6 @@
 				B9E892171C5D88B70068AA18 /* Support */,
 				B9BB520A1C75264700C521F5 /* CollectionType.swift */,
 				B964AC031C78D762002E638E /* MutableCollectionType.swift */,
-				B9F2E62C1C6434B80004F465 /* Array.swift */,
 				B94491C61C62A98300099D6A /* Bool.swift */,
 				B98BB48D1C5EDA05000FACDB /* Int.swift */,
 				B9B3FF3D1C72292B0095FC07 /* SequenceType.swift */,
@@ -108,7 +103,6 @@
 			isa = PBXGroup;
 			children = (
 				B9E892181C5D88D10068AA18 /* Support */,
-				B9F2E62E1C6435590004F465 /* ArrayTests.swift */,
 				B94491C91C62AA6700099D6A /* BoolTests.swift */,
 				B98BB4901C5EDB03000FACDB /* IntTests.swift */,
 				B91B42921C848D9500763287 /* CollectionTypeTests.swift */,
@@ -244,7 +238,6 @@
 			files = (
 				B9BB520B1C75264700C521F5 /* CollectionType.swift in Sources */,
 				B9B3FF3E1C72292B0095FC07 /* SequenceType.swift in Sources */,
-				B9F2E62D1C6434B80004F465 /* Array.swift in Sources */,
 				B98BB48E1C5EDA05000FACDB /* Int.swift in Sources */,
 				B964AC041C78D762002E638E /* MutableCollectionType.swift in Sources */,
 				B94491C71C62A98300099D6A /* Bool.swift in Sources */,
@@ -255,7 +248,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9F2E62F1C6435590004F465 /* ArrayTests.swift in Sources */,
 				B91B42931C848D9500763287 /* CollectionTypeTests.swift in Sources */,
 				B98BB4931C5EDBDD000FACDB /* Int.swift in Sources */,
 				B94491CB1C62AA6700099D6A /* BoolTests.swift in Sources */,
