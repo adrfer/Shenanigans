@@ -29,6 +29,5 @@ public extension Bool {
 
     static func random() -> Bool {
         return [true, false][Int.random(from: 0, to: 1)]
-        // return [true, false].sample()
     }
 }
