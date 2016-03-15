@@ -18,11 +18,8 @@ public extension CollectionType {
 
     @warn_unused_result(mutable_variant="shuffleInPlace")
     func shuffle() -> [Generator.Element] {
-
         var array = Array(self)
-
         array.shuffleInPlace()
-
         return array
     }
 }
@@ -36,7 +33,6 @@ public extension CollectionType where Index.Distance == Int, Generator.Element: 
     /// - Returns: An optional random element from `self` or `nil` if `self` is empty
 
     func sample() -> Generator.Element? {
-
         guard !isEmpty else {
             return nil
         }
@@ -58,9 +54,8 @@ public extension CollectionType where Index.Distance == Int, Generator.Element: 
 
     @warn_unused_result
     func sample(size size: Int = 1, allowSamePick: Bool = true) -> [Generator.Element]? {
-
         precondition(size > 0, "Sample size must be greater than zero and ")
-        //        precondition(size <= count, "Sample size must be less than or equal to the size of the collection")
+        // precondition(size <= count, "Sample size must be less than or equal to the size of the collection")
 
         guard !isEmpty else {
             return nil
