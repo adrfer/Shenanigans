@@ -63,7 +63,7 @@ public extension CollectionType where Index.Distance == Int, Generator.Element: 
         var array = Array<Generator.Element>()
         var picks: Set<Generator.Element> = Set(self)
 
-        repeat {
+        while size > 0 {
 
             let offset = Int.random(from: 0, to: size)
             let index = self.startIndex.advancedBy(offset)
@@ -75,9 +75,7 @@ public extension CollectionType where Index.Distance == Int, Generator.Element: 
             array.append(pick)
 
             size -= 1
-
-        } while size > 0
-
+        }
 
         return array
     }
