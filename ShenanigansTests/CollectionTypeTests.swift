@@ -29,11 +29,11 @@ class CollectionTypeTests: XCTestCase {
 
         var array = [Int]()
         var sample = array.sample()
-//        XCTAssertNil(sample)
+        XCTAssertNil(sample)
 
         array = [3, 1, 0, 2, 1]
 
-        sample = array.sample()
+        sample = array.sample(1)
         XCTAssertTrue(sample!.count == 1)
         XCTAssertTrue(array.contains(sample!.first!))
 

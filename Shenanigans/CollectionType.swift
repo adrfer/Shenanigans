@@ -53,7 +53,7 @@ public extension CollectionType where Index.Distance == Int, Generator.Element: 
     /// - Returns: An optional random element from `self`, or `nil` if `self` is empty
 
     @warn_unused_result
-    func sample(size size: Int = 1, allowSamePick: Bool = true) -> [Generator.Element]? {
+    func sample(size: Int, allowSamePick: Bool = true) -> [Generator.Element]? {
         guard !isEmpty else {
             return nil
         }
@@ -64,7 +64,7 @@ public extension CollectionType where Index.Distance == Int, Generator.Element: 
 
         repeat {
 
-            let offset = Int.random(to: size)
+            let offset = Int.random(from: 0, to: size)
             let index = self.startIndex.advancedBy(offset)
             let pick = self[index]
 
