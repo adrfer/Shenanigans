@@ -32,6 +32,7 @@ public extension CollectionType where Index.Distance == Int, Generator.Element: 
     ///
     /// - Returns: An optional random element from `self` or `nil` if `self` is empty
 
+    @warn_unused_result
     func sample() -> Generator.Element? {
         guard !isEmpty else {
             return nil
