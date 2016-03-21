@@ -38,7 +38,7 @@ public extension CollectionType where Index.Distance == Int, Generator.Element: 
             return nil
         }
 
-        let offset = Int.random(to: 1)
+        let offset = Int.random(from: 0, to: 1)
         let index = self.startIndex.advancedBy(offset)
 
         return self[index]
