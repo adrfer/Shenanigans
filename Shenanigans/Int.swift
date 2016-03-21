@@ -71,7 +71,7 @@ public extension Int {
     ///
     /// - Returns: A random integer between lower and upper bounds
 
-    static func random(from lower: Int = 0, to upper: Int) -> Int {
+    static func random(from lower: Int, to upper: Int) -> Int {
         return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
     }
 }
