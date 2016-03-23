@@ -64,10 +64,7 @@ public extension CollectionType where Index.Distance == Int, Generator.Element: 
         var picks: Set<Generator.Element> = Set(self)
 
         while size > 0 {
-
-            let offset = Int.random(from: 0, to: size)
-            let index = self.startIndex.advancedBy(offset)
-            let pick = self[index]
+            let pick = self.sample()!
 
             if !allowSamePick && picks.contains(pick) { continue }
 
