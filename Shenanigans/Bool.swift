@@ -28,11 +28,6 @@ public extension Bool {
     /// - Returns: A random bool value
 
     static func random() -> Bool {
-//        return [true, false][Int.random(from: 0, to: 1)]
-
-//        let array = [true, false]
-//        return array.sample()!
-
         return [true, false].sample()!
     }
 }
