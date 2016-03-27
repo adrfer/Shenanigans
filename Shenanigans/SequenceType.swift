@@ -19,7 +19,7 @@ public extension SequenceType {
     /// - Returns: A subsequence containing all elements of `self` but those the predicate was false
 
     @warn_unused_result
-    func dropWhile(@noescape predicate: (Self.Generator.Element) throws -> Bool) rethrows -> AnySequence<Self.Generator.Element> {
+    func dropWhile(@noescape predicate: (Generator.Element) throws -> Bool) rethrows -> AnySequence<Generator.Element> {
         var array = Array(self)
         var generator = generate()
 
