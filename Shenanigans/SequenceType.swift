@@ -38,7 +38,7 @@ public extension SequenceType {
     /// - Returns: A new array containing all elements of `self` for which the predicate was true
 
     @warn_unused_result
-    func takeWhile(@noescape predicate: (Self.Generator.Element) throws -> Bool) rethrows -> AnySequence<Self.Generator.Element> {
+    func takeWhile(@noescape predicate: (Generator.Element) throws -> Bool) rethrows -> AnySequence<Generator.Element> {
         var array = ContiguousArray<Generator.Element>()
         var generator = generate()
 
