@@ -134,8 +134,8 @@ public extension SequenceType where Self.Generator.Element: Hashable {
     /// - Returns: All unique elements of `self`
 
     @warn_unused_result
-    func unique() -> [Self.Generator.Element] {
-        var array: Set<Self.Generator.Element> = []
+    func unique() -> [Generator.Element] {
+        var array = Set<Generator.Element>()
 
         return filter {
             if array.contains($0) {
