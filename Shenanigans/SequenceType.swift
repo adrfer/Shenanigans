@@ -87,7 +87,7 @@ public extension SequenceType {
     /// - Returns: True iff every element in `self` satisfies `predicate`, false otherwise
 
     @warn_unused_result
-    func all(@noescape predicate: Self.Generator.Element throws -> Bool) rethrows -> Bool {
+    func all(@noescape predicate: Generator.Element throws -> Bool) rethrows -> Bool {
         for element in self where try !predicate(element) {
             return false
         }
