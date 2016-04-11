@@ -60,6 +60,20 @@ public extension Int {
         }
     }
 
+    /// Check whether an integer is divisible by another
+    ///
+    /// - Parameter other: The denominator
+    ///
+    /// - Returns: True iff `self` is divisible, false otherwise
+
+    func isDivisible(by other: Int) -> Bool {
+        guard other != 0 else {
+            return false
+        }
+
+        return self % other == 0
+    }
+
     // MARK: - Type Methods
 
     /// Generate a uniformly distributed random integer
