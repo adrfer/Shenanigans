@@ -44,6 +44,14 @@ public extension Int {
         return !isPositive
     }
 
+    /// Check whether an integer is non-positive
+    ///
+    /// - Returns: True iff `self` is greater than or equal to zero, false otherwise
+
+    var isNonPositive: Bool {
+        return self >= 0
+    }
+
     // MARK: - Instance Methods
 
     /// Repeat a block of code `self` times
