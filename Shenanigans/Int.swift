@@ -12,23 +12,23 @@ public extension Int {
 
     // MARK: - Instance Properties
     
-    /// Check whether an integer is even
+    /// Check whether `self` is even
     ///
-    /// - Returns: True if even, false otherwise
+    /// - Returns: True iff `self` is even, false otherwise
 
     var isEven: Bool {
         return self % 2 == 0
     }
 
-    /// Check whether an integer is odd
+    /// Check whether `self` is odd
     ///
-    /// - Returns: True if odd, false otherwise
+    /// - Returns: True iff `self` is odd, false otherwise
 
     var isOdd: Bool {
         return !isEven
     }
 
-    /// Check whether an integer is positive
+    /// Check whether `self` is positive
     ///
     /// - Returns: True iff `self` is greater than zero, false otherwise
 
@@ -36,7 +36,7 @@ public extension Int {
         return self > 0
     }
 
-    /// Check whether an integer is negative
+    /// Check whether `self` is negative
     ///
     /// - Returns: True iff `self` is less than zero, false otherwise
 
@@ -44,7 +44,7 @@ public extension Int {
         return !isPositive
     }
 
-    /// Check whether an integer is non-positive
+    /// Check whether `self` is non-positive
     ///
     /// - Returns: True iff `self` is greater than or equal to zero, false otherwise
 
@@ -52,7 +52,7 @@ public extension Int {
         return self >= 0
     }
 
-    /// Check whether an integer is non-negative
+    /// Check whether `self` is non-negative
     ///
     /// - Returns: True iff `self` is less than or equal to zero, false otherwise
 
@@ -76,9 +76,9 @@ public extension Int {
         }
     }
 
-    /// Check whether an integer is divisible by another
+    /// Check whether `self` is divisible by an integer
     ///
-    /// - Parameter other: The denominator
+    /// - Parameter other: The denominator or divisor
     ///
     /// - Returns: True iff `self` is divisible, false otherwise
 
