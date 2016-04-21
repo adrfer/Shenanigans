@@ -39,7 +39,7 @@ public extension CollectionType where Index.Distance == Int, Generator.Element: 
         }
 
         let offset = Int.random(from: 0, to: count - 1)
-        let index = self.startIndex.advancedBy(offset)
+        let index = startIndex.advancedBy(offset)
 
         return self[index]
     }
