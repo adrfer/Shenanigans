@@ -30,7 +30,7 @@ public extension CollectionType where Index.Distance == Int, Generator.Element: 
 
     /// Choose a random element from `self`
     ///
-    /// - Returns: An optional random element from `self` or `nil` if `self` is empty
+    /// - Returns: An optional random element from `self`, or `nil` if `self` is empty
 
     @warn_unused_result
     func sample() -> Generator.Element? {
@@ -51,7 +51,7 @@ public extension CollectionType where Index.Distance == Int, Generator.Element: 
     ///   - size: The size of the sample to be returned from `self`
     ///   - allowSamePick: The flag that allows chosen elements to be picked again
     ///
-    /// - Returns: An optional random element from `self`, or `nil` if `self` is empty
+    /// - Returns: An optional array of random elements from `self`, or `nil` if `self` is empty
 
     @warn_unused_result
     func sample(size: Int, allowSamePick: Bool = true) -> [Generator.Element]? {
