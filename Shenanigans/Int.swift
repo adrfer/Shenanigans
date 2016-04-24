@@ -82,6 +82,7 @@ public extension Int {
     ///
     /// - Returns: True iff `self` is divisible, false otherwise
 
+    @warn_unused_result
     func isDivisible(by other: Int) -> Bool {
         guard other != 0 else {
             return false
@@ -101,6 +102,7 @@ public extension Int {
     ///
     /// - Returns: A random integer between `lower` and `upper` bounds
 
+    @warn_unused_result
     static func random(from lower: Int, to upper: Int) -> Int {
         return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
     }
