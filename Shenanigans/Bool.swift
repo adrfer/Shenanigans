@@ -16,6 +16,7 @@ public extension Bool {
     ///
     /// - Returns: A toggled bool
     
+    @warn_unused_result
     mutating func toggle() -> Bool {
         self = !self
         return self
@@ -27,6 +28,7 @@ public extension Bool {
     ///
     /// - Returns: A random bool value
 
+    @warn_unused_result
     static func random() -> Bool {
         return [true, false].sample()!
     }
