@@ -12,7 +12,7 @@ public extension MutableCollectionType where Self.Index == Int {
 
     // MARK: - Instance Methods
 
-    /// Shuffle elements of `self` in place
+    /// Shuffle elements of `self` by mutating `self`
     ///
     /// - Note: This implementation uses the Fisher–Yates algorithm
 
