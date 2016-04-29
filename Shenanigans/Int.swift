@@ -66,7 +66,7 @@ public extension Int {
     ///
     /// - Parameter closure: The code to be executed `self` times
 
-    func times(closure: () -> Void) {
+    func times(@noescape closure: () -> Void) {
         guard self > 0 else {
             return
         }
