@@ -43,37 +43,4 @@ public extension CollectionType where Index.Distance == Int, Generator.Element: 
 
         return self[index]
     }
-
-    /// Choose random elements from `self`
-    ///
-    /// - Parameters:
-    ///
-    ///   - size: The size of the sample to be returned from `self`
-    ///   - allowSamePick: The flag that allows chosen elements to be picked again
-    ///
-    /// - Returns: An optional array of random elements from `self`, or `nil` if `self` is empty
-
-    @warn_unused_result
-    func sample(size: Int, allowSamePick: Bool = true) -> [Generator.Element]? {
-        guard !isEmpty else {
-            return nil
-        }
-
-        var size = size
-        var array = Array<Generator.Element>()
-        var picks: Set<Generator.Element> = Set(self)
-
-        while size > 0 {
-            let pick = self.sample()!
-
-            if !allowSamePick && picks.contains(pick) { continue }
-
-            picks.remove(pick)
-            array.append(pick)
-
-            size -= 1
-        }
-
-        return array
-    }
 }
