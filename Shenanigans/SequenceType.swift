@@ -132,6 +132,8 @@ public extension SequenceType where Generator.Element: Hashable {
     /// Get the unique elements of `self`
     ///
     /// - Returns: All unique elements of `self`
+    ///
+    /// - Note: Alternatively, one could pass the sequence to Set to remove duplicates
 
     @warn_unused_result
     func unique() -> [Generator.Element] {
