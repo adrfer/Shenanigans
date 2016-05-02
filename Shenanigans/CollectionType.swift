@@ -24,7 +24,7 @@ public extension CollectionType {
     }
 }
 
-public extension CollectionType where Index.Distance == Int, Generator.Element: Hashable {
+public extension CollectionType where Index.Distance == Int {
 
     // MARK: - Instance Methods
 
