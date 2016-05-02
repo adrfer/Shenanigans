@@ -111,7 +111,7 @@ public extension SequenceType {
     }
 }
 
-public extension SequenceType where Self.Generator.Element: Hashable {
+public extension SequenceType where Generator.Element: Hashable {
 
 
     /// Get the frequencies of the elements of `self`
