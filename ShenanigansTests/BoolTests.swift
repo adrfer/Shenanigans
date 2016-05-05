@@ -13,25 +13,25 @@ import XCTest
 class BoolTests: XCTestCase {
 
     func testToggle() {
-        var bool: Bool
+        var value: Bool
 
-        bool = false
-        XCTAssertTrue(bool.toggle())
+        value = false
+        XCTAssertTrue(value.toggle())
 
-        bool = true
-        XCTAssertFalse(bool.toggle())
+        value = true
+        XCTAssertFalse(value.toggle())
     }
 
     func testRandom() {
         7.times {
-            var bool = Bool.random()
+            var value = Bool.random()
 
-            XCTAssertTrue([true, false].contains(bool))
+            XCTAssertTrue([true, false].contains(value))
 
-            if bool {
-                XCTAssertFalse(bool.toggle())
+            if value {
+                XCTAssertFalse(value.toggle())
             } else {
-                XCTAssertTrue(bool.toggle())
+                XCTAssertTrue(value.toggle())
             }
         }
     }
