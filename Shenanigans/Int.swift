@@ -41,7 +41,7 @@ public extension Int {
     /// - Returns: True iff `self` is less than zero, false otherwise
 
     var isNegative: Bool {
-        return !isPositive
+        return !isNonPositive
     }
 
     /// Check whether `self` is non-positive

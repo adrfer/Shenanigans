@@ -7,81 +7,125 @@
 //
 
 import Foundation
-
 import XCTest
-@testable import Shenanigans
+
+@testable
+import Shenanigans
 
 class ShenanigansTests: XCTestCase {
 
     func testIsEven() {
-        [-2, 0, 2, 4].forEach {
-            XCTAssertTrue($0.isEven)
+        for value in (-2).stride(through: 4, by: 2) {
+            XCTAssertTrue(value.isEven)
         }
 
-        [-1, 3, 5, 7].forEach {
-            XCTAssertFalse($0.isEven)
+        for value in (-1).stride(through: 7, by: 2) {
+            XCTAssertFalse(value.isEven)
         }
     }
 
     func testIsOdd() {
-        [-2, 0, 2, 4].forEach {
-            XCTAssertFalse($0.isOdd)
+        for value in (-2).stride(through: 4, by: 2) {
+            XCTAssertFalse(value.isOdd)
         }
 
-        [-1, 3, 5, 7].forEach {
-            XCTAssertTrue($0.isOdd)
+        for value in (-1).stride(through: 7, by: 2) {
+            XCTAssertTrue(value.isOdd)
         }
     }
 
     func testIsPositive() {
-        [1, 7].forEach {
-            XCTAssertTrue($0.isPositive)
+
+        for value in (1).stride(through: 4, by: 1) {
+            XCTAssertTrue(value.isPositive)
         }
 
-        [-1, -7].forEach {
-            XCTAssertFalse($0.isPositive)
+        XCTAssertFalse(0.isPositive)
+
+        for value in (-7).stride(through: -1, by: 2) {
+            XCTAssertFalse(value.isPositive)
         }
     }
 
     func testIsNegative() {
-        [0, 1, 7].forEach {
-            XCTAssertFalse($0.isNegative)
+        for value in (1).stride(through: 4, by: 1) {
+            XCTAssertFalse(value.isNegative)
         }
 
-        [-1, -7].forEach {
-            XCTAssertTrue($0.isNegative)
+        XCTAssertFalse(0.isNegative)
+
+        for value in (-7).stride(through: -1, by: 2) {
+            XCTAssertTrue(value.isNegative)
+        }
+    }
+
+    func testIsNonPositive() {
+        for value in (1).stride(through: 4, by: 1) {
+            XCTAssertTrue(value.isNonPositive)
+        }
+
+        XCTAssertTrue(0.isNonPositive)
+
+        for value in (-7).stride(through: -1, by: 2) {
+            XCTAssertFalse(value.isNonPositive)
+        }
+    }
+
+    func testIsNonNegative() {
+        for value in (1).stride(through: 4, by: 1) {
+            XCTAssertFalse(value.isNonNegative)
+        }
+
+        XCTAssertTrue(0.isNonNegative)
+
+        for value in (-7).stride(through: -1, by: 2) {
+            XCTAssertTrue(value.isNonNegative)
         }
     }
 
     func testTimes() {
-        var count: Int
+        var value: Int
 
-        count = 0
-        (-7).times { count += 1 }
-        XCTAssertEqual(0, count)
+        value = 0
+        (-7).times { value += 1 }
+        XCTAssertEqual(0, value)
 
-        count = 0
-        0.times { count += 1 }
-        XCTAssertEqual(0, count)
+        value = 0
+        0.times { value += 1 }
+        XCTAssertEqual(0, value)
 
-        count = 0
-        7.times { count += 1 }
-        XCTAssertEqual(7, count)
+        value = 0
+        7.times { value += 1 }
+        XCTAssertEqual(7, value)
+    }
+
+    func testIsDivisible() {
+        for value in (-1).stride(through: 1, by: 1) {
+            XCTAssertFalse(value.isDivisible(by: 0))
+        }
+
+        for value in (-7).stride(through: 7, by: 1) {
+            XCTAssertTrue(value.isDivisible(by: 1))
+        }
+
+        for value in (-2).stride(through: 2, by: 2) {
+            XCTAssertTrue(value.isDivisible(by: 2))
+        }
     }
 
     func testRandom() {
         7.times {
-            var random = Int.random(from: -7, to: 7)
+            var value = Int.random(from: -7, to: 7)
 
-            XCTAssertGreaterThanOrEqual(random, -7)
-            XCTAssertLessThanOrEqual(random, 7)
+            XCTAssertGreaterThanOrEqual(value, -7)
+            XCTAssertLessThanOrEqual(value, 7)
 
-            random = Int.random(from: 0, to: 0)
-            XCTAssertEqual(random, 0)
+            value = Int.random(from: 0, to: 0)
+            XCTAssertEqual(value, 0)
 
-            random = Int.random(from: 0, to: 7)
-            XCTAssertGreaterThanOrEqual(random, 0)
-            XCTAssertLessThanOrEqual(random, 7)
+            value = Int.random(from: 0, to: 7)
+            XCTAssertGreaterThanOrEqual(value, 0)
+            XCTAssertLessThanOrEqual(value, 7)
         }
     }
 }
