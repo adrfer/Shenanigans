@@ -35,7 +35,6 @@ class ShenanigansTests: XCTestCase {
     }
 
     func testIsPositive() {
-
         for value in (1).stride(through: 4, by: 1) {
             XCTAssertTrue(value.isPositive)
         }
