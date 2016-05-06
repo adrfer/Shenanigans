@@ -8,37 +8,33 @@
 
 import Foundation
 import XCTest
-@testable import Shenanigans
+
+@testable
+import Shenanigans
 
 class CollectionTypeTests: XCTestCase {
 
     func testShuffle() {
-        let array = [3, 1, 0, 2, 1]
-        let shuffled = array.shuffle()
+        let first = Array(-7...7)
+        let second = first.shuffle()
 
-        XCTAssertEqual(array.count, shuffled.count)
+        XCTAssertEqual(first.count, second.count)
 
-        array.forEach {
-            XCTAssertTrue(shuffled.contains($0))
+        for value in first {
+            XCTAssertTrue(second.contains(value))
         }
 
-        XCTAssertEqual(array.sort(), shuffled.sort())
+        XCTAssertEqual(first.sort(), second.sort())
     }
 
-//    func testSample() {
-//
-//        var array = [Int]()
-//        var sample = array.sample()
-//        XCTAssertNil(sample)
-//
-//        array = [3, 1, 0, 2, 1]
-//
-//        sample = array.sample(1)
-//        XCTAssertTrue(sample!.count == 1)
-//        XCTAssertTrue(array.contains(sample!.first!))
-//
-//        sample = array.sample(size: 3)
-//        XCTAssertTrue(sample!.count == 3)
-//        sample!.forEach { XCTAssertTrue(array.contains($0)) }
-//    }
+    func testSample() {
+        var first = [Int]()
+        var second = first.sample()
+        XCTAssertNil(second)
+
+        first = Array(-7...7)
+        second = first.sample()
+        XCTAssertNotNil(second)
+        XCTAssertTrue(first.contains(second!))
+    }
 }
