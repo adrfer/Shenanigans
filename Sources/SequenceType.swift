@@ -72,7 +72,7 @@ public extension SequenceType {
     /// - Returns: True iff any element in `self` satisfies `predicate`, false otherwise
 
     @warn_unused_result
-    func any(@noescape predicate: (Generator.Element) throws -> Bool) rethrows -> Bool {
+    func any(@noescape where predicate: (Generator.Element) throws -> Bool) rethrows -> Bool {
         for element in self where try predicate(element) {
             return true
         }
@@ -87,7 +87,7 @@ public extension SequenceType {
     /// - Returns: True iff every element in `self` satisfies `predicate`, false otherwise
 
     @warn_unused_result
-    func all(@noescape predicate: Generator.Element throws -> Bool) rethrows -> Bool {
+    func all(@noescape where predicate: Generator.Element throws -> Bool) rethrows -> Bool {
         for element in self where try !predicate(element) {
             return false
         }
@@ -102,7 +102,7 @@ public extension SequenceType {
     /// - Returns: True iff every element in `self` does not satisfy `predicate`, false otherwise
 
     @warn_unused_result
-    func none(@noescape predicate: (Generator.Element) throws -> Bool) rethrows -> Bool {
+    func none(@noescape where predicate: (Generator.Element) throws -> Bool) rethrows -> Bool {
         for element in self where try predicate(element) {
             return false
         }
@@ -112,7 +112,6 @@ public extension SequenceType {
 }
 
 public extension SequenceType where Generator.Element: Hashable {
-
 
     /// Get the frequencies of the elements of `self`
     ///
