@@ -8,7 +8,9 @@
 
 import Foundation
 import XCTest
-@testable import Shenanigans
+
+@testable
+import Shenanigans
 
 class BoolTests: XCTestCase {
 
