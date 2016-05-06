@@ -14,10 +14,18 @@ import Shenanigans
 
 class BoolTests: XCTestCase {
 
-    func testToggle() {
-        var value: Bool
+    func testToggleInPlace() {
+        var value = false
 
-        value = false
+        value.toggleInPlace()
+        XCTAssertTrue(value)
+
+        value.toggleInPlace()
+        XCTAssertFalse(value)
+    }
+
+    func testToggle() {
+        var value = false
         XCTAssertTrue(value.toggle())
 
         value = true
@@ -26,7 +34,7 @@ class BoolTests: XCTestCase {
 
     func testRandom() {
         7.times {
-            var value = Bool.random()
+            let value = Bool.random()
 
             XCTAssertTrue([true, false].contains(value))
 

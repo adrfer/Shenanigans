@@ -12,14 +12,21 @@ public extension Bool {
 
     // MARK: - Instance Methods
 
-    /// Toggle a bool value
-    ///
-    /// - Returns: A toggled bool
-    
-    @warn_unused_result
-    mutating func toggle() -> Bool {
+    /// Toggle `self` by mutating it
+
+    mutating func toggleInPlace() {
         self = !self
-        return self
+    }
+
+    /// Toggle `self`
+    ///
+    /// - Returns: A toggled `self`
+    
+    @warn_unused_result(mutable_variant="toggleInPlace")
+    func toggle() -> Bool {
+        var value = self
+        value.toggleInPlace()
+        return value
     }
 
     // MARK: - Type Methods
