@@ -28,6 +28,20 @@ class SequenceTypeTests: XCTestCase {
         XCTAssert(Array(second) == Array(1 ... 7))
     }
 
+    func testTakeWhile() {
+        var first = [Int]()
+        var second = first.take(while: { $0 > 7})
+        XCTAssert(Array(second) == [Int]())
+
+        first = Array(1 ... 7)
+        second = first.take(while: { $0 < 0})
+        XCTAssert(Array(second) == [Int]())
+
+        first = Array(-7 ... 7)
+        second = first.take(while: { $0 <= 0})
+        XCTAssert(Array(second) == Array(-1 ... 0))
+    }
+
     func testFrequencies() {
 
         let array = [1, 1, 2, 3, 3, 7, 7, 7]
