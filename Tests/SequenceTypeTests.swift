@@ -42,6 +42,20 @@ class SequenceTypeTests: XCTestCase {
         XCTAssert(Array(second) == Array(-7 ... 0))
     }
 
+    func testFind() {
+        var first = [Int]()
+        var second = first.find(where: { $0 > 7})
+        XCTAssertNil(second)
+
+        first = Array(-7 ... 7)
+        second = first.find(where: { $0 < -7 })
+        XCTAssertNil(second)
+
+        first = Array(0 ... 7)
+        second = first.find(where: { $0 > 0 })
+        XCTAssertEqual(second, 1)
+    }
+
     func testFrequencies() {
 
         let array = [1, 1, 2, 3, 3, 7, 7, 7]
