@@ -57,7 +57,6 @@ class SequenceTypeTests: XCTestCase {
     }
 
     func testFrequencies() {
-
         let array = [1, 1, 2, 3, 3, 7, 7, 7]
         XCTAssertEqual([1: 2, 2: 1, 3: 2, 7: 3], array.frequencies())
 
