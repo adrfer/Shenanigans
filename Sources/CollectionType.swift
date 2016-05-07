@@ -49,7 +49,7 @@ public extension CollectionType where Index: Comparable {
 
     // MARK: - Subscripts
 
-    /// Slice collections safely by clamping the range to its bounds to avoid index out of range errors
+    /// Slice collections by clamping the range to its bounds to avoid index out of range errors
     ///
     /// - Returns: A bounded subsequence
 
