@@ -15,7 +15,7 @@ import Shenanigans
 class CollectionTypeTests: XCTestCase {
 
     func testShuffle() {
-        let first = Array(-7...7)
+        let first = Array(-7 ... 7)
         let second = first.shuffle()
 
         XCTAssertEqual(first.count, second.count)
@@ -32,9 +32,19 @@ class CollectionTypeTests: XCTestCase {
         var second = first.sample()
         XCTAssertNil(second)
 
-        first = Array(-7...7)
+        first = Array(-7 ... 7)
         second = first.sample()
         XCTAssertNotNil(second)
         XCTAssertTrue(first.contains(second!))
+    }
+
+    func testSubscriptBounded() {
+        let array = [1, 2, 3]
+
+        XCTAssert(array[bounded: 0 ..< 5] == [1, 2, 3])
+        XCTAssert(array[bounded: -1 ..< 2] == [1, 2])
+        XCTAssert(array[bounded: 1 ..< 2] == [2])
+        XCTAssert(array[bounded: 3 ..< 4] == [])
+        XCTAssert(array[bounded: 2 ... 4] == [3])
     }
 }

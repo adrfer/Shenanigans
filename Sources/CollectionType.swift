@@ -44,3 +44,20 @@ public extension CollectionType where Index.Distance == Int {
         return self[index]
     }
 }
+
+
+public extension CollectionType where Index: Comparable {
+
+    // MARK: - Subscripts
+
+    /// Slice collections safely by clamping the range to its bounds to avoid index out of range errors
+    ///
+    /// - Returns: A bounded subsequence
+
+    subscript(bounded range: Range<Index>) -> SubSequence {
+        let startIndex = max(self.startIndex, range.startIndex)
+        let endIndex = min(self.endIndex, range.endIndex)
+        
+        return self[startIndex ..< endIndex]
+    }
+}
