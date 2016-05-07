@@ -39,7 +39,7 @@ class SequenceTypeTests: XCTestCase {
 
         first = Array(-7 ... 7)
         second = first.take(while: { $0 <= 0})
-        XCTAssert(Array(second) == Array(-1 ... 0))
+        XCTAssert(Array(second) == Array(-7 ... 0))
     }
 
     func testFrequencies() {
