@@ -45,7 +45,6 @@ public extension CollectionType where Index.Distance == Int {
     }
 }
 
-
 public extension CollectionType where Index: Comparable {
 
     // MARK: - Subscripts
@@ -57,7 +56,7 @@ public extension CollectionType where Index: Comparable {
     subscript(bounded range: Range<Index>) -> SubSequence {
         let startIndex = max(self.startIndex, range.startIndex)
         let endIndex = min(self.endIndex, range.endIndex)
-        
+
         return self[startIndex ..< endIndex]
     }
 }
