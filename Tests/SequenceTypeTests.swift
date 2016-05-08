@@ -63,4 +63,12 @@ class SequenceTypeTests: XCTestCase {
         let strings = ["A", "AB", "A", "ABC", "AB", "A"]
         XCTAssertEqual(["A": 3, "AB": 2, "ABC": 1], strings.frequencies())
     }
+
+    func testUnique() {
+        let first = [1, 1, 2, 3, 3, 7, 7, 7]
+        XCTAssertEqual([1, 2, 3, 7], first.unique())
+
+        let second = ["A", "AB", "A", "ABC", "AB", "A"]
+        XCTAssertEqual(["A", "AB", "ABC"], second.unique())
+    }
 }
