@@ -56,6 +56,21 @@ class SequenceTypeTests: XCTestCase {
         XCTAssertEqual(second, 1)
     }
 
+    func testAny() {
+        var first = [Int]()
+        var second = first.any(where: { $0 > 7 })
+        XCTAssertFalse(second)
+
+        first = Array(1 ... 7)
+        second = first.any(where: { $0 < 0 })
+        XCTAssertFalse(second)
+
+        first = Array(-7 ... 7)
+        second = first.any(where: { $0 < 0 })
+        XCTAssertTrue(second)
+    }
+
+
     func testFrequencies() {
         let first = [1, 1, 2, 3, 3, 7, 7, 7]
         XCTAssertEqual([1: 2, 2: 1, 3: 2, 7: 3], first.frequencies())
