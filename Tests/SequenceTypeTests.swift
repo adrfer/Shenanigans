@@ -62,7 +62,7 @@ class SequenceTypeTests: XCTestCase {
         XCTAssertFalse(second)
 
         first = Array(1 ... 7)
-        second = first.any(where: { $0 < 0 })
+        second = first.any(where: { $0.isNegative })
         XCTAssertFalse(second)
 
         first = Array(-7 ... 7)
@@ -76,7 +76,7 @@ class SequenceTypeTests: XCTestCase {
         XCTAssertTrue(second)
 
         first = Array(1 ... 7)
-        second = first.none(where: { $0 > 0 })
+        second = first.none(where: { $0.isPositive })
         XCTAssertFalse(second)
 
         first = Array(-7 ... -1)
