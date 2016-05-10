@@ -82,6 +82,14 @@ class ShenanigansTests: XCTestCase {
         }
     }
 
+    func testIsNonZero() {
+        for value in (1).stride(through: 4, by: 1) {
+            XCTAssertTrue(value.isNonZero)
+        }
+
+        XCTAssertFalse(0.isNonZero)
+    }
+
     func testTimes() {
         var value: Int
 

@@ -60,6 +60,14 @@ public extension Int {
         return self <= 0
     }
 
+    /// Check whether `self` is non-zero
+    ///
+    /// - Returns: True iff `self` is not zero, false otherwise
+
+    var isNonZero: Bool {
+        return self != 0
+    }
+
     // MARK: - Instance Methods
 
     /// Repeat a block of code `self` times
