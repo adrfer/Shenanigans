@@ -70,6 +70,20 @@ class SequenceTypeTests: XCTestCase {
         XCTAssertTrue(second)
     }
 
+    func testAll() {
+        var first = [Int]()
+        var second = first.all(where: { $0 > 7 })
+        XCTAssertTrue(second)
+
+        first = Array(1 ... 7)
+        second = first.all(where: { $0 > 0 })
+        XCTAssertTrue(second)
+
+        first = Array(-7 ... 7)
+        second = first.all(where: { $0 < 0 })
+        XCTAssertFalse(second)
+    }
+
     func testNone() {
         var first = [Int]()
         var second = first.none(where: { $0 > 7 })
