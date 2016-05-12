@@ -53,7 +53,7 @@ public extension CollectionType where Index: Comparable {
     ///
     /// - Returns: A bounded subsequence
 
-    subscript(bounded range: Range<Index>) -> SubSequence {
+    subscript(within range: Range<Index>) -> SubSequence {
         let startIndex = max(self.startIndex, range.startIndex)
         let endIndex = min(self.endIndex, range.endIndex)
 
