@@ -106,6 +106,22 @@ class ShenanigansTests: XCTestCase {
         XCTAssertEqual(7, value)
     }
 
+    func testUp() {
+        var value: Int
+
+        value = 0
+        (-7).up(to: -1) { value += 1 }
+        XCTAssertEqual(6, value)
+
+        value = 0
+        0.up(to: 0) { value += 1 }
+        XCTAssertEqual(0, value)
+
+        value = 0
+        0.up(to: 7) { value += 1 }
+        XCTAssertEqual(7, value)
+    }
+
     func testIsDivisible() {
         for value in (-1).stride(through: 1, by: 1) {
             XCTAssertFalse(value.isDivisible(by: 0))

@@ -84,6 +84,19 @@ public extension Int {
         }
     }
 
+    /// Repeat a block of code from `self` up to a limit
+    ///
+    /// - Parameters:
+    ///
+    ///   - upper: Non-inclusive upper bound value
+    ///   - closure: The code to be executed
+
+    func up(to upper: Int, @noescape closure: () -> Void) {
+        for _ in self..<upper {
+            closure()
+        }
+    }
+
     /// Check whether `self` is divisible by an integer
     ///
     /// - Parameter other: The denominator or divisor
