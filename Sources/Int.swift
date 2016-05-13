@@ -97,6 +97,19 @@ public extension Int {
         }
     }
 
+    /// Repeat a block of code from `self` down to a limit
+    ///
+    /// - Parameters:
+    ///
+    ///   - lower: Inclusive lower bound value
+    ///   - closure: The code to be executed
+
+    func down(to lower: Int, @noescape closure: () -> Void) {
+        for _ in (lower...self).reverse() {
+            closure()
+        }
+    }
+    
     /// Check whether `self` is divisible by an integer
     ///
     /// - Parameter other: The denominator or divisor

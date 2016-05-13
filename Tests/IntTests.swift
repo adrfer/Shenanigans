@@ -122,6 +122,22 @@ class ShenanigansTests: XCTestCase {
         XCTAssertEqual(7, value)
     }
 
+    func testDown() {
+        var value: Int
+
+        value = 0
+        (-1).down(to: -7) { value += 1 }
+        XCTAssertEqual(7, value)
+
+        value = 0
+        0.down(to: 0) { value += 1 }
+        XCTAssertEqual(1, value)
+
+        value = 0
+        7.down(to: 0) { value += 1 }
+        XCTAssertEqual(8, value)
+    }
+
     func testIsDivisible() {
         for value in (-1).stride(through: 1, by: 1) {
             XCTAssertFalse(value.isDivisible(by: 0))
