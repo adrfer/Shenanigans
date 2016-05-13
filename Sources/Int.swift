@@ -89,10 +89,11 @@ public extension Int {
     /// - Parameters:
     ///
     ///   - upper: Non-inclusive upper bound value
+    ///   - step: The step used to stride
     ///   - closure: The code to be executed
 
-    func up(to upper: Int, @noescape closure: () -> Void) {
-        for _ in self..<upper {
+    func up(to upper: Int, by step: Int = 1, @noescape closure: () -> Void) {
+        for _ in self.stride(to: upper, by: step) {
             closure()
         }
     }
