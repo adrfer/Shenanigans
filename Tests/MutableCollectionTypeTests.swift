@@ -15,7 +15,7 @@ import Shenanigans
 class MutableCollectionType: XCTestCase {
 
     func testShuffleInPlace() {
-        var first = Array(-7...7)
+        var first = Array(-7 ... 7)
         let second = first
 
         first.shuffleInPlace()
