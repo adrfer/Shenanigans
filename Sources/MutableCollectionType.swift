@@ -21,7 +21,7 @@ public extension MutableCollectionType where Self.Index == Int {
             return
         }
 
-        for i in 0..<count - 1 {
+        for i in 0 ..< count - 1 {
             let j = Int.random(from: i, to: count - 1)
 
             if i != j {
