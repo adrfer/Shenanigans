@@ -79,7 +79,7 @@ public extension Int {
             return
         }
 
-        for _ in 0..<self {
+        for _ in 0 ..< self {
             closure()
         }
     }
