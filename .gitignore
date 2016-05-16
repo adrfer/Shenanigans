@@ -27,3 +27,4 @@ xcuserdata/
 
 # Other
 .DS_Store
+Carthage/Build
