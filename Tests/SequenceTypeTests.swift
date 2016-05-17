@@ -14,7 +14,7 @@ import Shenanigans
 
 class SequenceTypeTests: XCTestCase {
 
-    func testDropWhile() {
+    func testDrop() {
         var first = [Int]()
         var second = first.drop(while: { $0 > 7 })
         XCTAssertEqual(Array(second), [Int]())
@@ -28,7 +28,7 @@ class SequenceTypeTests: XCTestCase {
         XCTAssertEqual(Array(second), Array(1 ... 7))
     }
 
-    func testTakeWhile() {
+    func testTake() {
         var first = [Int]()
         var second = first.take(while: { $0 > 7 })
         XCTAssertEqual(Array(second), [Int]())
