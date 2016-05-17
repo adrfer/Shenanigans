@@ -89,8 +89,8 @@ public extension Int {
     /// - Parameters:
     ///
     ///   - upper: Non-inclusive upper bound value
-    ///   - step: The step used to stride
-    ///   - closure: The code to be executed
+    ///   - step: The step used to stride over a half-open interval
+    ///   - closure: The block of code to be executed
 
     func up(to upper: Int, by step: Int = 1, @noescape closure: () -> Void) {
         for _ in self.stride(to: upper, by: step) {
@@ -103,8 +103,8 @@ public extension Int {
     /// - Parameters:
     ///
     ///   - lower: Inclusive lower bound value
-    ///   - step: The step used to stride
-    ///   - closure: The code to be executed
+    ///   - step: The step used to stride over the closed interval
+    ///   - closure: The block of code to be executed
 
     func down(to lower: Int, by step: Int = -1, @noescape closure: () -> Void) {
         for _ in self.stride(through: lower, by: step).reverse() {
