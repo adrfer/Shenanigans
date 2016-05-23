@@ -63,4 +63,20 @@ public extension CollectionType where Index: Comparable {
 
         return self[startIndex ..< endIndex]
     }
+
+    /// Slice a collection by first checking if a range is out of bounds
+    ///
+    /// - Parameter range: The range of values used to slice the collection
+    ///
+    /// - Returns: A bounded subsequence, or `nil` when the range is out of bounds
+    ///
+    /// - Note: This behaviour avoids throwing a fatal error in execution time
+
+    subscript(checking range: Range<Index>) -> SubSequence? {
+        guard range.startIndex >= startIndex && range.endIndex <= endIndex else {
+            return nil
+        }
+
+        return self[range]
+    }
 }
