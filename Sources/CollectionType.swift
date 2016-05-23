@@ -51,6 +51,8 @@ public extension CollectionType where Index: Comparable {
 
     /// Slice a collection by clamping the range to its bounds to avoid index out of range errors
     ///
+    /// - Parameter range: The range of values used to slice the collection
+    ///
     /// - Returns: A bounded subsequence
 
     subscript(clamping range: Range<Index>) -> SubSequence {
