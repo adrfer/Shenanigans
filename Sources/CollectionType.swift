@@ -79,4 +79,20 @@ public extension CollectionType where Index: Comparable {
 
         return self[range]
     }
+
+    /// Slice a collection by first checking if index is out of bounds
+    ///
+    /// - Parameter index: The index used to slice the collection
+    ///
+    /// - Returns: An element of the collection, or `nil` iff it is out of bounds
+    ///
+    /// - Note: This behaviour avoids throwing a fatal error in execution time
+
+    subscript(checking index: Index) -> Generator.Element? {
+        guard index >= startIndex && index < endIndex else {
+            return nil
+        }
+
+        return self[index]
+    }
 }
