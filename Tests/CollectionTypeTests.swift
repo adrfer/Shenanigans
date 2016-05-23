@@ -38,7 +38,7 @@ class CollectionTypeTests: XCTestCase {
         XCTAssertTrue(first.contains(second!))
     }
 
-    func testSubscriptBounded() {
+    func testSubscript() {
         let array = [1, 2, 3]
 
         XCTAssert(array[clamping: 0 ..< 5] == [1, 2, 3])
