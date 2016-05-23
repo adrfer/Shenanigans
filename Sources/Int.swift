@@ -133,8 +133,8 @@ public extension Int {
     ///
     /// - Parameters:
     ///
-    ///   - lower: Inclusive lower bound random value
-    ///   - upper: Inclusive upper bound random value
+    ///   - lower: Inclusive lower bound value
+    ///   - upper: Inclusive upper bound value
     ///
     /// - Returns: A random integer between `lower` and `upper` bounds
 

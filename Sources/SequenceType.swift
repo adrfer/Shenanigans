@@ -12,7 +12,7 @@ public extension SequenceType {
 
     // MARK: - Instance Methods
 
-    /// Drop elements of `self` while a predicate is true
+    /// Drop elements of `self` that satisfy the given predicate
     ///
     /// - Parameter predicate: The predicate called on each element of `self`
     ///
@@ -31,7 +31,7 @@ public extension SequenceType {
         return AnySequence(array)
     }
 
-    /// Take elements of `self` while a predicate is true
+    /// Take elements of `self` that satisfy the given predicate
     ///
     /// - Parameter predicate: The predicate called on each element of `self`
     ///
@@ -50,7 +50,7 @@ public extension SequenceType {
         return AnySequence(array)
     }
 
-    /// Find the first element of `self` where `predicate` is true
+    /// Find the first element of `self` that satisfies the given predicate
     ///
     /// - Parameter predicate: The predicate called on each element of `self`
     ///
@@ -65,7 +65,7 @@ public extension SequenceType {
         return nil
     }
 
-    /// Check if `predicate` is true for at least one element of `self`
+    /// Check if at least one element of `self` satisfies the given predicate
     ///
     /// - Parameter predicate: The predicate called on each element of `self`
     ///
@@ -80,7 +80,7 @@ public extension SequenceType {
         return false
     }
 
-    /// Check if `predicate` is true for all elements of `self`
+    /// Check if all elements of `self` satisfy a given predicate the given predicate
     ///
     /// - Parameter predicate: The predicate called on each element of `self`
     ///
@@ -95,7 +95,7 @@ public extension SequenceType {
         return true
     }
 
-    /// Check if `predicate` is false for all elements of `self`
+    /// Check if none elements of `self` satisfy a given predicate the given predicate
     ///
     /// - Parameter predicate: The predicate called on each element of `self`
     ///
