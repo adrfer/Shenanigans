@@ -49,11 +49,13 @@ public extension CollectionType where Index: Comparable {
 
     // MARK: - Subscripts
 
-    /// Slice a collection by clamping the range to its bounds to avoid index out of range errors
+    /// Slice a collection by first clamping the range to its bounds
     ///
     /// - Parameter range: The range of values used to slice the collection
     ///
     /// - Returns: A bounded subsequence
+    ///
+    /// - Note: This behaviour avoids throwing a fatal error in execution time
 
     subscript(clamping range: Range<Index>) -> SubSequence {
         let startIndex = max(self.startIndex, range.startIndex)
