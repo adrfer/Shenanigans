@@ -41,10 +41,10 @@ class CollectionTypeTests: XCTestCase {
     func testSubscript() {
         let array = [1, 2, 3]
 
-        XCTAssert(array[clamping: 0 ..< 5] == [1, 2, 3])
-        XCTAssert(array[clamping: -1 ..< 2] == [1, 2])
-        XCTAssert(array[clamping: 1 ..< 2] == [2])
-        XCTAssert(array[clamping: 3 ..< 4] == [])
-        XCTAssert(array[clamping: 2 ... 4] == [3])
+        XCTAssertEqual(array[clamping: 0 ..< 5], [1, 2, 3])
+        XCTAssertEqual(array[clamping: -1 ..< 2], [1, 2])
+        XCTAssertEqual(array[clamping: 1 ..< 2], [2])
+        XCTAssertEqual(array[clamping: 3 ..< 4], [])
+        XCTAssertEqual(array[clamping: 2 ... 4], [3])
     }
 }
