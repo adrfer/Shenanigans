@@ -14,17 +14,15 @@ public extension String {
     ///
     /// - Parameters:
     ///
-    ///   - count: The specific string length after truncating
-    ///   - trailing: The trailing characters appended
+    ///   - count: The required string length after truncating
+    ///   - trailing: The optional trailing characters to be appended
     ///
-    /// - Returns: A new truncated string with trailing characters appended
+    /// - Returns: A new truncated string with optional trailing characters appended
 
     @warn_unused_result
     func truncate(after count: Int, trailing: String? = "...") -> String {
-        if characters.count > count {
-            return substringToIndex(startIndex.advancedBy(count)) + (trailing ?? "")
-        } else {
-            return self
-        }
+        guard !isEmpty && characters.count > count else { return self }
+
+        return substringToIndex(startIndex.advancedBy(count)) + (trailing ?? "")
     }
 }
