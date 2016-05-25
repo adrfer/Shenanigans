@@ -84,6 +84,20 @@ public extension Int {
         }
     }
 
+    /// Repeat a block of code `self` times
+    ///
+    /// - Parameter closure: The code to be executed `self` times
+
+    func times(@noescape closure: (Int) -> Void) {
+        guard self > 0 else {
+            return
+        }
+
+        for index in 0 ..< self {
+            closure(index)
+        }
+    }
+
     /// Repeat a block of code from `self` up to a limit
     ///
     /// - Parameters:

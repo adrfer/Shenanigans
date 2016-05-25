@@ -104,6 +104,18 @@ class ShenanigansTests: XCTestCase {
         value = 0
         7.times { value += 1 }
         XCTAssertEqual(7, value)
+
+        value = 0
+        (-7).times { value += $0 }
+        XCTAssertEqual(0, value)
+
+        value = 0
+        0.times { value += $0 }
+        XCTAssertEqual(0, value)
+
+        value = 0
+        7.times { value += $0 }
+        XCTAssertEqual(21, value)
     }
 
     func testUp() {
