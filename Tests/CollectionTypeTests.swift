@@ -52,8 +52,10 @@ class CollectionTypeTests: XCTestCase {
         XCTAssertNil(array[checking: -1 ... 4])
         XCTAssertNil(array[checking: 2 ..< 5])
         XCTAssertNil(array[checking: 3 ... 5])
-        // FIXME: - Xcode's complaining about the label `checking:`
-        // XCTAssertEqual([1, 2, 3], array[checking: 0 ..< 3])
+
+        XCTAssertEqual([1, 2, 3], array[checking: 0 ..< 3]!)
+        XCTAssertEqual([2, 3], array[checking: 1 ... 2]!)
+        XCTAssertEqual([2], array[checking: 1 ..< 2]!)
 
         XCTAssertNil(array[checking: -1])
         XCTAssertNil(array[checking: 3])
