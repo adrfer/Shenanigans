@@ -20,6 +20,7 @@ public extension CollectionType {
     func shuffle() -> [Generator.Element] {
         var array = Array(self)
         array.shuffleInPlace()
+
         return array
     }
 }
