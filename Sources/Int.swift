@@ -46,18 +46,18 @@ public extension Int {
 
     /// Check whether `self` is non-positive
     ///
-    /// - Returns: True iff `self` is greater than or equal to zero, false otherwise
+    /// - Returns: True iff `self` is less than or equal to zero, false otherwise
 
     var isNonPositive: Bool {
-        return self >= 0
+        return self <= 0
     }
 
     /// Check whether `self` is non-negative
     ///
-    /// - Returns: True iff `self` is less than or equal to zero, false otherwise
+    /// - Returns: True iff `self` is greater than or equal to zero, false otherwise
 
     var isNonNegative: Bool {
-        return self <= 0
+        return self >= 0
     }
 
     /// Check whether `self` is non-zero

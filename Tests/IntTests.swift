@@ -60,25 +60,25 @@ class ShenanigansTests: XCTestCase {
 
     func testIsNonPositive() {
         for value in (1).stride(through: 4, by: 1) {
-            XCTAssertTrue(value.isNonPositive)
+            XCTAssertFalse(value.isNonPositive)
         }
 
         XCTAssertTrue(0.isNonPositive)
 
         for value in (-7).stride(through: -1, by: 2) {
-            XCTAssertFalse(value.isNonPositive)
+            XCTAssertTrue(value.isNonPositive)
         }
     }
 
     func testIsNonNegative() {
         for value in (1).stride(through: 4, by: 1) {
-            XCTAssertFalse(value.isNonNegative)
+            XCTAssertTrue(value.isNonNegative)
         }
 
         XCTAssertTrue(0.isNonNegative)
 
         for value in (-7).stride(through: -1, by: 2) {
-            XCTAssertTrue(value.isNonNegative)
+            XCTAssertFalse(value.isNonNegative)
         }
     }
 
