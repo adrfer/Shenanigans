@@ -15,9 +15,7 @@ To install using [Carthage](https://github.com/Carthage/Carthage):
 
 Now you can `import Shenanigans` to make your project swift-y.
 
-### Manually
-
-To install it manually, using [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules):
+### Git Submodules
 
 To install it using [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules):
 
