@@ -11,7 +11,7 @@ To install using [Carthage](https://github.com/Carthage/Carthage):
 
 1. Add `github "adrfer/Shenanigans" "master"` to your [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile)
 2. Run `carthage update` to build the framework
-3. Drag and drop the **Shenanigans.framework** file from **Carthage/build** to your navigator ( <kbd>⌘</kbd><kbd>1</kbd> ).
+3. Drag and drop the **Shenanigans.framework** file from **Carthage/build** to your navigator ( <kbd>⌘</kbd><kbd>1</kbd> )
 
 Now you can `import Shenanigans` to make your project swift-y.
 
