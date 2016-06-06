@@ -5,6 +5,11 @@ The code was tested on `Xcode 7.3` and `Swift 2.2`.
 
 ## Install
 
+Shenanigans can currently be installed in one of two ways:
+
+* [Carthage](#carthage)
+* [Git Submodules](#git-submodules)
+
 ### Carthage
 
 To install using [Carthage](https://github.com/Carthage/Carthage):
