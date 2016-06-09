@@ -93,7 +93,7 @@
 		B9E891FF1C5D80A00068AA18 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				B9E892171C5D88B70068AA18 /* Support */,
+				B9E892171C5D88B70068AA18 /* Supporting Files */,
 				B94491C61C62A98300099D6A /* Bool.swift */,
 				B9BB520A1C75264700C521F5 /* CollectionType.swift */,
 				B98BB48D1C5EDA05000FACDB /* Int.swift */,
@@ -107,7 +107,7 @@
 		B9E8920B1C5D80A00068AA18 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				B9E892181C5D88D10068AA18 /* Support */,
+				B9E892181C5D88D10068AA18 /* Supporting Files */,
 				B94491C91C62AA6700099D6A /* BoolTests.swift */,
 				B91B42921C848D9500763287 /* CollectionTypeTests.swift */,
 				B98BB4901C5EDB03000FACDB /* IntTests.swift */,
@@ -118,21 +118,21 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		B9E892171C5D88B70068AA18 /* Support */ = {
+		B9E892171C5D88B70068AA18 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				B9E892001C5D80A00068AA18 /* Shenanigans.h */,
 				B9E892021C5D80A00068AA18 /* Info.plist */,
 			);
-			path = Support;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		B9E892181C5D88D10068AA18 /* Support */ = {
+		B9E892181C5D88D10068AA18 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
 				B9E8920E1C5D80A00068AA18 /* Info.plist */,
 			);
-			path = Support;
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -280,7 +280,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Tests/Support/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adrfer.Tests;
@@ -292,7 +292,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Tests/Support/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Tests/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adrfer.Tests;
@@ -397,7 +397,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Support/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adrfer.Shenanigans;
@@ -415,7 +415,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/Sources/Support/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Sources/Supporting Files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.adrfer.Shenanigans;
