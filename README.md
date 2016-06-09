@@ -5,10 +5,12 @@ The code was tested on `Xcode 7.3` and `Swift 2.2`.
 
 ## Install
 
-Shenanigans can currently be installed in one of two ways:
+Shenanigans can currently be installed in one of three ways:
 
 * [Carthage](#carthage)
+* [CocoaPods](#cocoapods)
 * [Git Submodules](#git-submodules)
+
 
 ### Carthage
 
@@ -18,6 +20,28 @@ To install using [Carthage](https://github.com/Carthage/Carthage):
 2. Run `carthage update` to build the framework
 3. Drag and drop the **Shenanigans.framework** file from **Carthage/build** to your navigator ( <kbd>⌘</kbd><kbd>1</kbd> )
 
+Now you can `import Shenanigans` to make your project swift-y.
+
+### CocoaPods
+
+To install it using [CocoaPods](https://github.com/CocoaPods/CocoaPods):
+
+1. Create a **Podfile** in your Xcode project directory and add the following:
+
+  ```ruby
+  source 'https://github.com/CocoaPods/Specs.git'
+  platform :ios, '9.0'
+  use_frameworks!
+
+  target '<Your Target Name' do
+    pod 'Shenanigans', '~> 1.0'
+  end
+  ```
+2. Open a terminal, change to your project directory, and run:
+
+  ```ruby
+  pod install
+  ```
 Now you can `import Shenanigans` to make your project swift-y.
 
 ### Git Submodules
@@ -37,4 +61,4 @@ To install it using [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Su
 Now you can `import Shenanigans` to make your project swift-y.
 
 --
-Support for [Swift Package Manager](https://github.com/apple/swift-package-manager) and [Cocoapods](https://github.com/CocoaPods/CocoaPods) is on the way.
+Support for [Swift Package Manager](https://github.com/apple/swift-package-manager) is on the way.
