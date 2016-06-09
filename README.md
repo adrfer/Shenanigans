@@ -33,7 +33,7 @@ To install it using [CocoaPods](https://github.com/CocoaPods/CocoaPods):
   platform :ios, '9.0'
   use_frameworks!
 
-  target '<Your Target Name' do
+  target '<Target Name>' do
     pod 'Shenanigans', '~> 1.0'
   end
   ```
