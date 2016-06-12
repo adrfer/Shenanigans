@@ -24,7 +24,7 @@ Now you can `import Shenanigans` to make your project swift-y.
 
 ### CocoaPods
 
-To install it using [CocoaPods](https://github.com/CocoaPods/CocoaPods):
+To install using [CocoaPods](https://github.com/CocoaPods/CocoaPods):
 
 1. Create a **Podfile** in your Xcode project directory and add the following:
 
@@ -46,7 +46,7 @@ Now you can `import Shenanigans` to make your project swift-y.
 
 ### Git Submodules
 
-To install it using [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules):
+To install using [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules):
 
 1. Open a terminal, change to your project directory, and run:
 
