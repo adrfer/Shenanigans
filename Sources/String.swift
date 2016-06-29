@@ -21,7 +21,10 @@ public extension String {
 
     @warn_unused_result
     func truncate(after count: Int, trailing: String? = "...") -> String {
-        guard !isEmpty && characters.count > count else { return self }
+
+        guard !isEmpty && characters.count > count else {
+            return self
+        }
 
         return substringToIndex(startIndex.advancedBy(count)) + (trailing ?? "")
     }

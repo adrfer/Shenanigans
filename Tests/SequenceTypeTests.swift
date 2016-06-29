@@ -15,6 +15,7 @@ import Shenanigans
 class SequenceTypeTests: XCTestCase {
 
     func testDrop() {
+
         var first = [Int]()
         var second = first.drop(while: { $0 > 7 })
         XCTAssertEqual(Array(second), [Int]())
@@ -29,6 +30,7 @@ class SequenceTypeTests: XCTestCase {
     }
 
     func testTake() {
+
         var first = [Int]()
         var second = first.take(while: { $0 > 7 })
         XCTAssertEqual(Array(second), [Int]())
@@ -43,6 +45,7 @@ class SequenceTypeTests: XCTestCase {
     }
 
     func testFind() {
+
         var first = [Int]()
         var second = first.find(where: { $0 > 7})
         XCTAssertNil(second)
@@ -57,6 +60,7 @@ class SequenceTypeTests: XCTestCase {
     }
 
     func testAny() {
+
         var first = [Int]()
         var second = first.any(where: { $0 > 7 })
         XCTAssertFalse(second)
@@ -71,6 +75,7 @@ class SequenceTypeTests: XCTestCase {
     }
 
     func testAll() {
+
         var first = [Int]()
         var second = first.all(where: { $0 > 7 })
         XCTAssertTrue(second)
@@ -85,6 +90,7 @@ class SequenceTypeTests: XCTestCase {
     }
 
     func testNone() {
+
         var first = [Int]()
         var second = first.none(where: { $0 > 7 })
         XCTAssertTrue(second)
@@ -99,6 +105,7 @@ class SequenceTypeTests: XCTestCase {
     }
 
     func testFrequencies() {
+
         let first = [1, 1, 2, 3, 3, 7, 7, 7]
         XCTAssertEqual([1: 2, 2: 1, 3: 2, 7: 3], first.frequencies())
 
@@ -107,6 +114,7 @@ class SequenceTypeTests: XCTestCase {
     }
 
     func testUnique() {
+
         let first = [1, 1, 2, 3, 3, 7, 7, 7]
         XCTAssertEqual([1, 2, 3, 7], first.unique())
 

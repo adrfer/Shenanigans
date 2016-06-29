@@ -17,6 +17,7 @@ public extension Int {
     /// - Returns: True iff `self` is even, false otherwise
 
     var isEven: Bool {
+
         return self % 2 == 0
     }
 
@@ -25,6 +26,7 @@ public extension Int {
     /// - Returns: True iff `self` is odd, false otherwise
 
     var isOdd: Bool {
+
         return !isEven
     }
 
@@ -33,6 +35,7 @@ public extension Int {
     /// - Returns: True iff `self` is greater than zero, false otherwise
 
     var isPositive: Bool {
+
         return self > 0
     }
 
@@ -41,6 +44,7 @@ public extension Int {
     /// - Returns: True iff `self` is less than zero, false otherwise
 
     var isNegative: Bool {
+
         return self < 0
     }
 
@@ -49,6 +53,7 @@ public extension Int {
     /// - Returns: True iff `self` is less than or equal to zero, false otherwise
 
     var isNonPositive: Bool {
+
         return self <= 0
     }
 
@@ -57,6 +62,7 @@ public extension Int {
     /// - Returns: True iff `self` is greater than or equal to zero, false otherwise
 
     var isNonNegative: Bool {
+
         return self >= 0
     }
 
@@ -65,6 +71,7 @@ public extension Int {
     /// - Returns: True iff `self` is not zero, false otherwise
 
     var isNonZero: Bool {
+
         return self != 0
     }
 
@@ -75,6 +82,7 @@ public extension Int {
     /// - Parameter closure: The code to be executed `self` times
 
     func times(@noescape closure: () -> Void) {
+
         guard self > 0 else {
             return
         }
@@ -89,6 +97,7 @@ public extension Int {
     /// - Parameter closure: The code to be executed `self` times
 
     func times(@noescape closure: (Int) -> Void) {
+
         guard self > 0 else {
             return
         }
@@ -107,6 +116,7 @@ public extension Int {
     ///   - closure: The block of code to be executed
 
     func up(to upper: Int, by step: Int = 1, @noescape closure: () -> Void) {
+
         for _ in self.stride(to: upper, by: step) {
             closure()
         }
@@ -121,6 +131,7 @@ public extension Int {
     ///   - closure: The block of code to be executed
 
     func down(to lower: Int, by step: Int = -1, @noescape closure: () -> Void) {
+
         for _ in self.stride(through: lower, by: step).reverse() {
             closure()
         }
@@ -134,6 +145,7 @@ public extension Int {
 
     @warn_unused_result
     func isDivisible(by other: Int) -> Bool {
+
         guard other != 0 else {
             return false
         }
@@ -154,6 +166,7 @@ public extension Int {
 
     @warn_unused_result
     static func random(from lower: Int, to upper: Int) -> Int {
+
         return lower + Int(arc4random_uniform(UInt32(upper - lower + 1)))
     }
 }

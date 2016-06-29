@@ -15,6 +15,7 @@ import Shenanigans
 class ShenanigansTests: XCTestCase {
 
     func testIsEven() {
+
         for value in (-2).stride(through: 4, by: 2) {
             XCTAssertTrue(value.isEven)
         }
@@ -25,6 +26,7 @@ class ShenanigansTests: XCTestCase {
     }
 
     func testIsOdd() {
+
         for value in (-2).stride(through: 4, by: 2) {
             XCTAssertFalse(value.isOdd)
         }
@@ -35,6 +37,7 @@ class ShenanigansTests: XCTestCase {
     }
 
     func testIsPositive() {
+
         for value in (1).stride(through: 4, by: 1) {
             XCTAssertTrue(value.isPositive)
         }
@@ -47,6 +50,7 @@ class ShenanigansTests: XCTestCase {
     }
 
     func testIsNegative() {
+
         for value in (1).stride(through: 4, by: 1) {
             XCTAssertFalse(value.isNegative)
         }
@@ -59,6 +63,7 @@ class ShenanigansTests: XCTestCase {
     }
 
     func testIsNonPositive() {
+
         for value in (1).stride(through: 4, by: 1) {
             XCTAssertFalse(value.isNonPositive)
         }
@@ -71,6 +76,7 @@ class ShenanigansTests: XCTestCase {
     }
 
     func testIsNonNegative() {
+
         for value in (1).stride(through: 4, by: 1) {
             XCTAssertTrue(value.isNonNegative)
         }
@@ -83,6 +89,7 @@ class ShenanigansTests: XCTestCase {
     }
 
     func testIsNonZero() {
+
         for value in (1).stride(through: 4, by: 1) {
             XCTAssertTrue(value.isNonZero)
         }
@@ -91,6 +98,7 @@ class ShenanigansTests: XCTestCase {
     }
 
     func testTimes() {
+
         var value: Int
 
         value = 0
@@ -119,6 +127,7 @@ class ShenanigansTests: XCTestCase {
     }
 
     func testUp() {
+
         var value: Int
 
         value = 0
@@ -135,6 +144,7 @@ class ShenanigansTests: XCTestCase {
     }
 
     func testDown() {
+
         var value: Int
 
         value = 0
@@ -151,6 +161,7 @@ class ShenanigansTests: XCTestCase {
     }
 
     func testIsDivisible() {
+
         for value in (-1).stride(through: 1, by: 1) {
             XCTAssertFalse(value.isDivisible(by: 0))
         }
@@ -165,6 +176,7 @@ class ShenanigansTests: XCTestCase {
     }
 
     func testRandom() {
+
         7.times {
             var value = Int.random(from: -7, to: 7)
 

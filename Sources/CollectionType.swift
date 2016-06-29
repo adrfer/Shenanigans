@@ -18,6 +18,7 @@ public extension CollectionType {
 
     @warn_unused_result(mutable_variant="shuffleInPlace")
     func shuffle() -> [Generator.Element] {
+
         var array = Array(self)
         array.shuffleInPlace()
 
@@ -35,6 +36,7 @@ public extension CollectionType where Index.Distance == Int {
 
     @warn_unused_result
     func sample() -> Generator.Element? {
+
         guard !isEmpty else {
             return nil
         }
@@ -59,6 +61,7 @@ public extension CollectionType where Index: Comparable {
     /// - Note: This behaviour avoids throwing a fatal error in execution time
 
     subscript(clamping range: Range<Index>) -> SubSequence {
+
         let startIndex = max(self.startIndex, range.startIndex)
         let endIndex = min(self.endIndex, range.endIndex)
 
@@ -74,6 +77,7 @@ public extension CollectionType where Index: Comparable {
     /// - Note: This behaviour avoids throwing a fatal error in execution time
 
     subscript(checking range: Range<Index>) -> SubSequence? {
+
         guard range.startIndex >= startIndex && range.endIndex <= endIndex else {
             return nil
         }
@@ -90,6 +94,7 @@ public extension CollectionType where Index: Comparable {
     /// - Note: This behaviour avoids throwing a fatal error in execution time
 
     subscript(checking index: Index) -> Generator.Element? {
+
         guard index >= startIndex && index < endIndex else {
             return nil
         }

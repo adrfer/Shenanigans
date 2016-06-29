@@ -15,6 +15,7 @@ import Shenanigans
 class StringTests: XCTestCase {
 
     func testTruncate() {
+
         var value = ""
         XCTAssertEqual(value.truncate(after: 7), "")
 

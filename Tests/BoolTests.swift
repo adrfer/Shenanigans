@@ -15,6 +15,7 @@ import Shenanigans
 class BoolTests: XCTestCase {
 
     func testToggleInPlace() {
+
         var value = false
 
         value.toggleInPlace()
@@ -25,6 +26,7 @@ class BoolTests: XCTestCase {
     }
 
     func testToggle() {
+
         var value = false
         XCTAssertTrue(value.toggle())
 
@@ -33,6 +35,7 @@ class BoolTests: XCTestCase {
     }
 
     func testRandom() {
+
         7.times {
             let value = Bool.random()
 
