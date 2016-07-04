@@ -14,7 +14,7 @@ public extension Bool {
 
     /// Toggle `self` by mutating it
 
-    mutating func toggleInPlace() {
+    mutating func toggle() {
 
         self = !self
     }
@@ -23,11 +23,11 @@ public extension Bool {
     ///
     /// - Returns: A toggled `self`
     
-    @warn_unused_result(mutable_variant="toggleInPlace")
-    func toggle() -> Bool {
+    @warn_unused_result(mutable_variant:"toggle")
+    func toggled() -> Bool {
 
         var value = self
-        value.toggleInPlace()
+        value.toggle()
 
         return value
     }
@@ -41,6 +41,6 @@ public extension Bool {
     @warn_unused_result
     static func random() -> Bool {
 
-        return [true, false].sample()!
+        return [true, false].sampled()!
     }
 }
