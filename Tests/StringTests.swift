@@ -14,15 +14,15 @@ import Shenanigans
 
 class StringTests: XCTestCase {
 
-    func testTruncate() {
+    func testTruncated() {
 
         var value = ""
-        XCTAssertEqual(value.truncate(after: 7), "")
+        XCTAssertEqual(value.truncated(after: 7), "")
 
         value = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-        XCTAssertEqual(value.truncate(after: 100), value)
-        XCTAssertEqual(value.truncate(after: 7), "Lorem i...")
-        XCTAssertEqual(value.truncate(after: 7, trailing: nil), "Lorem i")
-        XCTAssertEqual(value.truncate(after: 7, trailing: "...."), "Lorem i....")
+        XCTAssertEqual(value.truncated(after: 100), value)
+        XCTAssertEqual(value.truncated(after: 7), "Lorem i...")
+        XCTAssertEqual(value.truncated(after: 7, trailing: nil), "Lorem i")
+        XCTAssertEqual(value.truncated(after: 7, trailing: "...."), "Lorem i....")
     }
 }
