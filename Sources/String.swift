@@ -20,12 +20,12 @@ public extension String {
     /// - Returns: A new truncated string with optional trailing characters appended
 
     @warn_unused_result
-    func truncate(after count: Int, trailing: String? = "...") -> String {
+    func truncated(after count: Int, trailing: String? = "...") -> String {
 
         guard !isEmpty && characters.count > count else {
             return self
         }
 
-        return substringToIndex(startIndex.advancedBy(count)) + (trailing ?? "")
+        return substring(to: index(startIndex, offsetBy: count)) + (trailing ?? "")
     }
 }
