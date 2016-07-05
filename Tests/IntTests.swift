@@ -16,81 +16,81 @@ class ShenanigansTests: XCTestCase {
 
     func testIsEven() {
 
-        for value in (-2).stride(through: 4, by: 2) {
+        for value in Swift.stride(from: -2, through: 4, by: 2) {
             XCTAssertTrue(value.isEven)
         }
 
-        for value in (-1).stride(through: 7, by: 2) {
+        for value in Swift.stride(from: -1, through: 7, by: 2) {
             XCTAssertFalse(value.isEven)
         }
     }
 
     func testIsOdd() {
 
-        for value in (-2).stride(through: 4, by: 2) {
+        for value in Swift.stride(from: -2, through: 4, by: 2) {
             XCTAssertFalse(value.isOdd)
         }
 
-        for value in (-1).stride(through: 7, by: 2) {
+        for value in Swift.stride(from: -1, through: 7, by: 2) {
             XCTAssertTrue(value.isOdd)
         }
     }
 
     func testIsPositive() {
 
-        for value in (1).stride(through: 4, by: 1) {
+        for value in Swift.stride(from: 1, through: 4, by: 1) {
             XCTAssertTrue(value.isPositive)
         }
 
         XCTAssertFalse(0.isPositive)
 
-        for value in (-7).stride(through: -1, by: 2) {
+        for value in Swift.stride(from: -7, through: -1, by: 2) {
             XCTAssertFalse(value.isPositive)
         }
     }
 
     func testIsNegative() {
 
-        for value in (1).stride(through: 4, by: 1) {
+        for value in Swift.stride(from: 1, through: 4, by: 1) {
             XCTAssertFalse(value.isNegative)
         }
 
         XCTAssertFalse(0.isNegative)
 
-        for value in (-7).stride(through: -1, by: 2) {
+        for value in Swift.stride(from: -7, through: -1, by: 2) {
             XCTAssertTrue(value.isNegative)
         }
     }
 
     func testIsNonPositive() {
 
-        for value in (1).stride(through: 4, by: 1) {
+        for value in Swift.stride(from: 1, through: 4, by: 1) {
             XCTAssertFalse(value.isNonPositive)
         }
 
         XCTAssertTrue(0.isNonPositive)
 
-        for value in (-7).stride(through: -1, by: 2) {
+        for value in Swift.stride(from: -7, through: -1, by: 2) {
             XCTAssertTrue(value.isNonPositive)
         }
     }
 
     func testIsNonNegative() {
 
-        for value in (1).stride(through: 4, by: 1) {
+        for value in Swift.stride(from: 1, through: 4, by: 1) {
             XCTAssertTrue(value.isNonNegative)
         }
 
         XCTAssertTrue(0.isNonNegative)
 
-        for value in (-7).stride(through: -1, by: 2) {
+        for value in Swift.stride(from: -7, through: -1, by: 2) {
             XCTAssertFalse(value.isNonNegative)
         }
     }
 
     func testIsNonZero() {
 
-        for value in (1).stride(through: 4, by: 1) {
+        for value in Swift.stride(from: 1, through: 4, by: 1) {
             XCTAssertTrue(value.isNonZero)
         }
 
@@ -162,15 +162,15 @@ class ShenanigansTests: XCTestCase {
 
     func testIsDivisible() {
 
-        for value in (-1).stride(through: 1, by: 1) {
+        for value in Swift.stride(from: 1, through: 1, by: 1) {
             XCTAssertFalse(value.isDivisible(by: 0))
         }
 
-        for value in (-7).stride(through: 7, by: 1) {
+        for value in Swift.stride(from: -7, through: 7, by: 1) {
             XCTAssertTrue(value.isDivisible(by: 1))
         }
 
-        for value in (-2).stride(through: 2, by: 2) {
+        for value in Swift.stride(from: -2, through: 2, by: 2) {
             XCTAssertTrue(value.isDivisible(by: 2))
         }
     }
