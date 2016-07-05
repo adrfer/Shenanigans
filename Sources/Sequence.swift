@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension SequenceType {
+public extension Sequence {
 
     // MARK: - Instance Methods
 
@@ -19,10 +19,10 @@ public extension SequenceType {
     /// - Returns: A subsequence containing all elements of `self` but those the predicate was false
 
     @warn_unused_result
-    func drop(@noescape while predicate: (Generator.Element) throws -> Bool) rethrows -> AnySequence<Generator.Element> {
+    func drop(while predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
 
         var array = Array(self)
-        var generator = generate()
+        var generator = makeIterator()
 
         while let element = generator.next() {
 
@@ -40,10 +40,10 @@ public extension SequenceType {
     /// - Returns: A new array containing all elements of `self` for which the predicate was true
 
     @warn_unused_result
-    func take(@noescape while predicate: (Generator.Element) throws -> Bool) rethrows -> AnySequence<Generator.Element> {
+    func take(while predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
 
-        var array = ContiguousArray<Generator.Element>()
-        var generator = generate()
+        var array = ContiguousArray<Iterator.Element>()
+        var generator = makeIterator()
 
         while let element = generator.next() {
 
@@ -61,7 +61,7 @@ public extension SequenceType {
     /// - Returns: The first element where `predicate` is `true`, `nil` otherwise
 
     @warn_unused_result
-    func find(@noescape where predicate: Generator.Element throws -> Bool) rethrows -> Generator.Element? {
+    func find(where predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> Iterator.Element? {
 
         for element in self where try predicate(element) {
             return element
@@ -77,7 +77,7 @@ public extension SequenceType {
     /// - Returns: True iff any element in `self` satisfies `predicate`, false otherwise
 
     @warn_unused_result
-    func any(@noescape where predicate: (Generator.Element) throws -> Bool) rethrows -> Bool {
+    func any(where predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> Bool {
 
         for element in self where try predicate(element) {
             return true
@@ -93,7 +93,7 @@ public extension SequenceType {
     /// - Returns: True iff every element in `self` satisfies `predicate`, false otherwise
 
     @warn_unused_result
-    func all(@noescape where predicate: Generator.Element throws -> Bool) rethrows -> Bool {
+    func all(where predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> Bool {
 
         for element in self where try !predicate(element) {
             return false
@@ -109,7 +109,7 @@ public extension SequenceType {
     /// - Returns: True iff every element in `self` does not satisfy `predicate`, false otherwise
 
     @warn_unused_result
-    func none(@noescape where predicate: (Generator.Element) throws -> Bool) rethrows -> Bool {
+    func none(where predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> Bool {
 
         for element in self where try predicate(element) {
             return false
@@ -119,19 +119,19 @@ public extension SequenceType {
     }
 }
 
-public extension SequenceType where Generator.Element: Hashable {
+public extension Sequence where Iterator.Element: Hashable {
 
     /// Get the frequencies of the elements of `self`
     ///
     /// - Returns: A dictionary where the keys are the elements of `self`, and the values are their frequencies
 
     @warn_unused_result
-    func frequencies() -> [Generator.Element: Int] {
+    func frequencies() -> [Iterator.Element: Int] {
 
-        var dictionary = Dictionary<Generator.Element, Int>()
+        var dictionary = Dictionary<Iterator.Element, Int>()
 
-        for element in self {
-            dictionary[element] = dictionary[element]?.successor() ?? 1
+        for key in self {
+            dictionary[key] = dictionary[key]?.advanced(by: 1) ?? 1
         }
 
         return dictionary
@@ -144,9 +144,9 @@ public extension SequenceType where Generator.Element: Hashable {
     /// - Note: Alternatively, one could pass the sequence to Set to remove duplicates
 
     @warn_unused_result
-    func unique() -> [Generator.Element] {
+    func unique() -> [Iterator.Element] {
 
-        var array = Set<Generator.Element>()
+        var array = Set<Iterator.Element>()
 
         return filter {
 
