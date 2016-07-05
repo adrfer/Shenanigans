@@ -14,24 +14,24 @@ import Shenanigans
 
 class BoolTests: XCTestCase {
 
-    func testToggleInPlace() {
-
-        var value = false
-
-        value.toggleInPlace()
-        XCTAssertTrue(value)
-
-        value.toggleInPlace()
-        XCTAssertFalse(value)
-    }
-
     func testToggle() {
 
         var value = false
-        XCTAssertTrue(value.toggle())
+
+        value.toggle()
+        XCTAssertTrue(value)
+
+        value.toggle()
+        XCTAssertFalse(value)
+    }
+
+    func testToggled() {
+
+        var value = false
+        XCTAssertTrue(value.toggled())
 
         value = true
-        XCTAssertFalse(value.toggle())
+        XCTAssertFalse(value.toggled())
     }
 
     func testRandom() {
@@ -42,9 +42,9 @@ class BoolTests: XCTestCase {
             XCTAssertTrue([true, false].contains(value))
 
             if value {
-                XCTAssertFalse(value.toggle())
+                XCTAssertFalse(value.toggled())
             } else {
-                XCTAssertTrue(value.toggle())
+                XCTAssertTrue(value.toggled())
             }
         }
     }
