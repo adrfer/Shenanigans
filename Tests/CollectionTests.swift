@@ -12,12 +12,12 @@ import XCTest
 @testable
 import Shenanigans
 
-class CollectionTypeTests: XCTestCase {
+class CollectionTests: XCTestCase {
 
-    func testShuffle() {
+    func testShuffled() {
 
         let first = Array(-7 ... 7)
-        let second = first.shuffle()
+        let second = first.shuffled()
 
         XCTAssertEqual(first.count, second.count)
 
@@ -25,17 +25,17 @@ class CollectionTypeTests: XCTestCase {
             XCTAssertTrue(second.contains(value))
         }
 
-        XCTAssertEqual(first.sort(), second.sort())
+        XCTAssertEqual(first.sorted(), second.sorted())
     }
 
-    func testSample() {
+    func testSampled() {
 
         var first = [Int]()
-        var second = first.sample()
+        var second = first.sampled()
         XCTAssertNil(second)
 
         first = Array(-7 ... 7)
-        second = first.sample()
+        second = first.sampled()
         XCTAssertNotNil(second)
         XCTAssertTrue(first.contains(second!))
     }

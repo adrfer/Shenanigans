@@ -12,14 +12,14 @@ import XCTest
 @testable
 import Shenanigans
 
-class MutableCollectionType: XCTestCase {
+class MutableCollection: XCTestCase {
 
-    func testShuffleInPlace() {
+    func testShuffle() {
 
         var first = Array(-7 ... 7)
         let second = first
 
-        first.shuffleInPlace()
+        first.shuffle()
 
         XCTAssertEqual(first.count, second.count)
 
@@ -27,6 +27,6 @@ class MutableCollectionType: XCTestCase {
             XCTAssertTrue(first.contains(value))
         }
 
-        XCTAssertEqual(first.sort(), second.sort())
+        XCTAssertEqual(first.sorted(), second.sorted())
     }
 }

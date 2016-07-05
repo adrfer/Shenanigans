@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension CollectionType {
+public extension Collection {
 
     // MARK: - Instance Methods
 
@@ -16,17 +16,17 @@ public extension CollectionType {
     ///
     /// - Returns: A copy of `self` with its elements shuffled
 
-    @warn_unused_result(mutable_variant="shuffleInPlace")
-    func shuffle() -> [Generator.Element] {
+    @warn_unused_result(mutable_variant:"shuffle")
+    func shuffled() -> [Iterator.Element] {
 
         var array = Array(self)
-        array.shuffleInPlace()
+        array.shuffle()
 
         return array
     }
 }
 
-public extension CollectionType where Index.Distance == Int {
+public extension Collection where IndexDistance == Int {
 
     // MARK: - Instance Methods
 
@@ -35,20 +35,19 @@ public extension CollectionType where Index.Distance == Int {
     /// - Returns: An optional random element from `self`, or `nil` if `self` is empty
 
     @warn_unused_result
-    func sample() -> Generator.Element? {
+    func sampled() -> Iterator.Element? {
 
         guard !isEmpty else {
             return nil
         }
 
         let offset = Int.random(from: 0, to: count - 1)
-        let index = startIndex.advancedBy(offset)
 
-        return self[index]
+        return self[index(startIndex, offsetBy: offset)]
     }
 }
 
-public extension CollectionType where Index: Comparable {
+public extension Collection where Index: Comparable {
 
     // MARK: - Subscripts
 
@@ -62,8 +61,8 @@ public extension CollectionType where Index: Comparable {
 
     subscript(clamping range: Range<Index>) -> SubSequence {
 
-        let startIndex = max(self.startIndex, range.startIndex)
-        let endIndex = min(self.endIndex, range.endIndex)
+        let startIndex = Swift.max(self.startIndex, range.lowerBound)
+        let endIndex = Swift.min(self.endIndex, range.upperBound)
 
         return self[startIndex ..< endIndex]
     }
@@ -78,7 +77,7 @@ public extension CollectionType where Index: Comparable {
 
     subscript(checking range: Range<Index>) -> SubSequence? {
 
-        guard range.startIndex >= startIndex && range.endIndex <= endIndex else {
+        guard range.lowerBound >= startIndex && range.upperBound <= endIndex else {
             return nil
         }
 
@@ -93,7 +92,7 @@ public extension CollectionType where Index: Comparable {
     ///
     /// - Note: This behaviour avoids throwing a fatal error in execution time
 
-    subscript(checking index: Index) -> Generator.Element? {
+    subscript(checking index: Index) -> Iterator.Element? {
 
         guard index >= startIndex && index < endIndex else {
             return nil

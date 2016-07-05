@@ -8,7 +8,7 @@
 
 import Foundation
 
-public extension MutableCollectionType where Self.Index == Int {
+public extension MutableCollection where Index == Int, IndexDistance == Int {
 
     // MARK: - Instance Methods
 
@@ -16,7 +16,7 @@ public extension MutableCollectionType where Self.Index == Int {
     ///
     /// - Note: This implementation uses the Fisher–Yates algorithm
 
-    mutating func shuffleInPlace() {
+    mutating func shuffle() {
 
         guard count > 1 else {
             return
