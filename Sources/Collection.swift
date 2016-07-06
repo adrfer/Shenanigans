@@ -16,7 +16,7 @@ public extension Collection {
     ///
     /// - Returns: A copy of `self` with its elements shuffled
 
-    @warn_unused_result(mutable_variant:"shuffle")
+    @discardableResult
     func shuffled() -> [Iterator.Element] {
 
         var array = Array(self)
@@ -34,7 +34,7 @@ public extension Collection where IndexDistance == Int {
     ///
     /// - Returns: An optional random element from `self`, or `nil` if `self` is empty
 
-    @warn_unused_result
+    @discardableResult
     func sampled() -> Iterator.Element? {
 
         guard !isEmpty else {

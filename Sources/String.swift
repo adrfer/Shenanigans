@@ -19,7 +19,7 @@ public extension String {
     ///
     /// - Returns: A new truncated string with optional trailing characters appended
 
-    @warn_unused_result
+    @discardableResult
     func truncated(after count: Int, trailing: String? = "...") -> String {
 
         guard !isEmpty && characters.count > count else {

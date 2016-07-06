@@ -23,7 +23,7 @@ public extension Bool {
     ///
     /// - Returns: A toggled `self`
     
-    @warn_unused_result(mutable_variant:"toggle")
+    @discardableResult
     func toggled() -> Bool {
 
         var value = self
@@ -38,7 +38,7 @@ public extension Bool {
     ///
     /// - Returns: A random bool value
 
-    @warn_unused_result
+    @discardableResult
     static func random() -> Bool {
 
         return [true, false].sampled()!

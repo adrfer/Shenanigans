@@ -18,7 +18,7 @@ public extension Sequence {
     ///
     /// - Returns: A subsequence containing all elements of `self` but those the predicate was false
 
-    @warn_unused_result
+    @discardableResult
     func drop(while predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
 
         var array = Array(self)
@@ -39,7 +39,7 @@ public extension Sequence {
     ///
     /// - Returns: A new array containing all elements of `self` for which the predicate was true
 
-    @warn_unused_result
+    @discardableResult
     func take(while predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
 
         var array = ContiguousArray<Iterator.Element>()
@@ -60,7 +60,7 @@ public extension Sequence {
     ///
     /// - Returns: The first element where `predicate` is `true`, `nil` otherwise
 
-    @warn_unused_result
+    @discardableResult
     func find(where predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> Iterator.Element? {
 
         for element in self where try predicate(element) {
@@ -76,7 +76,7 @@ public extension Sequence {
     ///
     /// - Returns: True iff any element in `self` satisfies `predicate`, false otherwise
 
-    @warn_unused_result
+    @discardableResult
     func any(where predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> Bool {
 
         for element in self where try predicate(element) {
@@ -92,7 +92,7 @@ public extension Sequence {
     ///
     /// - Returns: True iff every element in `self` satisfies `predicate`, false otherwise
 
-    @warn_unused_result
+    @discardableResult
     func all(where predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> Bool {
 
         for element in self where try !predicate(element) {
@@ -108,7 +108,7 @@ public extension Sequence {
     ///
     /// - Returns: True iff every element in `self` does not satisfy `predicate`, false otherwise
 
-    @warn_unused_result
+    @discardableResult
     func none(where predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> Bool {
 
         for element in self where try predicate(element) {
@@ -125,7 +125,7 @@ public extension Sequence where Iterator.Element: Hashable {
     ///
     /// - Returns: A dictionary where the keys are the elements of `self`, and the values are their frequencies
 
-    @warn_unused_result
+    @discardableResult
     func frequencies() -> [Iterator.Element: Int] {
 
         var dictionary = Dictionary<Iterator.Element, Int>()
@@ -143,7 +143,7 @@ public extension Sequence where Iterator.Element: Hashable {
     ///
     /// - Note: Alternatively, one could pass the sequence to Set to remove duplicates
 
-    @warn_unused_result
+    @discardableResult
     func unique() -> [Iterator.Element] {
 
         var array = Set<Iterator.Element>()
