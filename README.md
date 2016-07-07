@@ -1,7 +1,7 @@
 # Shenanigans
 Just a collection of some sleek Swift shenanigans.
 
-Tested on `Xcode 7.3` and `Swift 2.2`.
+The code was tested on `Xcode 8` and `Swift 3`.
 
 ## Install
 
@@ -10,7 +10,6 @@ Shenanigans can currently be installed in one of three ways:
 * [Carthage](#carthage)
 * [CocoaPods](#cocoapods)
 * [Git Submodules](#git-submodules)
-
 
 ### Carthage
 
