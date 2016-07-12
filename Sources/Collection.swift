@@ -61,12 +61,10 @@ public extension Collection where Index: Comparable {
 
     subscript(clamping range: Range<Index>) -> SubSequence {
 
-        let startIndex = Swift.min(Swift.max(self.startIndex, range.lowerBound), self.endIndex)
-        let endIndex = Swift.max(Swift.min(self.endIndex, range.upperBound), self.startIndex)
+        let clamped = range.clamped(to: (startIndex ..< endIndex))
+        return self[clamped]
 
-        return self[startIndex ..< endIndex]
     }
-
 
     /// Slice a collection by first checking if a range is out of bounds
     ///
