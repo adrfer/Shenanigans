@@ -53,34 +53,43 @@ public extension Collection where Index: Comparable {
 
     /// Slice a collection by first clamping the range to its bounds
     ///
-    /// - Parameter range: The range of values used to slice the collection
+    /// - Parameter bounds: The range of values used to slice the collection
     ///
     /// - Returns: A bounded subsequence
     ///
     /// - Note: This behaviour avoids throwing a fatal error in execution time
 
-    subscript(clamping range: Range<Index>) -> SubSequence {
+    subscript(clamping bounds: Range<Index>) -> SubSequence {
 
-        let clamped = range.clamped(to: (startIndex ..< endIndex))
+        let clamped = bounds.clamped(to: startIndex ..< endIndex)
         return self[clamped]
+    }
 
+    subscript(clamping bounds: ClosedRange<Index>) -> SubSequence {
+
+        let range = bounds.lowerBound ..< index(bounds.upperBound, offsetBy: 1)
+        let clamped = range.clamped(to: startIndex ..< endIndex)
+        return self[clamped]
     }
 
     /// Slice a collection by first checking if a range is out of bounds
     ///
-    /// - Parameter range: The range of values used to slice the collection
+    /// - Parameter bounds: The range of values used to slice the collection
     ///
     /// - Returns: A bounded subsequence, or `nil` when the range is out of bounds
     ///
     /// - Note: This behaviour avoids throwing a fatal error in execution time
 
-    subscript(checking range: Range<Index>) -> SubSequence? {
+    subscript(checking bounds: Range<Index>) -> SubSequence? {
 
-        guard range.lowerBound >= startIndex && range.upperBound <= endIndex else {
-            return nil
-        }
+        let range = startIndex ... endIndex
+        return range.contains(bounds.lowerBound) && range.contains(bounds.upperBound) ? self[bounds] : nil
+    }
 
-        return self[range]
+    subscript(checking bounds: ClosedRange<Index>) -> SubSequence? {
+
+        let range = bounds.lowerBound ..< index(bounds.upperBound, offsetBy: 1)
+        return self[checking: range]
     }
 
     /// Slice a collection by first checking if index is out of bounds

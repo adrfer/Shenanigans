@@ -48,16 +48,16 @@ class CollectionTests: XCTestCase {
         XCTAssertEqual([1, 2], array[clamping: -1 ..< 2])
         XCTAssertEqual([2], array[clamping: 1 ..< 2])
         XCTAssertEqual([], array[clamping: 3 ..< 4])
-//        XCTAssertEqual([3], array[clamping: 2 ... 4])
+        XCTAssertEqual([3], array[clamping: 2 ... 4])
 
         XCTAssertNil(array[checking: -2 ..< -1])
         XCTAssertNil(array[checking: -1 ..< 2])
-//        XCTAssertNil(array[checking: -1 ... 4])
+        XCTAssertNil(array[checking: -1 ... 4])
         XCTAssertNil(array[checking: 2 ..< 5])
-//        XCTAssertNil(array[checking: 3 ... 5])
+        XCTAssertNil(array[checking: 3 ... 5])
 
         XCTAssertEqual([1, 2, 3], array[checking: 0 ..< 3]!)
-//        XCTAssertEqual([2, 3], array[checking: 1 ... 2]!)
+        XCTAssertEqual([2, 3], array[checking: 1 ... 2]!)
         XCTAssertEqual([2], array[checking: 1 ..< 2]!)
 
         XCTAssertNil(array[checking: -1])
