@@ -18,7 +18,6 @@ public extension String {
     ///   - trailing: The optional trailing characters to be appended
     ///
     /// - Returns: A new truncated string with optional trailing characters appended
-
     @discardableResult
     func truncated(after count: Int, trailing: String? = "...") -> String {
 
