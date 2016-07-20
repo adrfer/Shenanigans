@@ -15,7 +15,6 @@ public extension Int {
     /// Check whether `self` is even
     ///
     /// - Returns: True iff `self` is even, false otherwise
-
     var isEven: Bool {
 
         return self % 2 == 0
@@ -24,7 +23,6 @@ public extension Int {
     /// Check whether `self` is odd
     ///
     /// - Returns: True iff `self` is odd, false otherwise
-
     var isOdd: Bool {
 
         return !isEven
@@ -33,7 +31,6 @@ public extension Int {
     /// Check whether `self` is positive
     ///
     /// - Returns: True iff `self` is greater than zero, false otherwise
-
     var isPositive: Bool {
 
         return self > 0
@@ -42,7 +39,6 @@ public extension Int {
     /// Check whether `self` is negative
     ///
     /// - Returns: True iff `self` is less than zero, false otherwise
-
     var isNegative: Bool {
 
         return self < 0
@@ -51,7 +47,6 @@ public extension Int {
     /// Check whether `self` is non-positive
     ///
     /// - Returns: True iff `self` is less than or equal to zero, false otherwise
-
     var isNonPositive: Bool {
 
         return self <= 0
@@ -60,7 +55,6 @@ public extension Int {
     /// Check whether `self` is non-negative
     ///
     /// - Returns: True iff `self` is greater than or equal to zero, false otherwise
-
     var isNonNegative: Bool {
 
         return self >= 0
@@ -69,7 +63,6 @@ public extension Int {
     /// Check whether `self` is non-zero
     ///
     /// - Returns: True iff `self` is not zero, false otherwise
-
     var isNonZero: Bool {
 
         return self != 0
@@ -80,7 +73,6 @@ public extension Int {
     /// Repeat a block of code `self` times
     ///
     /// - Parameter closure: The code to be executed `self` times
-
     func times(_ closure: @noescape () -> Void) {
 
         guard self > 0 else {
@@ -95,7 +87,6 @@ public extension Int {
     /// Repeat a block of code `self` times
     ///
     /// - Parameter closure: The code to be executed `self` times
-
     func times(_ closure: @noescape (Int) -> Void) {
 
         guard self > 0 else {
@@ -114,7 +105,6 @@ public extension Int {
     ///   - upper: Non-inclusive upper bound value
     ///   - step: The step used to stride over a half-open interval
     ///   - closure: The block of code to be executed
-
     func up(to upper: Int, by step: Int = 1, _ closure: @noescape () -> Void) {
 
         for _ in Swift.stride(from: self, to: upper, by: step) {
@@ -129,7 +119,6 @@ public extension Int {
     ///   - lower: Inclusive lower bound value
     ///   - step: The step used to stride over the closed interval
     ///   - closure: The block of code to be executed
-
     func down(to lower: Int, by step: Int = -1, _ closure: @noescape () -> Void) {
 
         for _ in Swift.stride(from: self, through: lower, by: step).reversed() {
@@ -142,7 +131,6 @@ public extension Int {
     /// - Parameter other: The denominator or divisor
     ///
     /// - Returns: True iff `self` is divisible, false otherwise
-
     @discardableResult
     func isDivisible(by other: Int) -> Bool {
 
@@ -163,7 +151,6 @@ public extension Int {
     ///   - upper: Inclusive upper bound value
     ///
     /// - Returns: A random integer between `lower` and `upper` bounds
-
     @discardableResult
     static func random(from lower: Int, to upper: Int) -> Int {
 
