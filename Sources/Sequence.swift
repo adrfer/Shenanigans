@@ -17,7 +17,6 @@ public extension Sequence {
     /// - Parameter predicate: The predicate called on each element of `self`
     ///
     /// - Returns: A subsequence containing all elements of `self` but those the predicate was false
-
     @discardableResult
     func drop(while predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
 
@@ -38,7 +37,6 @@ public extension Sequence {
     /// - Parameter predicate: The predicate called on each element of `self`
     ///
     /// - Returns: A new array containing all elements of `self` for which the predicate was true
-
     @discardableResult
     func take(while predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
 
@@ -59,7 +57,6 @@ public extension Sequence {
     /// - Parameter predicate: The predicate called on each element of `self`
     ///
     /// - Returns: The first element where `predicate` is `true`, `nil` otherwise
-
     @discardableResult
     func find(where predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> Iterator.Element? {
 
@@ -75,7 +72,6 @@ public extension Sequence {
     /// - Parameter predicate: The predicate called on each element of `self`
     ///
     /// - Returns: True iff any element in `self` satisfies `predicate`, false otherwise
-
     @discardableResult
     func any(where predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> Bool {
 
@@ -91,7 +87,6 @@ public extension Sequence {
     /// - Parameter predicate: The predicate called on each element of `self`
     ///
     /// - Returns: True iff every element in `self` satisfies `predicate`, false otherwise
-
     @discardableResult
     func all(where predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> Bool {
 
@@ -107,7 +102,6 @@ public extension Sequence {
     /// - Parameter predicate: The predicate called on each element of `self`
     ///
     /// - Returns: True iff every element in `self` does not satisfy `predicate`, false otherwise
-
     @discardableResult
     func none(where predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> Bool {
 
@@ -124,7 +118,6 @@ public extension Sequence where Iterator.Element: Hashable {
     /// Get the frequencies of the elements of `self`
     ///
     /// - Returns: A dictionary where the keys are the elements of `self`, and the values are their frequencies
-
     @discardableResult
     func frequencies() -> [Iterator.Element: Int] {
 
@@ -142,7 +135,6 @@ public extension Sequence where Iterator.Element: Hashable {
     /// - Returns: All unique elements of `self`
     ///
     /// - Note: Alternatively, one could pass the sequence to Set to remove duplicates
-
     @discardableResult
     func unique() -> [Iterator.Element] {
 
