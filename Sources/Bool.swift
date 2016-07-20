@@ -13,7 +13,6 @@ public extension Bool {
     // MARK: - Instance Methods
 
     /// Toggle `self` by mutating it
-
     mutating func toggle() {
 
         self = !self
@@ -22,7 +21,6 @@ public extension Bool {
     /// Toggle `self`
     ///
     /// - Returns: A toggled `self`
-    
     @discardableResult
     func toggled() -> Bool {
 
@@ -37,7 +35,6 @@ public extension Bool {
     /// Generate a uniformly distributed random bool
     ///
     /// - Returns: A random bool value
-
     @discardableResult
     static func random() -> Bool {
 
