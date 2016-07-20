@@ -15,7 +15,6 @@ public extension MutableCollection where Index == Int, IndexDistance == Int {
     /// Shuffle elements of `self` by mutating `self`
     ///
     /// - Note: This implementation uses the Fisher–Yates algorithm
-
     mutating func shuffle() {
 
         guard count > 1 else {
