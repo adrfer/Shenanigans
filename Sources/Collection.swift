@@ -15,7 +15,6 @@ public extension Collection {
     /// Shuffle elements of `self`
     ///
     /// - Returns: A copy of `self` with its elements shuffled
-
     @discardableResult
     func shuffled() -> [Iterator.Element] {
 
@@ -33,7 +32,6 @@ public extension Collection where IndexDistance == Int {
     /// Choose a random element from `self`
     ///
     /// - Returns: An optional random element from `self`, or `nil` if `self` is empty
-
     @discardableResult
     func sampled() -> Iterator.Element? {
 
@@ -58,7 +56,6 @@ public extension Collection where Index: Comparable {
     /// - Returns: A bounded subsequence
     ///
     /// - Note: This behaviour avoids throwing a fatal error in execution time
-
     subscript(clamping bounds: Range<Index>) -> SubSequence {
 
         let clamped = bounds.clamped(to: startIndex ..< endIndex)
@@ -79,7 +76,6 @@ public extension Collection where Index: Comparable {
     /// - Returns: A bounded subsequence, or `nil` when the range is out of bounds
     ///
     /// - Note: This behaviour avoids throwing a fatal error in execution time
-
     subscript(checking bounds: Range<Index>) -> SubSequence? {
 
         let range = startIndex ... endIndex
@@ -99,7 +95,6 @@ public extension Collection where Index: Comparable {
     /// - Returns: An element of the collection, or `nil` iff it is out of bounds
     ///
     /// - Note: This behaviour avoids throwing a fatal error in execution time
-
     subscript(checking index: Index) -> Iterator.Element? {
 
         guard index >= startIndex && index < endIndex else {
