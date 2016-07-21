@@ -10,6 +10,16 @@ import Foundation
 
 public extension String {
 
+    // MARK: - Instance Properties
+
+    /// Count the number of characters in `self`
+    ///
+    /// - Returns: The lenght of `self`
+    var count: Int {
+
+        return characters.count
+    }
+
     ///  Truncate a string down to a specific number of characters
     ///
     /// - Parameters:

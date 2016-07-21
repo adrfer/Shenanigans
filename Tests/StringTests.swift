@@ -14,6 +14,15 @@ import Shenanigans
 
 class StringTests: XCTestCase {
 
+    func testCount() {
+
+        XCTAssertEqual("".count, 0)
+        XCTAssertEqual("7".count, 1)
+        XCTAssertEqual("👍".count, 1)
+        XCTAssertEqual("👍👍👍".count, 3)
+        XCTAssertEqual("Lorem ipsum...".count, 14)
+    }
+
     func testTruncated() {
 
         var value = ""
