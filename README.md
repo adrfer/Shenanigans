@@ -1,7 +1,7 @@
 # Shenanigans
 Just a collection of some sleek Swift shenanigans.
 
-The code was tested on `Xcode 8` and `Swift 3`.
+Tested on `Xcode 8` and `Swift 3`.
 
 ## Install
 
