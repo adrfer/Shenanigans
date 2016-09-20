@@ -1,5 +1,5 @@
 //
-//  IntTests.swift
+//  MutableCollectionTests.swift
 //  Shenanigans
 //
 //  Created by Adriano Ferreira on 2016-05-06.
@@ -12,7 +12,7 @@ import XCTest
 @testable
 import Shenanigans
 
-class MutableCollection: XCTestCase {
+class MutableCollectionTests: XCTestCase {
 
     func testShuffle() {
 

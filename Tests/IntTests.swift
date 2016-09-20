@@ -12,7 +12,7 @@ import XCTest
 @testable
 import Shenanigans
 
-class ShenanigansTests: XCTestCase {
+class IntTests: XCTestCase {
 
     func testIsEven() {
 

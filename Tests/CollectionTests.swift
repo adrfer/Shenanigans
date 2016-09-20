@@ -1,5 +1,5 @@
 //
-//  CollectionTypeTests.swift
+//  CollectionTests.swift
 //  Shenanigans
 //
 //  Created by Adriano Ferreira on 2016-02-29.

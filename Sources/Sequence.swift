@@ -18,7 +18,7 @@ public extension Sequence {
     ///
     /// - Returns: A subsequence containing all elements of `self` but those the predicate was false
     @discardableResult
-    func drop(while predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
+    func drop(while predicate: (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
 
         var array = Array(self)
         var generator = makeIterator()
@@ -38,7 +38,7 @@ public extension Sequence {
     ///
     /// - Returns: A new array containing all elements of `self` for which the predicate was true
     @discardableResult
-    func take(while predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
+    func take(while predicate: (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
 
         var array = ContiguousArray<Iterator.Element>()
         var generator = makeIterator()
@@ -58,7 +58,7 @@ public extension Sequence {
     ///
     /// - Returns: The first element where `predicate` is `true`, `nil` otherwise
     @discardableResult
-    func find(where predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> Iterator.Element? {
+    func find(where predicate: (Iterator.Element) throws -> Bool) rethrows -> Iterator.Element? {
 
         for element in self where try predicate(element) {
             return element
@@ -73,7 +73,7 @@ public extension Sequence {
     ///
     /// - Returns: True iff any element in `self` satisfies `predicate`, false otherwise
     @discardableResult
-    func any(where predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> Bool {
+    func any(where predicate: (Iterator.Element) throws -> Bool) rethrows -> Bool {
 
         for element in self where try predicate(element) {
             return true
@@ -88,7 +88,7 @@ public extension Sequence {
     ///
     /// - Returns: True iff every element in `self` satisfies `predicate`, false otherwise
     @discardableResult
-    func all(where predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> Bool {
+    func all(where predicate: (Iterator.Element) throws -> Bool) rethrows -> Bool {
 
         for element in self where try !predicate(element) {
             return false
@@ -103,7 +103,7 @@ public extension Sequence {
     ///
     /// - Returns: True iff every element in `self` does not satisfy `predicate`, false otherwise
     @discardableResult
-    func none(where predicate: @noescape (Iterator.Element) throws -> Bool) rethrows -> Bool {
+    func none(where predicate: (Iterator.Element) throws -> Bool) rethrows -> Bool {
 
         for element in self where try predicate(element) {
             return false

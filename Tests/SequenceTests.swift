@@ -1,5 +1,5 @@
 //
-//  SequenceTypeTests.swift
+//  SequenceTests.swift
 //  Shenanigans
 //
 //  Created by Adriano Ferreira on 2016-03-09.
@@ -12,7 +12,7 @@ import XCTest
 @testable
 import Shenanigans
 
-class SequenceTypeTests: XCTestCase {
+class SequenceTests: XCTestCase {
 
     func testDrop() {
 

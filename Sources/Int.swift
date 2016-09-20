@@ -73,7 +73,7 @@ public extension Int {
     /// Repeat a block of code `self` times
     ///
     /// - Parameter closure: The code to be executed `self` times
-    func times(_ closure: @noescape () -> Void) {
+    func times(_ closure: () -> Void) {
 
         guard self > 0 else {
             return
@@ -87,7 +87,7 @@ public extension Int {
     /// Repeat a block of code `self` times
     ///
     /// - Parameter closure: The code to be executed `self` times
-    func times(_ closure: @noescape (Int) -> Void) {
+    func times(_ closure: (Int) -> Void) {
 
         guard self > 0 else {
             return
@@ -105,7 +105,7 @@ public extension Int {
     ///   - upper: Non-inclusive upper bound value
     ///   - step: The step used to stride over a half-open interval
     ///   - closure: The block of code to be executed
-    func up(to upper: Int, by step: Int = 1, _ closure: @noescape () -> Void) {
+    func up(to upper: Int, by step: Int = 1, _ closure: () -> Void) {
 
         for _ in Swift.stride(from: self, to: upper, by: step) {
             closure()
@@ -119,7 +119,7 @@ public extension Int {
     ///   - lower: Inclusive lower bound value
     ///   - step: The step used to stride over the closed interval
     ///   - closure: The block of code to be executed
-    func down(to lower: Int, by step: Int = -1, _ closure: @noescape () -> Void) {
+    func down(to lower: Int, by step: Int = -1, _ closure: () -> Void) {
 
         for _ in Swift.stride(from: self, through: lower, by: step).reversed() {
             closure()
