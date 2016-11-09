@@ -12,21 +12,21 @@ public extension Sequence {
     
     // MARK: - Instance Methods
     
-    /// Drop elements of `self` that satisfy the given predicate
+    /// Drop elements of `self` that satisfy a given condition
     ///
-    /// - Parameter predicate: The predicate called on each element of `self`
+    /// - Parameter condition: The predicate called on each element of `self`
     ///
-    /// - Returns: A subsequence containing all elements of `self` but those the predicate was false
+    /// - Returns: A subsequence containing all elements of `self` but those the `condition` is `false`
     
     @discardableResult
-    func drop(while predicate: (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
+    func drop(while condition: (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
         
         var array = Array(self)
         var generator = makeIterator()
         
         while let element = generator.next() {
             
-            if try !predicate(element) {
+            if try !condition(element) {
                 break
             }
             
@@ -36,21 +36,21 @@ public extension Sequence {
         return AnySequence(array)
     }
     
-    /// Take elements of `self` that satisfy the given predicate
+    /// Take elements of `self` that satisfy a given condition
     ///
-    /// - Parameter predicate: The predicate called on each element of `self`
+    /// - Parameter condition: The predicate called on each element of `self`
     ///
-    /// - Returns: A new array containing all elements of `self` for which the predicate was true
+    /// - Returns: A new array containing all elements of `self` for which `condition` is `true`
     
     @discardableResult
-    func take(while predicate: (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
+    func take(while condition: (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
         
         var array = ContiguousArray<Iterator.Element>()
         var generator = makeIterator()
         
         while let element = generator.next() {
             
-            if try !predicate(element) {
+            if try !condition(element) {
                 break
             }
             
@@ -60,59 +60,59 @@ public extension Sequence {
         return AnySequence(array)
     }
     
-    /// Find the first element of `self` that satisfies the given predicate
+    /// Find the first element of `self` that satisfies a given condition
     ///
-    /// - Parameter predicate: The predicate called on each element of `self`
+    /// - Parameter condition: The predicate called on each element of `self`
     ///
-    /// - Returns: The first element where `predicate` is `true`, `nil` otherwise
+    /// - Returns: The first element where `condition` is `true`, `nil` otherwise
     
     @discardableResult
-    func find(where predicate: (Iterator.Element) throws -> Bool) rethrows -> Iterator.Element? {
+    func find(where condition: (Iterator.Element) throws -> Bool) rethrows -> Iterator.Element? {
         
-        for element in self where try predicate(element) {
+        for element in self where try condition(element) {
             return element
         }
         
         return nil
     }
     
-    /// Check if at least one element of `self` satisfies the given condition
+    /// Check if at least one element of `self` satisfies a given condition
     ///
     /// - Parameter condition: The predicate called on each element of `self`
     ///
-    /// - Returns: True iff any element in `self` satisfies `condition`, false otherwise
+    /// - Returns: `true` iff any element in `self` satisfies `condition`, `false` otherwise
     
     @discardableResult
     func any(where condition: (Iterator.Element) throws -> Bool) rethrows -> Bool {
         return try first(where: condition) != nil
     }
     
-    /// Check if all elements of `self` satisfy a given predicate the given predicate
+    /// Check if all elements of `self` satisfy a given condition
     ///
-    /// - Parameter predicate: The predicate called on each element of `self`
+    /// - Parameter condition: The predicate called on each element of `self`
     ///
-    /// - Returns: True iff every element in `self` satisfies `predicate`, false otherwise
+    /// - Returns: `true` iff every element in `self` satisfies `condition`, `false` otherwise
     
     @discardableResult
-    func all(where predicate: (Iterator.Element) throws -> Bool) rethrows -> Bool {
+    func all(where condition: (Iterator.Element) throws -> Bool) rethrows -> Bool {
         
-        for element in self where try !predicate(element) {
+        for element in self where try !condition(element) {
             return false
         }
         
         return true
     }
     
-    /// Check if none elements of `self` satisfy a given predicate the given predicate
+    /// Check if none elements of `self` satisfy a given condition
     ///
-    /// - Parameter predicate: The predicate called on each element of `self`
+    /// - Parameter condition: The predicate called on each element of `self`
     ///
-    /// - Returns: True iff every element in `self` does not satisfy `predicate`, false otherwise
+    /// - Returns: `true` iff every element in `self` does not satisfy `condition`, `false` otherwise
     
     @discardableResult
-    func none(where predicate: (Iterator.Element) throws -> Bool) rethrows -> Bool {
+    func none(where condition: (Iterator.Element) throws -> Bool) rethrows -> Bool {
         
-        for element in self where try predicate(element) {
+        for element in self where try condition(element) {
             return false
         }
         
@@ -126,7 +126,7 @@ public extension Sequence where Iterator.Element: Hashable {
     
     /// Get the frequencies of the elements of `self`
     ///
-    /// - Returns: A dictionary where the keys are the elements of `self`, and the values are their frequencies
+    /// - Returns: A dictionary where keys are the elements of `self`, and the values are their frequencies
     
     @discardableResult
     func frequencies() -> [Iterator.Element: Int] {
@@ -143,8 +143,6 @@ public extension Sequence where Iterator.Element: Hashable {
     /// Get the unique elements of `self`
     ///
     /// - Returns: All unique elements of `self`
-    ///
-    /// - Note: Alternatively, one could pass the sequence to Set to remove duplicates
     
     @discardableResult
     func unique() -> [Iterator.Element] {
