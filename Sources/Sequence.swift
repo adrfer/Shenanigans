@@ -76,20 +76,15 @@ public extension Sequence {
         return nil
     }
     
-    /// Check if at least one element of `self` satisfies the given predicate
+    /// Check if at least one element of `self` satisfies the given condition
     ///
-    /// - Parameter predicate: The predicate called on each element of `self`
+    /// - Parameter condition: The predicate called on each element of `self`
     ///
-    /// - Returns: True iff any element in `self` satisfies `predicate`, false otherwise
+    /// - Returns: True iff any element in `self` satisfies `condition`, false otherwise
     
     @discardableResult
-    func any(where predicate: (Iterator.Element) throws -> Bool) rethrows -> Bool {
-        
-        for element in self where try predicate(element) {
-            return true
-        }
-        
-        return false
+    func any(where condition: (Iterator.Element) throws -> Bool) rethrows -> Bool {
+        return try first(where: condition) != nil
     }
     
     /// Check if all elements of `self` satisfy a given predicate the given predicate
