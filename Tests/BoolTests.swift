@@ -13,34 +13,34 @@ import XCTest
 import Shenanigans
 
 class BoolTests: XCTestCase {
-
+    
     func testToggle() {
-
+        
         var value = false
-
+        
         value.toggle()
         XCTAssertTrue(value)
-
+        
         value.toggle()
         XCTAssertFalse(value)
     }
-
+    
     func testToggled() {
-
+        
         var value = false
         XCTAssertTrue(value.toggled())
-
+        
         value = true
         XCTAssertFalse(value.toggled())
     }
-
+    
     func testRandom() {
-
+        
         7.times {
             let value = Bool.random()
-
+            
             XCTAssertTrue([true, false].contains(value))
-
+            
             if value {
                 XCTAssertFalse(value.toggled())
             } else {
