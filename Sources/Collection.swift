@@ -51,7 +51,7 @@ public extension Collection where Index: Comparable {
     
     // MARK: - Subscripts
     
-    /// Slice a collection by first clamping the range to its bounds
+    /// Slice `self` by first clamping the range to its bounds
     ///
     /// - Parameter bounds: The range of values used to slice the collection
     ///
@@ -74,11 +74,11 @@ public extension Collection where Index: Comparable {
         return self[clamped]
     }
     
-    /// Slice a collection by first checking if a range is out of bounds
+    /// Slice `self` by first checking if the range is within bounds
     ///
     /// - Parameter bounds: The range of values used to slice the collection
     ///
-    /// - Returns: A bounded subsequence, or `nil` when the range is out of bounds
+    /// - Returns: A bounded subsequence or `nil` when the range is out of bounds
     ///
     /// - Note: This behaviour avoids throwing a fatal error in execution time
     
@@ -96,11 +96,11 @@ public extension Collection where Index: Comparable {
         return self[checking: range]
     }
     
-    /// Slice a collection by first checking if index is out of bounds
+    /// Slice `self` by first checking if the index is within bounds
     ///
     /// - Parameter index: The index used to slice the collection
     ///
-    /// - Returns: An element of the collection, or `nil` iff it is out of bounds
+    /// - Returns: An element of the collection or `nil` iff it is out of bounds
     ///
     /// - Note: This behaviour avoids throwing a fatal error in execution time
     
