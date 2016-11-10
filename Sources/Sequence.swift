@@ -16,7 +16,7 @@ public extension Sequence {
     ///
     /// - Parameter condition: The predicate called on each element of `self`
     ///
-    /// - Returns: A subsequence containing all elements of `self` but those the `condition` is `false`
+    /// - Returns: A new sequence containing all elements of `self` except those where the `condition` is `false`
     
     @discardableResult
     func drop(while condition: (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
@@ -40,7 +40,7 @@ public extension Sequence {
     ///
     /// - Parameter condition: The predicate called on each element of `self`
     ///
-    /// - Returns: A new array containing all elements of `self` for which `condition` is `true`
+    /// - Returns: A new sequence containing all elements of `self` for which `condition` is `true`
     
     @discardableResult
     func take(while condition: (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
@@ -103,7 +103,7 @@ public extension Sequence {
         return true
     }
     
-    /// Check if none elements of `self` satisfy a given condition
+    /// Check if no elements of `self` satisfy a given condition
     ///
     /// - Parameter condition: The predicate called on each element of `self`
     ///
@@ -124,9 +124,9 @@ public extension Sequence where Iterator.Element: Hashable {
  
     // MARK: - Instance Methods
     
-    /// Get the frequencies of the elements of `self`
+    /// Get the frequencies of each element of `self`
     ///
-    /// - Returns: A dictionary where keys are the elements of `self`, and the values are their frequencies
+    /// - Returns: A new dictionary where keys are the elements of `self`, and values are their frequencies
     
     @discardableResult
     func frequencies() -> [Iterator.Element: Int] {
@@ -142,7 +142,7 @@ public extension Sequence where Iterator.Element: Hashable {
     
     /// Get the unique elements of `self`
     ///
-    /// - Returns: All unique elements of `self`
+    /// - Returns: A new array containing all unique elements of `self`
     
     @discardableResult
     func unique() -> [Iterator.Element] {
