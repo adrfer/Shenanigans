@@ -14,7 +14,7 @@ public extension Int {
     
     /// Check whether `self` is even
     ///
-    /// - Returns: True iff `self` is even, false otherwise
+    /// - Returns: `true` iff `self` is even, `false` otherwise
     
     var isEven: Bool {
         return self % 2 == 0
@@ -22,7 +22,7 @@ public extension Int {
     
     /// Check whether `self` is odd
     ///
-    /// - Returns: True iff `self` is odd, false otherwise
+    /// - Returns: `true` iff `self` is odd, `false` otherwise
     
     var isOdd: Bool {
         return !isEven
@@ -30,7 +30,7 @@ public extension Int {
     
     /// Check whether `self` is positive
     ///
-    /// - Returns: True iff `self` is greater than zero, false otherwise
+    /// - Returns: `true` iff `self` is greater than zero, `false` otherwise
     
     var isPositive: Bool {
         return self > 0
@@ -38,7 +38,7 @@ public extension Int {
     
     /// Check whether `self` is negative
     ///
-    /// - Returns: True iff `self` is less than zero, false otherwise
+    /// - Returns: `true` iff `self` is less than zero, `false` otherwise
     
     var isNegative: Bool {
         return self < 0
@@ -46,7 +46,7 @@ public extension Int {
     
     /// Check whether `self` is non-positive
     ///
-    /// - Returns: True iff `self` is less than or equal to zero, false otherwise
+    /// - Returns: `true` iff `self` is less than or equal to zero, `false` otherwise
     
     var isNonPositive: Bool {
         return self <= 0
@@ -54,7 +54,7 @@ public extension Int {
     
     /// Check whether `self` is non-negative
     ///
-    /// - Returns: True iff `self` is greater than or equal to zero, false otherwise
+    /// - Returns: `true` iff `self` is greater than or equal to zero, `false` otherwise
     
     var isNonNegative: Bool {
         return self >= 0
@@ -62,7 +62,7 @@ public extension Int {
     
     /// Check whether `self` is non-zero
     ///
-    /// - Returns: True iff `self` is not zero, false otherwise
+    /// - Returns: `true` iff `self` is not zero, `false` otherwise
     
     var isNonZero: Bool {
         return self != 0
@@ -85,9 +85,10 @@ public extension Int {
         }
     }
     
-    /// Repeat a block of code `self` times
+    /// Repeat a block of code `self` times and pass the current index to the closure
     ///
     /// - Parameter closure: The code to be executed `self` times
+    
     func times(_ closure: (Int) -> Void) {
         
         guard self > 0 else {
@@ -99,41 +100,41 @@ public extension Int {
         }
     }
     
-    /// Repeat a block of code from `self` up to a limit
+    /// Repeat a block of code from `self` up to a specific value
     ///
     /// - Parameters:
     ///
-    ///   - upperBound: Non-inclusive upper bound value
+    ///   - value: Non-inclusive upper bound value
     ///   - step: The step used to stride over a half-open interval
     ///   - closure: The block of code to be executed
     
-    func up(to upperBound: Int, by step: Int = 1, _ closure: () -> Void) {
+    func up(to value: Int, by step: Int = 1, _ closure: () -> Void) {
         
-        for _ in Swift.stride(from: self, to: upperBound, by: step) {
+        for _ in Swift.stride(from: self, to: value, by: step) {
             closure()
         }
     }
     
-    /// Repeat a block of code from `self` down to a limit
+    /// Repeat a block of code from `self` down to a specific value
     ///
     /// - Parameters:
     ///
-    ///   - lowerBound: Inclusive lower bound value
+    ///   - value: Inclusive lower bound value
     ///   - step: The step used to stride over the closed interval
     ///   - closure: The block of code to be executed
     
-    func down(to lowerBound: Int, by step: Int = -1, _ closure: () -> Void) {
+    func down(to value: Int, by step: Int = -1, _ closure: () -> Void) {
         
-        for _ in Swift.stride(from: self, through: lowerBound, by: step).reversed() {
+        for _ in Swift.stride(from: self, through: value, by: step).reversed() {
             closure()
         }
     }
     
-    /// Check whether `self` is divisible by an integer
+    /// Check whether `self` is divisible by another integer
     ///
     /// - Parameter other: The denominator or divisor
     ///
-    /// - Returns: True iff `self` is divisible, false otherwise
+    /// - Returns:`true` iff `self` is divisible, `false` otherwise
     
     @discardableResult
     func isDivisible(by other: Int) -> Bool {
@@ -154,7 +155,7 @@ public extension Int {
     ///   - lowerBound: Inclusive lower bound value
     ///   - upperBound: Inclusive upper bound value
     ///
-    /// - Returns: A random integer between `lower` and `upper` bounds
+    /// - Returns: A random integer between `lowerBound` and `upperBound` values
 
     @discardableResult
     static func random(from lowerBound: Int, to upperBound: Int) -> Int {
