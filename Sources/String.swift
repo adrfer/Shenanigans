@@ -17,8 +17,10 @@ public extension String {
     var count: Int {
         return characters.count
     }
+
+    // MARK: - Instance Methods
     
-    ///  Truncate a string down to a specific number of characters
+    ///  Truncate `self` down to a specific number of characters
     ///
     /// - Parameters:
     ///
