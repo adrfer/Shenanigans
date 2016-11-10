@@ -12,7 +12,7 @@ public extension MutableCollection where Index == Int, IndexDistance == Int {
     
     // MARK: - Instance Methods
     
-    /// Shuffle elements of `self` by mutating `self`
+    /// Shuffle elements of `self` by mutating itself
     ///
     /// - Note: This implementation uses the Fisher–Yates algorithm
     
