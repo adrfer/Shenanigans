@@ -9,6 +9,7 @@ Shenanigans can currently be installed in one of three ways:
 
 * [Carthage](#carthage)
 * [CocoaPods](#cocoapods)
+* [Swift Package Manager](#swift-package-manager)
 * [Git Submodules](#git-submodules)
 
 ### Carthage
@@ -43,6 +44,32 @@ To install using [CocoaPods](https://github.com/CocoaPods/CocoaPods):
   ```
 Now you can `import Shenanigans` to make your project swift-y.
 
+### Swift Package Manager
+
+To install using [Swift Package Manager](https://github.com/apple/swift-package-manager):
+
+1. Create a [Package.swift](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) file in your Xcode project directory and add the following:
+
+```swift
+import PackageDescription
+
+let package = Package(
+    name: "Your Project Name",
+    targets: [],
+    dependencies: [
+        .Package(url: "https://github.com/adrfer/Shenanigans.git", majorVersion: 1)
+    ]
+)
+```
+
+2. Open a terminal, change to your project directory, and run:
+
+```sh
+swift build
+```
+
+Now you can `import Shenanigans` to make your project swift-y.
+
 ### Git Submodules
 
 To install using [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules):
@@ -58,6 +85,3 @@ To install using [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submo
 5. Add the **Shenanigans.framework** to the **Linked Frameworks and Libraries** section
 
 Now you can `import Shenanigans` to make your project swift-y.
-
---
-Support for [Swift Package Manager](https://github.com/apple/swift-package-manager) is on the way.
