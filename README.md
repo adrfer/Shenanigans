@@ -5,12 +5,7 @@ Tested on `Xcode 8` and `Swift 3`.
 
 ## Install
 
-Shenanigans can be installed using:
-
-* [Carthage](#carthage)
-* [CocoaPods](#cocoapods)
-* [Git Submodules](#git-submodules)
-* [Swift Package Manager](#swift-package-manager)
+Shenanigans can be installed using [Carthage](#carthage), [CocoaPods](#cocoapods), [Git Submodules](#git-submodules), or [Swift Package Manager](#swift-package-manager).
 
 ### [Carthage](https://github.com/Carthage/Carthage)
 
