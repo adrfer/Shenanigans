@@ -10,19 +10,19 @@ Shenanigans can be installed using [Carthage](#carthage), [CocoaPods](#cocoapods
 ### [Carthage](https://github.com/Carthage/Carthage)
 
 1. Create a [Cartfile](https://github.com/Carthage/Carthage/blob/master/Documentation/Artifacts.md#cartfile) file in your Xcode project directory and add the following:
-  
+
   ```sh
   github "adrfer/Shenanigans" "master"
   ```
   
 2. Run `carthage update` to build the framework
-3. Drag and drop the **Shenanigans.framework** file from **Carthage/build** to your navigator ( <kbd>⌘</kbd><kbd>1</kbd> )
+3. Drag and drop the __Shenanigans.framework__ file from __Carthage/build__ to your project navigator
 4. Now you can import the Shenanigans module to make your project Swift-y
   
   ```swift
   import Shenanigans
   ```
-
+  
 ### [CocoaPods](https://github.com/CocoaPods/CocoaPods)
 
 1. Create a [Podfile](https://guides.cocoapods.org/using/the-podfile.html) in your Xcode project directory and add the following:
@@ -42,13 +42,13 @@ Shenanigans can be installed using [Carthage](#carthage), [CocoaPods](#cocoapods
   ```sh
   pod install
   ```
-
+  
 3. Now you can import the Shenanigans module to make your project Swift-y
   
   ```swift
   import Shenanigans
   ```
-
+  
 ### [Git Submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
 
 1. Open a terminal, change to your project directory, and run:
@@ -57,16 +57,16 @@ Shenanigans can be installed using [Carthage](#carthage), [CocoaPods](#cocoapods
   git submodule add https://github.com/adrfer/Shenanigans.git
   ```
   
-2. Drag the **Shenanigans.xcodeproj** to your project navigator ( <kbd>⌘</kbd><kbd>1</kbd> )
-3. Select yout project and verify if the deployment target matches that of your application
-4. Click the application target under the **Targets** heading in the sidebar and open the **General** panel
-5. Add the **Shenanigans.framework** to the **Linked Frameworks and Libraries** section
+2. Drag __Shenanigans.xcodeproj__ to your project navigator
+3. Select your project and verify if the deployment target matches that of your application
+4. Click the application target under the __Targets__ heading in the sidebar and open the __General__ panel
+5. Add the __Shenanigans.framework__ to the __Linked Frameworks and Libraries__ section
 6. Now you can import the Shenanigans module to make your project Swift-y
   
   ```swift
   import Shenanigans
   ```
-
+  
 ### [Swift Package Manager](https://github.com/apple/swift-package-manager)
 
 1. Create a [Package.swift](https://github.com/apple/swift-package-manager/blob/master/Documentation/Reference.md#package-manifest-file-format-reference) file in your Xcode project directory and add the following:
@@ -94,3 +94,4 @@ Shenanigans can be installed using [Carthage](#carthage), [CocoaPods](#cocoapods
   ```swift
   import Shenanigans
   ```
+  
