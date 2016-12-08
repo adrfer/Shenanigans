@@ -34,4 +34,17 @@ class StringTests: XCTestCase {
         XCTAssertEqual(value.truncated(after: 7, trailing: nil), "Lorem i")
         XCTAssertEqual(value.truncated(after: 7, trailing: "...."), "Lorem i....")
     }
+    
+    func testSnakecased() {
+        
+        XCTAssertEqual("".snakecased(), "")
+        XCTAssertEqual(" ".snakecased(), "_")
+        XCTAssertEqual("  ".snakecased(), "__")
+        
+        XCTAssertEqual("Lorem ipsum".snakecased(), "lorem_ipsum")
+        XCTAssertEqual("Lorem... ipsum!".snakecased(), "lorem_ipsum")
+        XCTAssertEqual("Lorem!  ipsum!".snakecased(), "lorem__ipsum")
+        XCTAssertEqual("L o r e m i p s u m".snakecased(), "l_o_r_e_m_i_p_s_u_m")
+        XCTAssertEqual("_LoReM_ _IpSuM_".snakecased(), "lorem_ipsum")
+    }
 }
