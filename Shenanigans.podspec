@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'Shenanigans'
-  s.version = '1.0.0'
+  s.version = '1.1.0'
   s.summary = 'Just a collection of some sleek Swift shenanigans.'
   s.homepage = 'https://github.com/adrfer/Shenanigans'
   s.license = { :type => 'WTFPL', :file => 'LICENSE' }
