@@ -33,7 +33,7 @@ Shenanigans can be installed using [Carthage](#carthage), [CocoaPods](#cocoapods
   use_frameworks!
 
   target 'Your Target Name' do
-    pod 'Shenanigans', '~> 1.0'
+    pod 'Shenanigans', '~> 1.1'
   end
   ```
   
@@ -78,7 +78,7 @@ Shenanigans can be installed using [Carthage](#carthage), [CocoaPods](#cocoapods
       name: "Your Project Name",
       targets: [],
       dependencies: [
-          .Package(url: "https://github.com/adrfer/Shenanigans.git", "1.0.0")
+          .Package(url: "https://github.com/adrfer/Shenanigans.git", "1.1.0")
       ]
    )
   ```
