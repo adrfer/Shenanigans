@@ -20,6 +20,15 @@ public extension String {
 
     // MARK: - Instance Methods
     
+    /// Create a reversed version of `self`
+    ///
+    /// - Returns: A reversed copy of `self`
+    
+    func reversed() -> String {
+
+        return String(characters.reversed())
+    }
+    
     ///  Truncate `self` down to a specific number of characters
     ///
     /// - Parameters:

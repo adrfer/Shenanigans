@@ -22,6 +22,19 @@ class StringTests: XCTestCase {
         XCTAssertEqual("👍👍👍".count, 3)
         XCTAssertEqual("Lorem ipsum...".count, 14)
     }
+
+    func testReversed() {
+        
+        XCTAssertEqual("".reversed(), "")
+        XCTAssertEqual(" ".reversed(), " ")
+        XCTAssertEqual("  ".reversed(), "  ")
+        
+        XCTAssertEqual("Lorem ipsum".reversed(), "muspi meroL")
+        XCTAssertEqual("Lorem... ipsum!".reversed(), "!muspi ...meroL")
+        XCTAssertEqual("Lorem!  ipsum!".reversed(), "!muspi  !meroL")
+        XCTAssertEqual("L o r e m i p s u m".reversed(), "m u s p i m e r o L")
+        XCTAssertEqual("_LoReM_ _IpSuM_".reversed(), "_MuSpI_ _MeRoL_")
+    }
     
     func testTruncated() {
         
