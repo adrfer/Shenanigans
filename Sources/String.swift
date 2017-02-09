@@ -5,7 +5,9 @@
 //  Created by Adriano Ferreira on 2016-05-23.
 //  Copyright © 2016 Adriano Ferreira. All rights reserved.
 //
-import Swift
+
+import Foundation
+
 public extension String {
     
     // MARK: - Instance Properties
