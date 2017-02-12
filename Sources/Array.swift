@@ -12,7 +12,7 @@ public extension Array {
 
     // MARK: - Instance Methods
 
-    /// Add a new element at the beginning of of a mutable array
+    /// Add a new element at the beginning of a mutable array
     ///
     /// - Parameter newElement: The element to prepend to the array
 
