@@ -61,4 +61,22 @@ public extension String {
         let result = components(separatedBy: charactersToRemove).joined(separator: "")
         return result.replacingOccurrences(of: " ", with: "_").lowercased()
     }
+    
+    /// Check if `self` is uppercased
+    ///
+    /// - Returns: `true` iff `self` is uppercased, `false` otherwise
+    
+    func isUppercased() -> Bool {
+        
+        return self == uppercased()
+    }
+    
+    /// Check if `self` is lowercased
+    ///
+    /// - Returns: `true` iff `self` is lowercased, `false` otherwise
+    
+    func isLowercased() -> Bool {
+        
+        return self == lowercased()
+    }
 }

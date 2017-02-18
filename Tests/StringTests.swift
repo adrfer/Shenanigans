@@ -60,4 +60,34 @@ class StringTests: XCTestCase {
         XCTAssertEqual("L o r e m i p s u m".snakecased(), "l_o_r_e_m_i_p_s_u_m")
         XCTAssertEqual("_LoReM_ _IpSuM_".snakecased(), "lorem_ipsum")
     }
+    
+    func testIsUppercased() {
+        
+        XCTAssertTrue("".isUppercased())
+        XCTAssertTrue(" ".isUppercased())
+        XCTAssertTrue("  ".isUppercased())
+        
+        XCTAssertFalse("Lorem ipsum".isUppercased())
+        XCTAssertFalse("lorem ipsum".isUppercased())
+        
+        XCTAssertTrue("LOREM IPSUM".isUppercased())
+        XCTAssertTrue("LOREM!  IPSUM!".isUppercased())
+        XCTAssertTrue("L O R E M I P S U M".isUppercased())
+        XCTAssertTrue("_LOREM_ _IPSUM_".isUppercased())
+    }
+
+    func testIsLowercased() {
+        
+        XCTAssertTrue("".isLowercased())
+        XCTAssertTrue(" ".isLowercased())
+        XCTAssertTrue("  ".isLowercased())
+        
+        XCTAssertFalse("Lorem ipsum".isLowercased())
+        XCTAssertFalse("LOREM IPSUM".isLowercased())
+        
+        XCTAssertTrue("lorem ipsum".isLowercased())
+        XCTAssertTrue("lorem!  ipsum!".isLowercased())
+        XCTAssertTrue("l o r e m i p s u m".isLowercased())
+        XCTAssertTrue("_lorem_ _ipsum_".isLowercased())
+    }
 }
