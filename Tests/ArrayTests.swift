@@ -8,7 +8,7 @@
 
 import Foundation
 import XCTest
-import Swift
+
 @testable
 import Shenanigans
 
