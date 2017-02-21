@@ -15,6 +15,7 @@ public extension Bool {
     /// Toggle `self` by mutating it
     
     mutating func toggle() {
+        
         self = !self
     }
     
