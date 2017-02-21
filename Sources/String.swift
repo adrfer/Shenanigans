@@ -55,8 +55,12 @@ public extension String {
     /// - Returns: A snakecased copy of `self`
     
     func snakecased() -> String {
-        var charactersToRemove = CharacterSet.alphanumerics.inverted
-        charactersToRemove.remove(charactersIn: " ")
+        
+        let snakeCharacterSet = CharacterSet.init(charactersIn: "_")
+        let charactersToKeep = CharacterSet.alphanumerics.union(snakeCharacterSet)
+        
+        var charactersToRemove = charactersToKeep.inverted
+        charactersToRemove.remove(charactersIn: " _")
         
         let result = components(separatedBy: charactersToRemove).joined(separator: "")
         return result.replacingOccurrences(of: " ", with: "_").lowercased()
@@ -78,5 +82,14 @@ public extension String {
     func isLowercased() -> Bool {
         
         return self == lowercased()
+    }
+    
+    /// Check if `self` is snakecased
+    ///
+    /// - Returns: `true` iff `self` is snakecased, `false` otherwise
+    
+    func isSnakecased() -> Bool {
+        
+        return self == snakecased()
     }
 }
