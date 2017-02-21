@@ -17,6 +17,7 @@ public extension String {
     /// - Returns: The lenght of `self`
     
     var count: Int {
+        
         return characters.count
     }
 
