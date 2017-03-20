@@ -59,6 +59,25 @@ public extension Sequence {
         
         return AnySequence(array)
     }
+
+    
+    /// Count elements of `self` that satisfy a given condition
+    ///
+    /// - Parameter condition: The predicate called on each element of `self`
+    ///
+    /// - Returns: The number of elements in `self` for which `condition` is `true`
+    
+    func count(while condition: (Iterator.Element) -> Bool) -> Int {
+        
+        var count = 0
+        
+        for element in self where condition(element) {
+            count += 1
+        }
+        
+        return count
+    }
+    
     
     /// Find the first element of `self` that satisfies a given condition
     ///

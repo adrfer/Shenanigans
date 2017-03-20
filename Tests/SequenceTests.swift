@@ -44,6 +44,13 @@ class SequenceTests: XCTestCase {
         XCTAssertEqual(Array(second), Array(-7 ... 0))
     }
     
+    func testCount() {
+
+        XCTAssertEqual([Int]().count(while: { $0 > 7 }), 0)
+        XCTAssertEqual(Array(1 ... 7).count(while: { $0 < 0 }), 0)
+        XCTAssertEqual(Array(-7 ... 7).count(while: { $0 <= 0 }), 8)
+    }
+    
     func testFind() {
         
         var first = [Int]()
