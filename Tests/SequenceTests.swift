@@ -16,36 +16,20 @@ class SequenceTests: XCTestCase {
     
     func testDrop() {
         
-        var first = [Int]()
-        var second = first.drop(while: { $0 > 7 })
-        XCTAssertEqual(Array(second), [Int]())
-        
-        first = Array(1 ... 7)
-        second = first.drop(while: { $0 > 0 })
-        XCTAssertEqual(Array(second), [Int]())
-        
-        first = Array(-7 ... 7)
-        second = first.drop(while: { $0 <= 0 })
-        XCTAssertEqual(Array(second), Array(1 ... 7))
+        XCTAssertEqual(Array([Int]().drop(while: { $0 > 7 })), [Int]())
+        XCTAssertEqual(Array(Array(1 ... 7).drop(while: { $0 > 0 })), [Int]())
+        XCTAssertEqual(Array(Array(-7 ... 7).drop(while: { $0 <= 0 })), Array(1 ... 7))
     }
     
     func testTake() {
         
-        var first = [Int]()
-        var second = first.take(while: { $0 > 7 })
-        XCTAssertEqual(Array(second), [Int]())
-        
-        first = Array(1 ... 7)
-        second = first.take(while: { $0 < 0 })
-        XCTAssertEqual(Array(second), [Int]())
-        
-        first = Array(-7 ... 7)
-        second = first.take(while: { $0 <= 0 })
-        XCTAssertEqual(Array(second), Array(-7 ... 0))
+        XCTAssertEqual(Array([Int]().take(while: { $0 > 7 })), [Int]())
+        XCTAssertEqual(Array(Array(1 ... 7).take(while: { $0 < 0 })), [Int]())
+        XCTAssertEqual(Array(Array(-7 ... 7).take(while: { $0 <= 0 })), Array(-7 ... 0))
     }
     
     func testCount() {
-
+        
         XCTAssertEqual([Int]().count(while: { $0 > 7 }), 0)
         XCTAssertEqual(Array(1 ... 7).count(while: { $0 < 0 }), 0)
         XCTAssertEqual(Array(-7 ... 7).count(while: { $0 <= 0 }), 8)
@@ -53,79 +37,41 @@ class SequenceTests: XCTestCase {
     
     func testFind() {
         
-        var first = [Int]()
-        var second = first.find(where: { $0 > 7})
-        XCTAssertNil(second)
-        
-        first = Array(-7 ... 7)
-        second = first.find(where: { $0 < -7 })
-        XCTAssertNil(second)
-        
-        first = Array(0 ... 7)
-        second = first.find(where: { $0 > 0 })
-        XCTAssertEqual(second, 1)
+        XCTAssertNil([Int]().find(where: { $0 > 7}))
+        XCTAssertNil(Array(-7 ... 7).find(where: { $0 < -7 }))
+        XCTAssertEqual(Array(0 ... 7).find(where: { $0 > 0 }), 1)
     }
     
     func testAny() {
         
-        var first = [Int]()
-        var second = first.any(where: { $0 > 7 })
-        XCTAssertFalse(second)
-        
-        first = Array(1 ... 7)
-        second = first.any(where: { $0.isNegative })
-        XCTAssertFalse(second)
-        
-        first = Array(-7 ... 7)
-        second = first.any(where: { $0 < 0 })
-        XCTAssertTrue(second)
+        XCTAssertFalse([Int]().any(where: { $0 > 7 }))
+        XCTAssertFalse(Array(1 ... 7).any(where: { $0.isNegative }))
+        XCTAssertTrue(Array(-7 ... 7).any(where: { $0 < 0 }))
     }
     
     func testAll() {
         
-        var first = [Int]()
-        var second = first.all(where: { $0 > 7 })
-        XCTAssertTrue(second)
-        
-        first = Array(1 ... 7)
-        second = first.all(where: { $0 > 0 })
-        XCTAssertTrue(second)
-        
-        first = Array(-7 ... 7)
-        second = first.all(where: { $0 < 0 })
-        XCTAssertFalse(second)
+        XCTAssertTrue([Int]().all(where: { $0 > 7 }))
+        XCTAssertTrue(Array(1 ... 7).all(where: { $0 > 0 }))
+        XCTAssertFalse(Array(-7 ... 7).all(where: { $0 < 0 }))
     }
     
     func testNone() {
         
-        var first = [Int]()
-        var second = first.none(where: { $0 > 7 })
-        XCTAssertTrue(second)
-        
-        first = Array(1 ... 7)
-        second = first.none(where: { $0.isPositive })
-        XCTAssertFalse(second)
-        
-        first = Array(-7 ... -1)
-        second = first.none(where: { $0 > 0 })
-        XCTAssertTrue(second)
+        XCTAssertTrue([Int]().none(where: { $0 > 7 }))
+        XCTAssertFalse(Array(1 ... 7).none(where: { $0.isPositive }))
+        XCTAssertTrue(Array(-7 ... -1).none(where: { $0 > 0 }))
     }
     
     func testFrequencies() {
         
-        let first = [1, 1, 2, 3, 3, 7, 7, 7]
-        XCTAssertEqual([1: 2, 2: 1, 3: 2, 7: 3], first.frequencies())
-        
-        let second = ["A", "AB", "A", "ABC", "AB", "A"]
-        XCTAssertEqual(["A": 3, "AB": 2, "ABC": 1], second.frequencies())
+        XCTAssertEqual([1, 1, 2, 3, 3, 7, 7, 7].frequencies(), [1: 2, 2: 1, 3: 2, 7: 3])
+        XCTAssertEqual(["A", "AB", "A", "ABC", "AB", "A"].frequencies(), ["A": 3, "AB": 2, "ABC": 1])
     }
     
     func testUnique() {
         
-        let first = [1, 1, 2, 3, 3, 7, 7, 7]
-        XCTAssertEqual([1, 2, 3, 7], first.unique())
-        
-        let second = ["A", "AB", "A", "ABC", "AB", "A"]
-        XCTAssertEqual(["A", "AB", "ABC"], second.unique())
+        XCTAssertEqual([1, 1, 2, 3, 3, 7, 7, 7].unique(), [1, 2, 3, 7])
+        XCTAssertEqual(["A", "AB", "A", "ABC", "AB", "A"].unique(), ["A", "AB", "ABC"])
     }
 }
