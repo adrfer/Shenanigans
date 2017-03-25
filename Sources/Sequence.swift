@@ -12,21 +12,20 @@ public extension Sequence {
     
     // MARK: - Instance Methods
     
-    /// Drop elements of `self` that satisfy a given condition
+    /// Drop elements of `self` that satisfy a given predicate
     ///
-    /// - Parameter condition: The predicate called on each element of `self`
+    /// - Parameter predicate: The condition called on each element of `self`
     ///
-    /// - Returns: A new sequence containing all elements of `self` except those where the `condition` is `false`
+    /// - Returns: A new sequence containing all elements of `self` but those where `predicate` is `false`
     
     @discardableResult
-    func drop(while condition: (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
+    func drop(while predicate: (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
         
         var array = Array(self)
-        var generator = makeIterator()
         
-        while let element = generator.next() {
+        for element in self {
             
-            if try !condition(element) {
+            if try !predicate(element) {
                 break
             }
             
@@ -36,24 +35,23 @@ public extension Sequence {
         return AnySequence(array)
     }
     
-    /// Take elements of `self` that satisfy a given condition
+    /// Take elements of `self` that satisfy a given predicate
     ///
-    /// - Parameter condition: The predicate called on each element of `self`
+    /// - Parameter predicate: The condition called on each element of `self`
     ///
-    /// - Returns: A new sequence containing all elements of `self` for which `condition` is `true`
+    /// - Returns: A new sequence containing elements of `self` where `predicate` is `true`
     
     @discardableResult
-    func take(while condition: (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
+    func take(while predicate: (Iterator.Element) throws -> Bool) rethrows -> AnySequence<Iterator.Element> {
+
+        var array = Array<Iterator.Element>()
         
-        var array = ContiguousArray<Iterator.Element>()
-        var generator = makeIterator()
-        
-        while let element = generator.next() {
+        for element in self {
             
-            if try !condition(element) {
+            if try !predicate(element) {
                 break
             }
-            
+        
             array.append(element)
         }
         
@@ -61,17 +59,17 @@ public extension Sequence {
     }
 
     
-    /// Count elements of `self` that satisfy a given condition
+    /// Count elements of `self` that satisfy a given predicate
     ///
-    /// - Parameter condition: The predicate called on each element of `self`
+    /// - Parameter predicate: The condition called on each element of `self`
     ///
-    /// - Returns: The number of elements in `self` for which `condition` is `true`
+    /// - Returns: The number of elements of `self` where `predicate` is `true`
     
-    func count(while condition: (Iterator.Element) -> Bool) -> Int {
+    func count(while predicate: (Iterator.Element) -> Bool) -> Int {
         
         var count = 0
         
-        for element in self where condition(element) {
+        for element in self where predicate(element) {
             count += 1
         }
         
@@ -79,59 +77,59 @@ public extension Sequence {
     }
     
     
-    /// Find the first element of `self` that satisfies a given condition
+    /// Find elements of `self` that satisfies a given predicate
     ///
-    /// - Parameter condition: The predicate called on each element of `self`
+    /// - Parameter predicate: The condition called on each element of `self`
     ///
-    /// - Returns: The first element where `condition` is `true`, `nil` otherwise
+    /// - Returns: All elements of `self` where `predicate` is `true`
     
     @discardableResult
-    func find(where condition: (Iterator.Element) throws -> Bool) rethrows -> Iterator.Element? {
+    func find(where predicate: (Iterator.Element) -> Bool) -> AnySequence<Iterator.Element> {
         
-        for element in self where try condition(element) {
-            return element
+        var array = Array<Iterator.Element>()
+        
+        for element in self where predicate(element) {
+            array.append(element)
         }
         
-        return nil
+        return AnySequence(array)
     }
     
-    /// Check if at least one element of `self` satisfies a given condition
+    /// Check if at least one element of `self` satisfies a given predicate
     ///
-    /// - Parameter condition: The predicate called on each element of `self`
+    /// - Parameter predicate: The condition called on each element of `self`
     ///
-    /// - Returns: `true` iff any element in `self` satisfies `condition`, `false` otherwise
+    /// - Returns: `true` iff any element of `self` satisfies `predicate`, `false` otherwise
     
     @discardableResult
-    func any(where condition: (Iterator.Element) throws -> Bool) rethrows -> Bool {
-        return try first(where: condition) != nil
+    func any(where predicate: (Iterator.Element) throws -> Bool) rethrows -> Bool {
+        
+        return try first(where: predicate) != nil
     }
     
-    /// Check if all elements of `self` satisfy a given condition
+    /// Check if no elements of `self` satisfy a given predicate
     ///
-    /// - Parameter condition: The predicate called on each element of `self`
+    /// - Parameter predicate: The condition called on each element of `self`
     ///
-    /// - Returns: `true` iff every element in `self` satisfies `condition`, `false` otherwise
+    /// - Returns: `true` iff every element of `self` does not satisfy `predicate`, `false` otherwise
     
     @discardableResult
-    func all(where condition: (Iterator.Element) throws -> Bool) rethrows -> Bool {
+    func none(where predicate: (Iterator.Element) throws -> Bool) rethrows -> Bool {
         
-        for element in self where try !condition(element) {
-            return false
-        }
-        
-        return true
+        return try first(where: predicate) == nil
     }
+
     
-    /// Check if no elements of `self` satisfy a given condition
+    /// Check if all elements of `self` satisfy a given predicate
     ///
-    /// - Parameter condition: The predicate called on each element of `self`
+    /// - Parameter predicate: The condition called on each element of `self`
     ///
-    /// - Returns: `true` iff every element in `self` does not satisfy `condition`, `false` otherwise
+    /// - Returns: `true` iff every element of `self` satisfies `predicate`, `false` otherwise
     
     @discardableResult
-    func none(where condition: (Iterator.Element) throws -> Bool) rethrows -> Bool {
+    func all(where predicate: (Iterator.Element) throws -> Bool) rethrows -> Bool {
         
-        for element in self where try condition(element) {
+        for element in self where try !predicate(element) {
             return false
         }
         
@@ -143,7 +141,7 @@ public extension Sequence where Iterator.Element: Hashable {
  
     // MARK: - Instance Methods
     
-    /// Get the frequencies of each element of `self`
+    /// Retrieve the frequency of each element of `self`
     ///
     /// - Returns: A new dictionary where keys are the elements of `self`, and values are their frequencies
     
@@ -153,13 +151,14 @@ public extension Sequence where Iterator.Element: Hashable {
         var dictionary = Dictionary<Iterator.Element, Int>()
         
         for key in self {
+            
             dictionary[key] = dictionary[key]?.advanced(by: 1) ?? 1
         }
         
         return dictionary
     }
     
-    /// Get the unique elements of `self`
+    /// Retrive the unique elements of `self`
     ///
     /// - Returns: A new array containing all unique elements of `self`
     

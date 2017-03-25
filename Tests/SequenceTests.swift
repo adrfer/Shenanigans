@@ -37,9 +37,9 @@ class SequenceTests: XCTestCase {
     
     func testFind() {
         
-        XCTAssertNil([Int]().find(where: { $0 > 7}))
-        XCTAssertNil(Array(-7 ... 7).find(where: { $0 < -7 }))
-        XCTAssertEqual(Array(0 ... 7).find(where: { $0 > 0 }), 1)
+        XCTAssertEqual(Array([Int]().find(where: { $0 > 0 })), [Int]())
+        XCTAssertEqual(Array(Array(-7 ... 0).find(where: { $0 > 0 })), [Int]())
+        XCTAssertEqual(Array(Array(0 ... 7).find(where: { $0 > 0 })), Array(1 ... 7))
     }
     
     func testAny() {
