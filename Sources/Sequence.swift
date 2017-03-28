@@ -77,11 +77,11 @@ public extension Sequence {
     }
     
     
-    /// Find elements of `self` that satisfies a given predicate
+    /// Find elements of `self` that satisfy a given predicate
     ///
     /// - Parameter predicate: The condition called on each element of `self`
     ///
-    /// - Returns: All elements of `self` where `predicate` is `true`
+    /// - Returns: A new sequence containing elements of `self` where `predicate` is `true`
     
     @discardableResult
     func find(where predicate: (Iterator.Element) -> Bool) -> AnySequence<Iterator.Element> {
@@ -99,7 +99,7 @@ public extension Sequence {
     ///
     /// - Parameter predicate: The condition called on each element of `self`
     ///
-    /// - Returns: `true` iff any element of `self` satisfies `predicate`, `false` otherwise
+    /// - Returns: `true` iff any element of `self` satisfies the `predicate`, `false` otherwise
     
     @discardableResult
     func any(where predicate: (Iterator.Element) throws -> Bool) rethrows -> Bool {
@@ -111,7 +111,7 @@ public extension Sequence {
     ///
     /// - Parameter predicate: The condition called on each element of `self`
     ///
-    /// - Returns: `true` iff every element of `self` does not satisfy `predicate`, `false` otherwise
+    /// - Returns: `true` iff every element of `self` does not satisfy the `predicate`, `false` otherwise
     
     @discardableResult
     func none(where predicate: (Iterator.Element) throws -> Bool) rethrows -> Bool {
@@ -124,7 +124,7 @@ public extension Sequence {
     ///
     /// - Parameter predicate: The condition called on each element of `self`
     ///
-    /// - Returns: `true` iff every element of `self` satisfies `predicate`, `false` otherwise
+    /// - Returns: `true` iff every element of `self` satisfies the `predicate`, `false` otherwise
     
     @discardableResult
     func all(where predicate: (Iterator.Element) throws -> Bool) rethrows -> Bool {
@@ -151,14 +151,13 @@ public extension Sequence where Iterator.Element: Hashable {
         var dictionary = Dictionary<Iterator.Element, Int>()
         
         for key in self {
-            
             dictionary[key] = dictionary[key]?.advanced(by: 1) ?? 1
         }
         
         return dictionary
     }
     
-    /// Retrive the unique elements of `self`
+    /// Retrieve all unique elements of `self`
     ///
     /// - Returns: A new array containing all unique elements of `self`
     
